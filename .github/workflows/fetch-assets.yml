@@ -42,9 +42,19 @@ jobs:
           cp "raw/mechs/Animated Mech Pack - March 2021/Preview.jpg" assets/mechs/preview.jpg || true
           cp "raw/mechs/Animated Mech Pack - March 2021/Preview2.png" assets/mechs/preview2.png || true
           cp "raw/mechs/Animated Mech Pack - March 2021/License.txt" assets/mechs/LICENSE.txt || true
+          cp "raw/mechs/Animated Mech Pack - March 2021/Textures/"*.png assets/mechs/ || true
           cat > /tmp/exp.py <<'PY'
           import bpy, sys
           out = sys.argv[sys.argv.index("--") + 1]
+          import os
+          tex = sys.argv[sys.argv.index("--") + 2]
+          for img in bpy.data.images:
+              if img.source == 'FILE':
+                  cand = os.path.join(tex, os.path.basename(img.filepath.replace("\\", "/")))
+                  if os.path.exists(cand):
+                      img.filepath = cand; img.reload()
+                  try: img.pack()
+                  except Exception as e: print("pack fail", img.name, e)
           for o in bpy.data.objects:
               o.hide_set(False); o.hide_viewport=False; o.hide_render=False
           bpy.ops.export_scene.gltf(filepath=out, export_format='GLB', export_animations=True, export_yup=True)
@@ -52,7 +62,7 @@ jobs:
           PY
           find raw/mechs -iname '*.blend' -print0 | while IFS= read -r -d '' f; do
             n=$(basename "$f" .blend)
-            blender -b "$f" --python /tmp/exp.py -- "assets/mechs/$n.glb" 2>&1 | grep -E "ACTIONS|Error|rror" | head -5 >> mech_files.txt
+            blender -b "$f" --python /tmp/exp.py -- "assets/mechs/$n.glb" "$PWD/raw/mechs/Animated Mech Pack - March 2021/Textures" 2>&1 | grep -E "ACTIONS|Error|rror|pack" | head -8 >> mech_files.txt
           done
           ls -la assets/mechs >> mech_files.txt
           rm -rf raw
