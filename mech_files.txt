@@ -21,6 +21,29 @@
   mechs/Animated Mech Pack - March 2021/OBJ/Stan.mtl
   mechs/Animated Mech Pack - March 2021/OBJ/Leela.mtl
   mechs/Animated Mech Pack - March 2021/OBJ/Stan.obj
-total 8
-drwxr-xr-x 2 runner runner 4096 Oct 24 15:18 .
-drwxr-xr-x 3 runner runner 4096 Oct 24 15:18 ..
+ModuleNotFoundError: No module named 'numpy'
+RuntimeError: Error: Python: Traceback (most recent call last):
+ModuleNotFoundError: No module named 'numpy'
+Error: Python: Traceback (most recent call last):
+ModuleNotFoundError: No module named 'numpy'
+ModuleNotFoundError: No module named 'numpy'
+RuntimeError: Error: Python: Traceback (most recent call last):
+ModuleNotFoundError: No module named 'numpy'
+Error: Python: Traceback (most recent call last):
+ModuleNotFoundError: No module named 'numpy'
+ModuleNotFoundError: No module named 'numpy'
+RuntimeError: Error: Python: Traceback (most recent call last):
+ModuleNotFoundError: No module named 'numpy'
+Error: Python: Traceback (most recent call last):
+ModuleNotFoundError: No module named 'numpy'
+ModuleNotFoundError: No module named 'numpy'
+RuntimeError: Error: Python: Traceback (most recent call last):
+ModuleNotFoundError: No module named 'numpy'
+Error: Python: Traceback (most recent call last):
+ModuleNotFoundError: No module named 'numpy'
+total 2976
+drwxr-xr-x 2 runner runner    4096 Oct 24 15:20 .
+drwxr-xr-x 4 runner runner    4096 Oct 24 15:20 ..
+-rw-r--r-- 1 runner runner     364 Oct 24 15:20 LICENSE.txt
+-rw-r--r-- 1 runner runner  292178 Oct 24 15:20 preview.jpg
+-rw-r--r-- 1 runner runner 2739710 Oct 24 15:20 preview2.png
