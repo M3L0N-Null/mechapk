@@ -1,6 +1,6 @@
 # Iron Swarm
 
-A side-on mech game with destructible terrain. Every explosion carves the ground. Your back pod fires a looping micro-missile swarm, and you buy swappable parts and upgrades with scrap between waves.
+A third-person 3D mech game in a destructible canyon. Explosions crater the ground and topple rock pillars. Your back pod fires a looping micro-missile swarm, and you buy swappable parts and upgrades with scrap between waves.
 
 ## Get the APK using only your phone
 
@@ -19,17 +19,18 @@ Whenever you change `index.html` and commit, GitHub builds a new APK. You can al
 
 ## Controls
 
-- **Left thumb:** move. Push the stick up to jump; keep holding to burn your jets.
-- **Right thumb:** aim and fire your arm weapon.
+- **Left thumb:** walk.
+- **Right side:** drag to look and aim. Hold **FIRE** to shoot (you can drag from it to aim too).
+- **JET:** tap to jump, hold to fly.
 - **Pod button:** fire your back weapon (Swarm, Buster or Cluster).
-- **Keyboard:** A/D to move, W or Space to jet, mouse to aim, click to fire, E for the back weapon, Esc to pause.
+- **Keyboard:** WASD to move, Space to jet, mouse to look, click to fire, E for the back weapon, P to pause.
 
 ## Parts
 
 | Slot | Options |
 |---|---|
 | Legs | Strider (balanced) · Bulwark Treads (armor, climbs) · Skimmer Hover (fast, fuel-efficient) |
-| Arm | Autocannon · Rail Lance (piercing beam that bores tunnels) · Mortar |
+| Arm | Autocannon · Rail Lance (piercing beam that punches through pillars) · Mortar |
 | Back | Swarm Pod (looping homing missiles) · Bunker Buster (drills in, then detonates) · Cluster Rack |
 | Core | Standard · Reactor (faster recharge) · Fortress (more armor) |
 
