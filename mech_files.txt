@@ -1,0 +1,26 @@
+  mechs/Animated Mech Pack - March 2021/Blends/Leela.blend
+  mechs/Animated Mech Pack - March 2021/Blends/Mike.blend
+  mechs/Animated Mech Pack - March 2021/Blends/George.blend
+  mechs/Animated Mech Pack - March 2021/Blends/Stan.blend
+  mechs/Animated Mech Pack - March 2021/Preview2.png
+  mechs/Animated Mech Pack - March 2021/License.txt
+  mechs/Animated Mech Pack - March 2021/Preview.jpg
+  mechs/Animated Mech Pack - March 2021/Textures/George_Texture.png
+  mechs/Animated Mech Pack - March 2021/Textures/Mike_Texture.png
+  mechs/Animated Mech Pack - March 2021/Textures/Stan_Texture.png
+  mechs/Animated Mech Pack - March 2021/Textures/Leela_Texture.png
+  mechs/Animated Mech Pack - March 2021/FBX/George.fbx
+  mechs/Animated Mech Pack - March 2021/FBX/Leela.fbx
+  mechs/Animated Mech Pack - March 2021/FBX/Stan.fbx
+  mechs/Animated Mech Pack - March 2021/FBX/Mike.fbx
+  mechs/Animated Mech Pack - March 2021/OBJ/George.mtl
+  mechs/Animated Mech Pack - March 2021/OBJ/Mike.mtl
+  mechs/Animated Mech Pack - March 2021/OBJ/Mike.obj
+  mechs/Animated Mech Pack - March 2021/OBJ/Leela.obj
+  mechs/Animated Mech Pack - March 2021/OBJ/George.obj
+  mechs/Animated Mech Pack - March 2021/OBJ/Stan.mtl
+  mechs/Animated Mech Pack - March 2021/OBJ/Leela.mtl
+  mechs/Animated Mech Pack - March 2021/OBJ/Stan.obj
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 15:18 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 15:18 ..

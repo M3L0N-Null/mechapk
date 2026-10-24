@@ -1,0 +1,7104 @@
+{
+ "aerial_beach_01": {
+  "name": "Aerial Beach 01",
+  "tags": [
+   "beach",
+   "wavy",
+   "costal",
+   "ocean",
+   "seaside"
+  ],
+  "cats": [
+   "terrain",
+   "sand",
+   "outdoor",
+   "natural",
+   "aerial"
+  ]
+ },
+ "aerial_beach_02": {
+  "name": "Aerial Beach 02",
+  "tags": [
+   "beach",
+   "flat",
+   "costal",
+   "ocean",
+   "seaside"
+  ],
+  "cats": [
+   "terrain",
+   "sand",
+   "natural",
+   "outdoor",
+   "aerial"
+  ]
+ },
+ "aerial_beach_03": {
+  "name": "Aerial Beach 03",
+  "tags": [
+   "beach",
+   "seaside",
+   "sand",
+   "trampled",
+   "uneven",
+   "brown",
+   "footprints",
+   "costal",
+   "ocean"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "sand",
+   "natural",
+   "aerial"
+  ]
+ },
+ "aerial_grass_rock": {
+  "name": "Aerial Grass Rock",
+  "tags": [
+   "moss",
+   "grass",
+   "cliff",
+   "cave",
+   "rock face"
+  ],
+  "cats": [
+   "terrain",
+   "rock",
+   "outdoor",
+   "natural",
+   "aerial"
+  ]
+ },
+ "aerial_ground_rock": {
+  "name": "Aerial Ground Rock",
+  "tags": [
+   "mud",
+   "rocks",
+   "stones",
+   "dirt",
+   "dry"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "aerial"
+  ]
+ },
+ "aerial_mud_1": {
+  "name": "Aerial Mud 1",
+  "tags": [
+   "mud",
+   "tracks",
+   "tire tracks",
+   "wet soil",
+   "uneven surface",
+   "ruts",
+   "surface depressions"
+  ],
+  "cats": [
+   "terrain",
+   "road",
+   "outdoor",
+   "natural",
+   "aerial"
+  ]
+ },
+ "aerial_rocks_01": {
+  "name": "Aerial Rocks 01",
+  "tags": [
+   "rocks",
+   "moss",
+   "cliff",
+   "rock face",
+   "cave"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "rock",
+   "aerial"
+  ]
+ },
+ "aerial_rocks_02": {
+  "name": "Aerial Rocks 02",
+  "tags": [
+   "rocks",
+   "rough",
+   "moss",
+   "cliff",
+   "rock face",
+   "cave"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "rock",
+   "aerial"
+  ]
+ },
+ "aerial_rocks_04": {
+  "name": "Aerial Rocks 04",
+  "tags": [
+   "rough",
+   "rocks",
+   "moss",
+   "cliff",
+   "rock face",
+   "cave"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "rock",
+   "aerial"
+  ]
+ },
+ "aerial_sand": {
+  "name": "Aerial Sand",
+  "tags": [
+   "sand",
+   "costal",
+   "seaside",
+   "ocean",
+   "sea"
+  ],
+  "cats": [
+   "terrain",
+   "sand",
+   "outdoor",
+   "natural",
+   "aerial"
+  ]
+ },
+ "aerial_wood_snips": {
+  "name": "Aerial Wood Snips",
+  "tags": [
+   "rough",
+   "wood",
+   "mud",
+   "dirt",
+   "wood chips",
+   "wood splinters",
+   "tire tracks",
+   "organic debris",
+   "earth"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "aerial"
+  ]
+ },
+ "asphalt_04": {
+  "name": "Asphalt 04",
+  "tags": [
+   "rough",
+   "weathered",
+   "dry",
+   "cracked",
+   "discolored",
+   "asphalt",
+   "road",
+   "street"
+  ],
+  "cats": [
+   "man made",
+   "outdoor",
+   "road"
+  ]
+ },
+ "asphalt_floor": {
+  "name": "Asphalt Floor",
+  "tags": [
+   "flat",
+   "asphalt",
+   "brown",
+   "even",
+   "dry",
+   "smooth",
+   "ground"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "floor",
+   "clean",
+   "concrete",
+   "road",
+   "asphalt",
+   "plaster-concrete"
+  ]
+ },
+ "bark_willow_02": {
+  "name": "Bark Willow 02",
+  "tags": [
+   "rough",
+   "dry",
+   "nature",
+   "tree",
+   "bark",
+   "wood",
+   "forest"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "wood",
+   "raw wood",
+   "bark"
+  ]
+ },
+ "baseball_playground": {
+  "name": "Baseball Playground",
+  "tags": [
+   "dirt",
+   "playground",
+   "sand",
+   "baseball",
+   "ground",
+   "brown",
+   "dry",
+   "trampled",
+   "footprints"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "sand"
+  ]
+ },
+ "bicolour_gravel": {
+  "name": "Bicolour Gravel",
+  "tags": [
+   "gravel",
+   "gravelly",
+   "driveway gravel",
+   "driveway stones",
+   "driveway",
+   "garden walkway",
+   "stones",
+   "garden path gravel"
+  ],
+  "cats": [
+   "floor",
+   "gravel"
+  ]
+ },
+ "brick_gravel": {
+  "name": "Brick Gravel",
+  "tags": [
+   "rough",
+   "uneven",
+   "brick",
+   "gravel",
+   "broken pieces",
+   "rubble",
+   "fragmented",
+   "crushed",
+   "aggregate",
+   "terracotta"
+  ],
+  "cats": [
+   "outdoor",
+   "gravel",
+   "brick"
+  ]
+ },
+ "brick_wall_006": {
+  "name": "Brick Wall 006",
+  "tags": [
+   "rough",
+   "wall",
+   "chipped",
+   "worn",
+   "cracked",
+   "discolored",
+   "dry",
+   "red",
+   "brick",
+   "bricks",
+   "damaged",
+   "concrete",
+   "scratched",
+   "uneven"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "brick"
+  ]
+ },
+ "brick_wall_04": {
+  "name": "Brick Wall 04",
+  "tags": [
+   "rough",
+   "uneven",
+   "wall",
+   "chipped",
+   "damaged",
+   "rock",
+   "rocks",
+   "concrete",
+   "plaster",
+   "brick",
+   "bricks",
+   "cement",
+   "weathered",
+   "stones",
+   "cracked",
+   "worn"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "brick",
+   "plaster-concrete"
+  ]
+ },
+ "broken_wall": {
+  "name": "Broken Wall",
+  "tags": [
+   "rough",
+   "wall",
+   "stacked",
+   "stones",
+   "castle",
+   "old",
+   "ancient",
+   "modern"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "indoor",
+   "wall",
+   "man made"
+  ]
+ },
+ "brown_brick_02": {
+  "name": "Brown Brick 02",
+  "tags": [
+   "brown",
+   "rough",
+   "sandy",
+   "urban",
+   "yellow"
+  ],
+  "cats": [
+   "brick",
+   "wall",
+   "outdoor",
+   "indoor",
+   "clean",
+   "man made"
+  ]
+ },
+ "brown_mud": {
+  "name": "Brown Mud",
+  "tags": [
+   "mud",
+   "dirt",
+   "stones",
+   "dry",
+   "ground",
+   "soil",
+   "plant debris",
+   "granular",
+   "organic matter",
+   "earthy",
+   "twigs",
+   "earth"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "brown_mud_02": {
+  "name": "Brown Mud 02",
+  "tags": [
+   "mud",
+   "dirt",
+   "stones",
+   "dry",
+   "ground",
+   "footprints",
+   "soil",
+   "compact soil",
+   "wet soil",
+   "plant debris",
+   "roots",
+   "sticks",
+   "earth"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "brown_mud_03": {
+  "name": "Brown Mud 03",
+  "tags": [
+   "mud",
+   "dirt",
+   "stones",
+   "dry",
+   "ground",
+   "soil",
+   "wet soil",
+   "footprints",
+   "earth",
+   "muddy surface",
+   "wet patches",
+   "mud clumps",
+   "loose earth"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "brown_mud_dry": {
+  "name": "Brown Mud Dry",
+  "tags": [
+   "mud",
+   "dirt",
+   "stones",
+   "dry",
+   "ground"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor",
+   "collection: the_shed"
+  ]
+ },
+ "brown_mud_leaves_01": {
+  "name": "Brown Mud Leaves 01",
+  "tags": [
+   "grass",
+   "mud",
+   "moss",
+   "stones",
+   "orange",
+   "forest"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "brown_mud_rocks_01": {
+  "name": "Brown Mud Rocks 01",
+  "tags": [
+   "gravel",
+   "mud",
+   "moss",
+   "stones",
+   "forest",
+   "rocks",
+   "loose stones",
+   "plants",
+   "weeds",
+   "scattered weeds",
+   "plant debris",
+   "riverbank",
+   "organic matter",
+   "rocky soil",
+   "wet ground"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "brown_planks_03": {
+  "name": "Brown Planks 03",
+  "tags": [
+   "planks",
+   "untreated",
+   "boat",
+   "costal",
+   "dry",
+   "old",
+   "withered"
+  ],
+  "cats": [
+   "wood",
+   "man made",
+   "indoor",
+   "outdoor",
+   "clean",
+   "wall"
+  ]
+ },
+ "brown_planks_09": {
+  "name": "Brown Planks 09",
+  "tags": [
+   "brown",
+   "planks",
+   "shed",
+   "deck",
+   "raw wood",
+   "nail holes",
+   "horizontal layout",
+   "weathered wood",
+   "knots",
+   "natural grain",
+   "grain",
+   "natural wood",
+   "natural wood grain",
+   "unsanded wood",
+   "rough wood"
+  ],
+  "cats": [
+   "wood",
+   "outdoor",
+   "indoor",
+   "clean",
+   "wall",
+   "man made"
+  ]
+ },
+ "brushed_concrete_03": {
+  "name": "Brushed Concrete 03",
+  "tags": [
+   "rough",
+   "weathered",
+   "dirty",
+   "dry",
+   "worn",
+   "scratched",
+   "brown",
+   "concrete",
+   "chipped"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "floor",
+   "plaster-concrete",
+   "concrete"
+  ]
+ },
+ "burned_ground_01": {
+  "name": "Burned Ground 01",
+  "tags": [
+   "mud",
+   "burned",
+   "fire",
+   "dirt",
+   "ash",
+   "plant debris",
+   "plant litter",
+   "leaves",
+   "dry leaves",
+   "dry grass",
+   "gravel",
+   "gravelly",
+   "fallen leaves",
+   "organic debris",
+   "loose stones",
+   "charred soil",
+   "scorched earth"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "castle_wall_slates": {
+  "name": "Castle Wall Slates",
+  "tags": [
+   "wall",
+   "rough",
+   "blocks",
+   "stacked",
+   "old",
+   "castle",
+   "medieval"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "wall",
+   "clean",
+   "man made"
+  ]
+ },
+ "castle_wall_varriation": {
+  "name": "Castle Wall Variation",
+  "tags": [
+   "wall",
+   "rough",
+   "blocks",
+   "old",
+   "castle"
+  ],
+  "cats": [
+   "rock",
+   "wall",
+   "outdoor",
+   "clean",
+   "man made"
+  ]
+ },
+ "ceiling_interior": {
+  "name": "Ceiling Interior",
+  "tags": [
+   "paint",
+   "spikey",
+   "wavy",
+   "ceiling",
+   "dry paint",
+   "dripping paint",
+   "dry",
+   "faded"
+  ],
+  "cats": [
+   "indoor",
+   "man made"
+  ]
+ },
+ "clean_pebbles": {
+  "name": "Clean Pebbles",
+  "tags": [
+   "rock",
+   "gravel",
+   "pebbles",
+   "stones",
+   "uneven",
+   "path"
+  ],
+  "cats": [
+   "rock",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "cliff_side": {
+  "name": "Cliff Side",
+  "tags": [
+   "cliff",
+   "rock face",
+   "rugged",
+   "eroded",
+   "boulder",
+   "landscape",
+   "mountain",
+   "terrain",
+   "orange",
+   "sediment",
+   "canyon"
+  ],
+  "cats": [
+   "outdoor",
+   "rock",
+   "natural",
+   "collection: namaqualand"
+  ]
+ },
+ "climbing_wall": {
+  "name": "Climbing Wall",
+  "tags": [
+   "rough",
+   "even",
+   "climbing",
+   "handholds",
+   "flat",
+   "foothold",
+   "grip",
+   "sport",
+   "bouldering",
+   "gym",
+   "rock climbing",
+   "climbing gym",
+   "climbing surface",
+   "climbing holds"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "indoor"
+  ]
+ },
+ "climbing_wall_02": {
+  "name": "Climbing Wall 02",
+  "tags": [
+   "rough",
+   "foothold",
+   "handholds",
+   "climbing",
+   "rock climbing",
+   "grip",
+   "climbing holds",
+   "gym",
+   "concrete",
+   "bouldering",
+   "climbing gym",
+   "climbing surface",
+   "sport"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "concrete",
+   "indoor",
+   "plaster-concrete"
+  ]
+ },
+ "climbing_wall_base": {
+  "name": "Climbing Wall Base",
+  "tags": [
+   "bouldering",
+   "rock climbing",
+   "grip",
+   "concrete",
+   "climbing surface",
+   "climbing",
+   "holes",
+   "climbing gym"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "indoor"
+  ]
+ },
+ "coast_land_rocks_01": {
+  "name": "Coast Land Rocks 01",
+  "tags": [
+   "rough",
+   "uneven",
+   "stones",
+   "moss",
+   "rock",
+   "dirt",
+   "cracked",
+   "seaside",
+   "ocean",
+   "costal",
+   "rocks",
+   "brown",
+   "gravel",
+   "nature",
+   "ground",
+   "cliff"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "aerial",
+   "sand",
+   "collection: smugglers_cove"
+  ]
+ },
+ "coast_sand_01": {
+  "name": "Coast Sand 01",
+  "tags": [
+   "beach",
+   "costal",
+   "ocean",
+   "seaside",
+   "sand",
+   "brown",
+   "rough",
+   "gravel",
+   "damp",
+   "dirt",
+   "stones"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "sand",
+   "natural",
+   "aerial",
+   "collection: smugglers_cove",
+   "collection: verdant_trail"
+  ]
+ },
+ "coast_sand_02": {
+  "name": "Coast Sand 02",
+  "tags": [
+   "beach",
+   "sand",
+   "seaside",
+   "rough",
+   "coastal",
+   "ocean",
+   "uneven",
+   "stones",
+   "brown",
+   "dirt"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "sand",
+   "natural",
+   "collection: smugglers_cove",
+   "aerial"
+  ]
+ },
+ "coast_sand_03": {
+  "name": "Coast Sand 03",
+  "tags": [
+   "sand",
+   "pebbles",
+   "stones",
+   "beach",
+   "seaside",
+   "ocean",
+   "costal",
+   "brown",
+   "ground",
+   "gravel",
+   "dry",
+   "pathway",
+   "coral",
+   "rock",
+   "broken",
+   "nature",
+   "debris"
+  ],
+  "cats": [
+   "sand",
+   "terrain",
+   "rock",
+   "outdoor",
+   "natural",
+   "collection: smugglers_cove"
+  ]
+ },
+ "coast_sand_04": {
+  "name": "Coast Sand 04",
+  "tags": [
+   "stones",
+   "pebbles",
+   "sand",
+   "coastal",
+   "coast",
+   "dirt",
+   "ocean",
+   "beach",
+   "seaside",
+   "brown",
+   "gravel",
+   "debris",
+   "coral",
+   "sea"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "sand",
+   "natural"
+  ]
+ },
+ "coast_sand_05": {
+  "name": "Coast Sand 05",
+  "tags": [
+   "costal",
+   "seaside",
+   "stones",
+   "ground",
+   "brown",
+   "gravel",
+   "beach",
+   "coastal",
+   "dirt",
+   "path",
+   "weathered",
+   "dirty",
+   "sand",
+   "worn"
+  ],
+  "cats": [
+   "sand",
+   "natural",
+   "terrain",
+   "dirty",
+   "rock",
+   "outdoor",
+   "aerial"
+  ]
+ },
+ "coast_sand_rocks_02": {
+  "name": "Coast Sand Rocks 02",
+  "tags": [
+   "grass",
+   "rock face",
+   "rock",
+   "moss",
+   "rough",
+   "uneven",
+   "weathered",
+   "stones",
+   "cliff",
+   "ground",
+   "seaside",
+   "coastal"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "aerial",
+   "rock",
+   "collection: smugglers_cove"
+  ]
+ },
+ "cobblestone_02": {
+  "name": "Cobblestone 02",
+  "tags": [
+   "cobblestone",
+   "path",
+   "footpath",
+   "stones",
+   "pebbles",
+   "dirty",
+   "walkway",
+   "garden walkway",
+   "outdoors",
+   "dry"
+  ],
+  "cats": [
+   "man made",
+   "floor",
+   "outdoor",
+   "cobblestone"
+  ]
+ },
+ "cobblestone_embedded_asphalt": {
+  "name": "Cobblestone Embedded Asphalt",
+  "tags": [
+   "rocks",
+   "asphalt",
+   "rocky",
+   "stone",
+   "coarse",
+   "gravelly",
+   "gravelly ground",
+   "gritty texture",
+   "rough",
+   "gravelly texture",
+   "rugged"
+  ],
+  "cats": [
+   "floor",
+   "man made",
+   "asphalt"
+  ]
+ },
+ "cobblestone_floor_001": {
+  "name": "Cobblestone Floor 001",
+  "tags": [
+   "cobblestone",
+   "mud",
+   "path",
+   "pathway",
+   "uneven",
+   "medieval"
+  ],
+  "cats": [
+   "road",
+   "man made",
+   "outdoor",
+   "dirty",
+   "floor",
+   "cobblestone"
+  ]
+ },
+ "cobblestone_floor_01": {
+  "name": "Cobblestone Floor 01",
+  "tags": [
+   "cobblestone",
+   "mud",
+   "path",
+   "pavement"
+  ],
+  "cats": [
+   "outdoor",
+   "floor",
+   "man made",
+   "dirty",
+   "cobblestone"
+  ]
+ },
+ "cobblestone_floor_03": {
+  "name": "Cobblestone Floor 03",
+  "tags": [
+   "cobblestone",
+   "plastered",
+   "mud",
+   "moss",
+   "pavement"
+  ],
+  "cats": [
+   "floor",
+   "outdoor",
+   "dirty",
+   "man made",
+   "cobblestone"
+  ]
+ },
+ "cobblestone_large_01": {
+  "name": "Cobblestone Large 01",
+  "tags": [
+   "cobblestone",
+   "farm",
+   "old",
+   "village",
+   "path",
+   "dry",
+   "mud"
+  ],
+  "cats": [
+   "floor",
+   "outdoor",
+   "man made",
+   "road",
+   "cobblestone"
+  ]
+ },
+ "cobblestone_pavement": {
+  "name": "Cobblestone Pavement",
+  "tags": [
+   "cobblestone",
+   "cobblestones",
+   "rocks",
+   "squares",
+   "stone slabs",
+   "stone pavement",
+   "grout lines",
+   "rough",
+   "weathered surface",
+   "weathered",
+   "uneven surface",
+   "sidewalk",
+   "sidewalk texture"
+  ],
+  "cats": [
+   "floor",
+   "cobblestone"
+  ]
+ },
+ "cobblestone_square": {
+  "name": "Cobblestone Square",
+  "tags": [
+   "cobblestone",
+   "mud",
+   "moss",
+   "smooth"
+  ],
+  "cats": [
+   "floor",
+   "outdoor",
+   "man made",
+   "dirty",
+   "cobblestone"
+  ]
+ },
+ "concrete_brick_wall_001": {
+  "name": "Concrete Brick Wall 001",
+  "tags": [
+   "wall",
+   "blocks",
+   "modern",
+   "slab"
+  ],
+  "cats": [
+   "sandstone",
+   "wall",
+   "man made",
+   "outdoor",
+   "indoor",
+   "brick"
+  ]
+ },
+ "concrete_debris": {
+  "name": "Concrete Debris",
+  "tags": [
+   "stones",
+   "dry",
+   "debris",
+   "crumbling",
+   "concrete",
+   "broken",
+   "grey",
+   "plaster",
+   "cement",
+   "damaged"
+  ],
+  "cats": [
+   "man made",
+   "plaster-concrete",
+   "concrete",
+   "plaster"
+  ]
+ },
+ "concrete_floor_01": {
+  "name": "Concrete Floor 01",
+  "tags": [
+   "rough",
+   "park",
+   "concrete",
+   "cement",
+   "rough  ",
+   "stone embedded",
+   "gravel embedded",
+   "weathered",
+   "granular"
+  ],
+  "cats": [
+   "concrete",
+   "clean",
+   "plaster-concrete",
+   "man made",
+   "outdoor"
+  ]
+ },
+ "concrete_floor_damaged_01": {
+  "name": "Concrete Floor Damaged 01",
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "chipped",
+   "cracked",
+   "damaged",
+   "dry",
+   "concrete",
+   "rocks",
+   "cracked cement",
+   "timeworn",
+   "floor",
+   "cement",
+   "crumbling",
+   "pitted",
+   "deteriorated",
+   "scratched",
+   "scuffed",
+   "deteriorating",
+   "industrial floor"
+  ],
+  "cats": [
+   "floor",
+   "man made",
+   "concrete",
+   "plaster-concrete"
+  ]
+ },
+ "concrete_floor_worn_02": {
+  "name": "Concrete Floor Worn 02",
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "chipped",
+   "cracked",
+   "damaged",
+   "exterior",
+   "dry",
+   "concrete",
+   "rocks",
+   "cracked cement",
+   "timeworn",
+   "floor",
+   "outdoor flooring",
+   "cement",
+   "crumbling"
+  ],
+  "cats": [
+   "floor",
+   "man made",
+   "concrete",
+   "plaster-concrete"
+  ]
+ },
+ "concrete_layers_02": {
+  "name": "Concrete Layers 02",
+  "tags": [
+   "worn",
+   "chipped",
+   "rough",
+   "weathered",
+   "cracked",
+   "damaged",
+   "wall",
+   "discolored",
+   "dirty",
+   "dry",
+   "concrete",
+   "grey",
+   "plastered",
+   "plaster"
+  ],
+  "cats": [
+   "man made",
+   "concrete",
+   "plaster-concrete"
+  ]
+ },
+ "concrete_rock_path": {
+  "name": "Concrete Rock Path",
+  "tags": [
+   "rough",
+   "uneven",
+   "old",
+   "weathered",
+   "brown",
+   "rock",
+   "dirty",
+   "ground",
+   "concrete",
+   "pathway",
+   "path",
+   "dry",
+   "cement"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "dirty",
+   "floor",
+   "concrete",
+   "rock",
+   "plaster-concrete"
+  ]
+ },
+ "concrete_wall_004": {
+  "name": "Concrete Wall 004",
+  "tags": [
+   "worn",
+   "painted",
+   "dry",
+   "flat",
+   "wall",
+   "stained",
+   "dirty",
+   "weathered"
+  ],
+  "cats": [
+   "man made",
+   "wall",
+   "plaster-concrete",
+   "concrete",
+   "collection: the_shed"
+  ]
+ },
+ "concrete_wall_007": {
+  "name": "Concrete Wall 007",
+  "tags": [
+   "rough",
+   "old",
+   "weathered",
+   "wall",
+   "worn",
+   "damaged",
+   "chipped",
+   "discolored",
+   "cracked",
+   "stained",
+   "dirty",
+   "dry",
+   "plaster",
+   "scratched",
+   "concrete",
+   "plastered",
+   "cement",
+   "grey"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "plaster-concrete",
+   "concrete",
+   "plaster"
+  ]
+ },
+ "concrete_wall_008": {
+  "name": "Concrete Wall 008",
+  "tags": [
+   "weathered",
+   "chipped",
+   "wall",
+   "damaged",
+   "cracked",
+   "stained",
+   "dry",
+   "plaster",
+   "concrete",
+   "scratched",
+   "cement"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "plaster-concrete",
+   "concrete",
+   "plaster"
+  ]
+ },
+ "coral_fort_wall_01": {
+  "name": "Coral Fort Wall 01",
+  "tags": [
+   "ocean",
+   "coastal",
+   "coral",
+   "fort",
+   "wall",
+   "weathered",
+   "damaged",
+   "damp",
+   "rough",
+   "uneven",
+   "grey",
+   "brown",
+   "cracked",
+   "seaside",
+   "beige",
+   "old"
+  ],
+  "cats": [
+   "wall",
+   "outdoor",
+   "man made",
+   "rock",
+   "plaster",
+   "plaster-concrete",
+   "dirty"
+  ]
+ },
+ "coral_fort_wall_02": {
+  "name": "Coral Fort Wall 02",
+  "tags": [
+   "ocean",
+   "coral",
+   "fort",
+   "wall",
+   "rough",
+   "uneven",
+   "weathered",
+   "old",
+   "stones",
+   "damaged",
+   "seaside",
+   "chipped",
+   "rock",
+   "coastal"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "outdoor",
+   "dirty",
+   "plaster-concrete",
+   "concrete",
+   "plaster"
+  ]
+ },
+ "coral_fort_wall_03": {
+  "name": "Coral Fort Wall 03",
+  "tags": [
+   "rough",
+   "wall",
+   "dirty",
+   "weathered",
+   "stones",
+   "rocks",
+   "old",
+   "worn",
+   "castle",
+   "fort"
+  ],
+  "cats": [
+   "outdoor",
+   "wall",
+   "man made",
+   "rock"
+  ]
+ },
+ "coral_gravel": {
+  "name": "Coral Gravel",
+  "tags": [
+   "gravel",
+   "coral",
+   "ground",
+   "stones",
+   "costal"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "rock",
+   "natural"
+  ]
+ },
+ "coral_ground_02": {
+  "name": "Coral Ground 02",
+  "tags": [
+   "coral",
+   "ground",
+   "costal",
+   "stones",
+   "ocean",
+   "gravel",
+   "debris",
+   "sandy",
+   "porous surface",
+   "dirt",
+   "reef",
+   "coastline",
+   "sand",
+   "exposed seabed"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "rock",
+   "natural"
+  ]
+ },
+ "coral_mud_01": {
+  "name": "Coral Mud 01",
+  "tags": [
+   "coral",
+   "ground",
+   "costal",
+   "stones",
+   "gravel",
+   "gravelly",
+   "coastal sediment",
+   "rock fragments",
+   "coastline",
+   "ocean",
+   "exposed seabed"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "road",
+   "natural"
+  ]
+ },
+ "coral_stone_wall": {
+  "name": "Coral Stone Wall",
+  "tags": [
+   "rough",
+   "wall",
+   "chipped",
+   "coral",
+   "stone",
+   "rocks",
+   "rock",
+   "fort",
+   "stonework",
+   "coastal",
+   "seaside"
+  ],
+  "cats": [
+   "wall",
+   "man made"
+  ]
+ },
+ "cracked_concrete_02": {
+  "name": "Cracked Concrete 02",
+  "tags": [
+   "uneven",
+   "rough",
+   "weathered",
+   "gritty",
+   "exterior",
+   "cracked",
+   "concrete",
+   "worn",
+   "weatherbeaten",
+   "plasterconcrete",
+   "rough  ",
+   "rough concrete",
+   "cracking",
+   "cracks",
+   "gravel embedded"
+  ],
+  "cats": [
+   "man made",
+   "floor",
+   "plaster-concrete"
+  ]
+ },
+ "cracked_concrete_wall": {
+  "name": "Cracked Concrete Wall",
+  "tags": [
+   "rough",
+   "uneven",
+   "old",
+   "weathered",
+   "wall",
+   "worn",
+   "discolored",
+   "cracked",
+   "chipped",
+   "stained",
+   "dirty",
+   "beige",
+   "painted",
+   "dry",
+   "plaster"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "dirty",
+   "brick",
+   "plaster-concrete",
+   "plaster"
+  ]
+ },
+ "cracked_red_ground": {
+  "name": "Cracked Red Ground",
+  "tags": [
+   "rough",
+   "uneven",
+   "old",
+   "weathered",
+   "worn",
+   "cracked",
+   "brown",
+   "dirty",
+   "stones",
+   "dry",
+   "ground",
+   "dirt",
+   "rocks",
+   "red",
+   "clay",
+   "cracks",
+   "eroded",
+   "nature",
+   "floor",
+   "sand"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "dirty",
+   "floor",
+   "sand"
+  ]
+ },
+ "damp_beach_sand": {
+  "name": "Damp Beach Sand",
+  "tags": [
+   "wet",
+   "beach",
+   "sandy",
+   "sandy beach",
+   "compact soil",
+   "beach sediment",
+   "gritty",
+   "pitted",
+   "imprinted"
+  ],
+  "cats": [
+   "outdoor",
+   "natural"
+  ]
+ },
+ "damp_beach_sand_02": {
+  "name": "Damp Beach Sand 02",
+  "tags": [
+   "sand",
+   "sandy",
+   "beach",
+   "sandy beach",
+   "damp",
+   "tidal",
+   "striated",
+   "pitted",
+   "impressions",
+   "imprinted",
+   "compact",
+   "shore"
+  ],
+  "cats": [
+   "outdoor",
+   "sand"
+  ]
+ },
+ "damp_sand": {
+  "name": "Damp Sand",
+  "tags": [
+   "coarse",
+   "sand",
+   "beach",
+   "wet",
+   "brown",
+   "ground",
+   "costal",
+   "granular",
+   "grainy",
+   "moist",
+   "riverbank",
+   "footprints",
+   "playground",
+   "sandpit"
+  ],
+  "cats": [
+   "outdoor",
+   "sand"
+  ]
+ },
+ "dark_brick_wall": {
+  "name": "Dark Brick Wall",
+  "tags": [
+   "rough",
+   "uneven",
+   "wall",
+   "dry",
+   "bricks",
+   "brick",
+   "dark"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "brick"
+  ]
+ },
+ "dark_rock": {
+  "name": "Dark Rock",
+  "tags": [
+   "uneven",
+   "rough",
+   "weathered",
+   "rock",
+   "fissured",
+   "cracked",
+   "craggy",
+   "striated",
+   "geological",
+   "rock formation",
+   "veined",
+   "stone",
+   "fractured",
+   "metamorphic",
+   "striations",
+   "exposed rock"
+  ],
+  "cats": [
+   "natural",
+   "outdoor",
+   "rock"
+  ]
+ },
+ "dark_rock_02": {
+  "name": "Dark Rock 02",
+  "tags": [
+   "rough",
+   "rock face",
+   "rock",
+   "weathered",
+   "fractured",
+   "stratified",
+   "craggy",
+   "striated",
+   "fissured",
+   "geological",
+   "veined",
+   "weathered rock",
+   "rock formation",
+   "striations",
+   "exposed rock"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "rock"
+  ]
+ },
+ "defense_wall": {
+  "name": "Defense Wall",
+  "tags": [
+   "wall",
+   "castle",
+   "fort",
+   "fortress walls",
+   "stone wall",
+   "aged",
+   "weathered"
+  ],
+  "cats": [
+   "wall",
+   "rock",
+   "outdoor",
+   "man made"
+  ]
+ },
+ "defense_wall_02": {
+  "name": "Defense Wall 02",
+  "tags": [
+   "rough",
+   "wall",
+   "bricks",
+   "castle",
+   "fort"
+  ],
+  "cats": [
+   "outdoor",
+   "wall",
+   "rock",
+   "man made",
+   "aerial"
+  ]
+ },
+ "dense_sand": {
+  "name": "Dense Sand",
+  "tags": [
+   "rough",
+   "sand",
+   "sandy",
+   "sandpit",
+   "granular",
+   "coarse",
+   "gritty",
+   "compact",
+   "footprints",
+   "tan"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "natural"
+  ]
+ },
+ "dirt": {
+  "name": "Dirt",
+  "tags": [
+   "dirt",
+   "dirty",
+   "ground",
+   "nature",
+   "earth",
+   "dusty",
+   "rocky",
+   "debris",
+   "footprints"
+  ],
+  "cats": [
+   "floor",
+   "dirty",
+   "sand"
+  ]
+ },
+ "dirt_aerial_02": {
+  "name": "Dirt Aerial 02",
+  "tags": [
+   "mud",
+   "rough",
+   "soil",
+   "erosion",
+   "compacted",
+   "tracks"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "sand",
+   "natural",
+   "aerial"
+  ]
+ },
+ "dirt_aerial_03": {
+  "name": "Dirt Aerial 03",
+  "tags": [
+   "mud",
+   "gravel",
+   "stones",
+   "dry",
+   "organic",
+   "ground",
+   "rock fragments"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "sand",
+   "natural",
+   "aerial"
+  ]
+ },
+ "dirt_floor": {
+  "name": "Dirt Floor",
+  "tags": [
+   "dirt",
+   "ground",
+   "brown",
+   "nature",
+   "uneven",
+   "mud",
+   "debris",
+   "forest",
+   "pathway",
+   "woodland"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "collection: verdant_trail"
+  ]
+ },
+ "dirty_concrete": {
+  "name": "Dirty Concrete",
+  "tags": [
+   "rough",
+   "mud"
+  ],
+  "cats": [
+   "concrete",
+   "outdoor",
+   "floor",
+   "man made",
+   "sand",
+   "dirty",
+   "plaster-concrete"
+  ]
+ },
+ "dry_decay_leaves": {
+  "name": "Dry Decay Leaves",
+  "tags": [
+   "leaves",
+   "forest",
+   "dry",
+   "sticks",
+   "winter",
+   "dead grass",
+   "twigs",
+   "nature",
+   "leaf litter",
+   "organic"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain"
+  ]
+ },
+ "dry_ground_01": {
+  "name": "Dry Ground 01",
+  "tags": [
+   "dry",
+   "sand",
+   "mud",
+   "cracked",
+   "desert",
+   "baked",
+   "rough",
+   "fissured",
+   "baked earth",
+   "compact",
+   "brittle",
+   "parched"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "dry_ground_rocks": {
+  "name": "Dry Ground Rocks",
+  "tags": [
+   "mud",
+   "rocks",
+   "cracked",
+   "ground",
+   "dry",
+   "parched",
+   "soil",
+   "dirt",
+   "stones",
+   "rough",
+   "stony"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "dry_mud_field_001": {
+  "name": "Dry Mud Field 001",
+  "tags": [
+   "road",
+   "mud",
+   "dry",
+   "uneven",
+   "dirt",
+   "farm",
+   "ground",
+   "rough",
+   "brown"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "natural"
+  ]
+ },
+ "dry_river_pebbles": {
+  "name": "Dry River Pebbles",
+  "tags": [
+   "river",
+   "rocks",
+   "pebbles",
+   "loose stones",
+   "loose rocks",
+   "rounded rocks",
+   "rounded pebbles",
+   "debris",
+   "riverbed"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "rock"
+  ]
+ },
+ "dry_riverbed_rock": {
+  "name": "Dry Riverbed Rock",
+  "tags": [
+   "rough",
+   "rock face",
+   "uneven",
+   "weathered",
+   "cracked",
+   "stone"
+  ],
+  "cats": [
+   "floor",
+   "natural",
+   "terrain",
+   "rock",
+   "outdoor"
+  ]
+ },
+ "embedded_rock_floor": {
+  "name": "Embedded Rock Floor",
+  "tags": [
+   "rough",
+   "weathered",
+   "uneven",
+   "stone",
+   "exterior",
+   "cement",
+   "rocky",
+   "rocks",
+   "rugged"
+  ],
+  "cats": [
+   "floor",
+   "man made",
+   "plaster-concrete",
+   "rock"
+  ]
+ },
+ "excavated_soil_wall": {
+  "name": "Excavated Soil Wall",
+  "tags": [
+   "sand",
+   "wall",
+   "cracks",
+   "excavation",
+   "soil",
+   "earth",
+   "dirt",
+   "dusty",
+   "dry",
+   "uneven"
+  ],
+  "cats": [
+   "outdoor",
+   "wall",
+   "sand"
+  ]
+ },
+ "farm_soil": {
+  "name": "Farm Soil",
+  "tags": [
+   "uneven",
+   "sand",
+   "sandy",
+   "dusty",
+   "ploughed",
+   "soil",
+   "earth",
+   "ground",
+   "granulated",
+   "cloddy"
+  ],
+  "cats": [
+   "floor",
+   "natural",
+   "dirty"
+  ]
+ },
+ "floor_pebbles_01": {
+  "name": "Floor Pebbles 01",
+  "tags": [
+   "pebbles",
+   "pathway",
+   "stones",
+   "walkway",
+   "driveway stones",
+   "stony",
+   "pebbly",
+   "gravelly",
+   "driveway gravel",
+   "scattered pebbles",
+   "loose stones"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "flower_scattered_dirt": {
+  "name": "Flower Scattered Dirt",
+  "tags": [
+   "dirt",
+   "dirty",
+   "ground",
+   "petals",
+   "sand",
+   "flowers",
+   "jacaranda",
+   "scattered",
+   "earth",
+   "soil",
+   "scattered flowers",
+   "scattered petals"
+  ],
+  "cats": [
+   "floor",
+   "outdoor",
+   "natural",
+   "sand"
+  ]
+ },
+ "flower_scattered_gravel": {
+  "name": "Flower Scattered Gravel",
+  "tags": [
+   "gravel",
+   "stones",
+   "driveway gravel",
+   "gravelly ground",
+   "petals",
+   "scattered",
+   "scattered petals",
+   "jacaranda",
+   "driveway stones",
+   "scattered flowers",
+   "leaves",
+   "plant debris",
+   "floral debris",
+   "gravelly"
+  ],
+  "cats": [
+   "floor",
+   "gravel"
+  ]
+ },
+ "forest_floor": {
+  "name": "Forest Floor",
+  "tags": [
+   "sand",
+   "leaves",
+   "autumn",
+   "forest",
+   "dirt",
+   "nature",
+   "dry",
+   "mud",
+   "debris",
+   "pathway",
+   "twigs",
+   "yellow",
+   "ground"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain"
+  ]
+ },
+ "forest_ground_04": {
+  "name": "Forest Ground 04",
+  "tags": [
+   "rough",
+   "uneven",
+   "stones",
+   "ground",
+   "forest",
+   "dry",
+   "brown",
+   "gravel",
+   "rock",
+   "debris",
+   "nature",
+   "dirt"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "rock",
+   "collection: pine_forest",
+   "collection: verdant_trail"
+  ]
+ },
+ "forest_ground_05": {
+  "name": "Forest Ground 05",
+  "tags": [
+   "rough",
+   "uneven",
+   "dirt",
+   "soil",
+   "compact soil",
+   "scattered rocks",
+   "scattered leaves",
+   "forest debris",
+   "organic matter",
+   "leaf litter",
+   "forest floor",
+   "earthy",
+   "dry soil",
+   "natural path",
+   "hikers trail"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "natural",
+   "sand"
+  ]
+ },
+ "forest_ground_06": {
+  "name": "Forest Ground 06",
+  "tags": [
+   "dirt",
+   "dirty",
+   "soil",
+   "compact soil",
+   "loose earth",
+   "scattered leaves",
+   "forest soil",
+   "forest",
+   "scattered rocks",
+   "forest debris",
+   "pathway",
+   "dry soil",
+   "pebbly",
+   "twigs",
+   "leaves",
+   "fallen leaves"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "floor"
+  ]
+ },
+ "forest_leaves_03": {
+  "name": "Forest Leaves 03",
+  "tags": [
+   "leaves",
+   "autumn",
+   "dry",
+   "nature",
+   "forest",
+   "ground",
+   "cover",
+   "dirt",
+   "debris",
+   "brown",
+   "yellow",
+   "green"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain"
+  ]
+ },
+ "forest_leaves_04": {
+  "name": "Forest Leaves 04",
+  "tags": [
+   "leaves",
+   "nature",
+   "ground",
+   "dirt",
+   "debris",
+   "dry",
+   "autumn",
+   "sticks",
+   "twigs",
+   "brown"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "natural",
+   "collection: pine_forest",
+   "collection: verdant_trail"
+  ]
+ },
+ "forrest_ground_01": {
+  "name": "Forest Ground 01",
+  "tags": [
+   "grass",
+   "twigs",
+   "forest",
+   "leaves",
+   "sticks",
+   "foliage",
+   "dead grass",
+   "plant litter",
+   "underbrush",
+   "underbrush",
+   "organic",
+   "dry grass",
+   "dry leaves"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "forrest_ground_03": {
+  "name": "Forest Ground 03",
+  "tags": [
+   "pine",
+   "needles",
+   "forest",
+   "plant debris",
+   "dirt soil",
+   "leaf litter",
+   "twigs",
+   "fallen leaves",
+   "ground cover",
+   "fallen pine needles",
+   "dry grass"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "forrest_sand_01": {
+  "name": "Forest Sand 01",
+  "tags": [
+   "sand",
+   "pine",
+   "needles",
+   "forest",
+   "plant debris",
+   "plant litter",
+   "soil",
+   "organic matter",
+   "granular",
+   "twigs",
+   "sticks"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "sand"
+  ]
+ },
+ "ganges_river_pebbles": {
+  "name": "Ganges River Pebbles",
+  "tags": [
+   "rough",
+   "uneven",
+   "rock",
+   "pebbles",
+   "pebble",
+   "scattered pebbles",
+   "scattered",
+   "river",
+   "pebbly",
+   "rocky",
+   "bumpy"
+  ],
+  "cats": [
+   "natural",
+   "rock",
+   "outdoor",
+   "terrain"
+  ]
+ },
+ "granular_concrete": {
+  "name": "Granular Concrete",
+  "tags": [
+   "rough",
+   "stones",
+   "rock",
+   "gravel",
+   "dirt",
+   "ground"
+  ],
+  "cats": [
+   "concrete",
+   "man made",
+   "floor",
+   "plaster-concrete"
+  ]
+ },
+ "grass_concrete_pavement": {
+  "name": "Grass Concrete Pavement",
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "old",
+   "discolored",
+   "grass",
+   "dead grass",
+   "dry",
+   "grey",
+   "pavement",
+   "concrete",
+   "blocks",
+   "worn"
+  ],
+  "cats": [
+   "man made",
+   "outdoor",
+   "cobblestone"
+  ]
+ },
+ "grass_ground": {
+  "name": "Grass Ground",
+  "tags": [
+   "grass",
+   "dry grass",
+   "dirt",
+   "root",
+   "dead grass",
+   "turf",
+   "dry"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "dirty"
+  ]
+ },
+ "grassy_cobblestone": {
+  "name": "Grassy Cobblestone",
+  "tags": [
+   "ground",
+   "dirt",
+   "rock",
+   "grass",
+   "dirty",
+   "path",
+   "trampled",
+   "pathway"
+  ],
+  "cats": [
+   "natural",
+   "sand",
+   "outdoor",
+   "floor",
+   "cobblestone"
+  ]
+ },
+ "gravel": {
+  "name": "Gravel",
+  "tags": [
+   "rock",
+   "stones",
+   "driveway gravel",
+   "gravel",
+   "gravelly",
+   "gravelly ground",
+   "stony",
+   "scattered leaves",
+   "plant debris",
+   "dirt",
+   "fallen leaves"
+  ],
+  "cats": [
+   "floor",
+   "outdoor"
+  ]
+ },
+ "gravel_concrete": {
+  "name": "Gravel Concrete",
+  "tags": [
+   "rough",
+   "uneven",
+   "stones",
+   "gravel",
+   "dry",
+   "concrete",
+   "cement"
+  ],
+  "cats": [
+   "floor",
+   "outdoor",
+   "man made",
+   "concrete",
+   "plaster-concrete"
+  ]
+ },
+ "gravel_concrete_02": {
+  "name": "Gravel Concrete 02",
+  "tags": [
+   "rough",
+   "uneven",
+   "stones",
+   "ground",
+   "chipped",
+   "pavement",
+   "pebble",
+   "gravel"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "floor",
+   "plaster-concrete",
+   "concrete"
+  ]
+ },
+ "gravel_concrete_03": {
+  "name": "Gravel Concrete 03",
+  "tags": [
+   "rough",
+   "weathered",
+   "old",
+   "urban",
+   "sidewalk",
+   "gravel",
+   "concrete",
+   "coarse",
+   "rough  ",
+   "pavement",
+   "exterior",
+   "gritty"
+  ],
+  "cats": [
+   "floor",
+   "man made",
+   "concrete",
+   "plaster-concrete"
+  ]
+ },
+ "gravel_concrete_04": {
+  "name": "Gravel Concrete 04",
+  "tags": [
+   "rough",
+   "weathered",
+   "old",
+   "urban",
+   "sidewalk",
+   "gravel",
+   "concrete",
+   "coarse",
+   "rough  ",
+   "pavement",
+   "exterior",
+   "gritty",
+   "rough surface",
+   "granular"
+  ],
+  "cats": [
+   "floor",
+   "man made",
+   "concrete",
+   "plaster-concrete"
+  ]
+ },
+ "gravel_embedded_concrete": {
+  "name": "Gravel Embedded Concrete",
+  "tags": [
+   "pavement",
+   "rough",
+   "concrete",
+   "cement",
+   "gravel",
+   "coarse",
+   "stony",
+   "gravelly",
+   "cemented floor",
+   "floor",
+   "gravelly ground",
+   "gritty"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "plaster-concrete",
+   "concrete",
+   "floor"
+  ]
+ },
+ "gravel_embedded_concrete_02": {
+  "name": "Gravel Embedded Concrete 02",
+  "tags": [
+   "rough",
+   "concrete",
+   "pavement",
+   "coarse",
+   "cement",
+   "sidewalk",
+   "urban",
+   "stone embedded",
+   "gritty",
+   "granular",
+   "rough surface",
+   "pitted",
+   "embedded pebble",
+   "embedded rock"
+  ],
+  "cats": [
+   "floor",
+   "plaster-concrete",
+   "man made"
+  ]
+ },
+ "gravel_floor": {
+  "name": "Gravel Floor",
+  "tags": [
+   "rough",
+   "uneven",
+   "stones",
+   "gravel",
+   "pathway",
+   "driveway stones",
+   "path",
+   "pebbles",
+   "outdoor flooring",
+   "gravelly ground",
+   "driveway gravel",
+   "coarse",
+   "gravelly texture",
+   "walkway",
+   "gravelly",
+   "pebbly",
+   "driveway",
+   "stony"
+  ],
+  "cats": [
+   "outdoor",
+   "gravel"
+  ]
+ },
+ "gravel_floor_02": {
+  "name": "Gravel Floor 02",
+  "tags": [
+   "rough",
+   "rocks",
+   "gravel",
+   "gravelly",
+   "gravelly ground",
+   "driveway gravel",
+   "driveway",
+   "stones",
+   "coarse",
+   "gray",
+   "driveway stones",
+   "stony",
+   "outdoors"
+  ],
+  "cats": [
+   "floor",
+   "gravel"
+  ]
+ },
+ "gravel_floor_03": {
+  "name": "Gravel Floor 03",
+  "tags": [
+   "rough",
+   "gravel",
+   "gravelly",
+   "gravelly ground",
+   "driveway texture",
+   "driveway gravel",
+   "stones",
+   "driveway stones",
+   "driveway"
+  ],
+  "cats": [
+   "floor",
+   "outdoor"
+  ]
+ },
+ "gravel_floor_04": {
+  "name": "Gravel Floor 04",
+  "tags": [
+   "rough",
+   "uneven",
+   "granular",
+   "gravel",
+   "gravelly",
+   "coarse",
+   "gritty",
+   "gravelly ground",
+   "stones",
+   "rock fragments",
+   "weathered",
+   "ground",
+   "sand",
+   "sandy",
+   "dusty"
+  ],
+  "cats": [
+   "floor",
+   "gravel"
+  ]
+ },
+ "gravel_ground_01": {
+  "name": "Gravel Ground 01",
+  "tags": [
+   "gravel",
+   "pathway",
+   "path",
+   "stones",
+   "ground",
+   "sidewalk",
+   "rural",
+   "farm"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "gravel_road": {
+  "name": "Gravel Road",
+  "tags": [
+   "old",
+   "worn",
+   "rough",
+   "aged",
+   "stone",
+   "gravel",
+   "gravelly",
+   "gravelly texture",
+   "road",
+   "gravelly ground",
+   "driveway",
+   "driveway gravel",
+   "pebbly",
+   "gritty texture"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "rock",
+   "road",
+   "asphalt",
+   "dirty",
+   "man made"
+  ]
+ },
+ "gravel_stones": {
+  "name": "Gravel Stones",
+  "tags": [
+   "rough",
+   "uneven",
+   "stones",
+   "gravel",
+   "gritty",
+   "grey",
+   "pebbles",
+   "coarse",
+   "pebbly",
+   "pathway",
+   "driveway",
+   "gravelly",
+   "gray",
+   "garden walkway",
+   "rocky",
+   "scattered pebbles",
+   "gritty texture",
+   "stony",
+   "driveway stones"
+  ],
+  "cats": [
+   "outdoor",
+   "gravel",
+   "natural"
+  ]
+ },
+ "gravelly_sand": {
+  "name": "Gravelly Sand",
+  "tags": [
+   "sand",
+   "gravel",
+   "stony",
+   "terrain",
+   "ground",
+   "dirt",
+   "coarse",
+   "debris",
+   "dusty"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "sand",
+   "gravel",
+   "collection: namaqualand"
+  ]
+ },
+ "gray_rocks": {
+  "name": "Gray Rocks",
+  "tags": [
+   "uneven",
+   "rocks",
+   "rocky",
+   "rock",
+   "gray",
+   "rough"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "natural",
+   "rock"
+  ]
+ },
+ "grey_cartago_01": {
+  "name": "Grey Cartago 01",
+  "tags": [
+   "rock",
+   "tiles",
+   "marble",
+   "flooring",
+   "cartago",
+   "smooth",
+   "stone",
+   "stone tile",
+   "granite tile"
+  ],
+  "cats": [
+   "floor",
+   "tiles"
+  ]
+ },
+ "grey_cartago_03": {
+  "name": "Grey Cartago 03",
+  "tags": [
+   "rock",
+   "tiles",
+   "marble",
+   "flooring",
+   "cartago",
+   "smooth",
+   "stone",
+   "stone tile",
+   "granite tile"
+  ],
+  "cats": [
+   "floor",
+   "tiles"
+  ]
+ },
+ "grey_stone_path": {
+  "name": "Grey Stone Path",
+  "tags": [
+   "rocks",
+   "exterior",
+   "stonework",
+   "outdoors",
+   "path",
+   "pathway",
+   "footpath",
+   "concrete",
+   "walkway",
+   "grey",
+   "gray"
+  ],
+  "cats": [
+   "man made",
+   "outdoor"
+  ]
+ },
+ "ground_grey": {
+  "name": "Ground Grey",
+  "tags": [
+   "gravel",
+   "grey",
+   "gravelly",
+   "rough",
+   "uneven",
+   "coarse",
+   "concrete"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "road"
+  ]
+ },
+ "japanese_stone_wall": {
+  "name": "Japanese Stone Wall",
+  "tags": [
+   "uneven",
+   "stones",
+   "wall",
+   "rocks",
+   "stone",
+   "rock"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "rock"
+  ]
+ },
+ "japanese_sycamore": {
+  "name": "Japanese Sycamore",
+  "tags": [
+   "dry",
+   "tree",
+   "bark",
+   "wood",
+   "nature",
+   "forest",
+   "wooden",
+   "non square"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "bark",
+   "wood"
+  ]
+ },
+ "large_pebbles": {
+  "name": "Large Pebbles",
+  "tags": [
+   "old",
+   "worn",
+   "dirty",
+   "pebbles",
+   "large",
+   "sidewalk",
+   "parking",
+   "stones",
+   "rocks",
+   "gravel",
+   "garden walkway",
+   "driveway",
+   "stone floor",
+   "rough",
+   "bumpy",
+   "outdoor flooring",
+   "pathway",
+   "cobblestones",
+   "stone pathway"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "man made",
+   "road"
+  ]
+ },
+ "large_sandstone_blocks": {
+  "name": "Large Sandstone Blocks",
+  "tags": [
+   "grey",
+   "discolored",
+   "blocks",
+   "sandstone",
+   "wall",
+   "trimsheet",
+   "urban",
+   "stained"
+  ],
+  "cats": [
+   "wall",
+   "outdoor",
+   "sandstone",
+   "man made",
+   "dirty"
+  ]
+ },
+ "large_sandstone_blocks_01": {
+  "name": "Large Sandstone Blocks 01",
+  "tags": [
+   "wall",
+   "stones",
+   "rough",
+   "uneven",
+   "old",
+   "large"
+  ],
+  "cats": [
+   "wall",
+   "floor",
+   "man made",
+   "dirty",
+   "brick"
+  ]
+ },
+ "leaf_scattered_gravel": {
+  "name": "Leaf Scattered Gravel",
+  "tags": [
+   "forest",
+   "nature",
+   "stones",
+   "autumn",
+   "leaves",
+   "stone-fragments",
+   "organic-debris",
+   "organic-debris",
+   "loose pebbles"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "gravel",
+   "rock"
+  ]
+ },
+ "lichen_rock": {
+  "name": "Lichen Rock",
+  "tags": [
+   "rock",
+   "cliff",
+   "lichen",
+   "moss",
+   "rock face",
+   "boulder",
+   "mossy",
+   "stone",
+   "nature",
+   "rugged"
+  ],
+  "cats": [
+   "collection: verdant_trail",
+   "rock",
+   "terrain",
+   "natural"
+  ]
+ },
+ "low_tide_rocks": {
+  "name": "Low Tide Rocks",
+  "tags": [
+   "rocks",
+   "scattered rocks",
+   "pebbles",
+   "wet",
+   "wet ground",
+   "low tide",
+   "granular",
+   "scattered pebbles",
+   "riverbank",
+   "pebbly",
+   "small stones",
+   "river sediment",
+   "sand"
+  ],
+  "cats": [
+   "floor",
+   "outdoor",
+   "natural",
+   "sand"
+  ]
+ },
+ "marble_cliff_01": {
+  "name": "Marble Cliff 01",
+  "tags": [
+   "uneven",
+   "weathered",
+   "marble",
+   "cliff",
+   "discolored",
+   "cracked",
+   "fractured",
+   "metamorphic",
+   "fissured",
+   "crag",
+   "cleft",
+   "sedimentary",
+   "strata"
+  ],
+  "cats": [
+   "natural",
+   "rock",
+   "aerial"
+  ]
+ },
+ "marble_cliff_02": {
+  "name": "Marble Cliff 02",
+  "tags": [
+   "rough",
+   "weathered",
+   "uneven",
+   "rock",
+   "cracked",
+   "sedimentary",
+   "sedimentary",
+   "fissured",
+   "marble",
+   "craggy",
+   "drone",
+   "dusty",
+   "brown"
+  ],
+  "cats": [
+   "natural",
+   "rock",
+   "outdoor",
+   "aerial"
+  ]
+ },
+ "marble_cliff_03": {
+  "name": "Marble Cliff 03",
+  "tags": [
+   "rough",
+   "weathered",
+   "uneven",
+   "cliff",
+   "marble",
+   "rock",
+   "craggy",
+   "sedimentary",
+   "fractured",
+   "cracked",
+   "rock wall",
+   "strata",
+   "cracks",
+   "drone"
+  ],
+  "cats": [
+   "outdoor",
+   "rock",
+   "natural",
+   "aerial"
+  ]
+ },
+ "marble_cliff_04": {
+  "name": "Marble Cliff 04",
+  "tags": [
+   "uneven",
+   "rough",
+   "weathered",
+   "cracked",
+   "rock face",
+   "rock",
+   "cliff",
+   "stratified",
+   "veined",
+   "marble",
+   "geological",
+   "fissured",
+   "striated",
+   "stone",
+   "fractured"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "rock",
+   "aerial"
+  ]
+ },
+ "marble_cliff_05": {
+  "name": "Marble Cliff 05",
+  "tags": [
+   "rough",
+   "weathered",
+   "uneven",
+   "rock",
+   "chipped",
+   "stone",
+   "marble",
+   "striated",
+   "veined",
+   "fractured",
+   "cracked",
+   "cliff",
+   "craggy",
+   "fissured",
+   "striations",
+   "rock face",
+   "rock formation",
+   "exposed rock"
+  ],
+  "cats": [
+   "aerial",
+   "rock",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "marble_cliff_06": {
+  "name": "Marble Cliff 06",
+  "tags": [
+   "rough",
+   "uneven",
+   "rock",
+   "cracked",
+   "stone",
+   "marble",
+   "cliff",
+   "veined",
+   "striations",
+   "rock formation",
+   "geological",
+   "exposed rock",
+   "stratified",
+   "pitted",
+   "eroded",
+   "crag",
+   "fractured",
+   "fissured"
+  ],
+  "cats": [
+   "outdoor",
+   "aerial",
+   "natural",
+   "rock"
+  ]
+ },
+ "marble_rock_01": {
+  "name": "Marble Rock 01",
+  "tags": [
+   "uneven",
+   "rock",
+   "rock face",
+   "geological",
+   "cracked",
+   "boulder",
+   "craggy",
+   "marble",
+   "veined",
+   "weathered",
+   "striated"
+  ],
+  "cats": [
+   "outdoor",
+   "rock",
+   "natural"
+  ]
+ },
+ "marble_rock_02": {
+  "name": "Marble Rock 02",
+  "tags": [
+   "uneven",
+   "rock",
+   "cracked",
+   "weathered",
+   "marble",
+   "craggy",
+   "stone",
+   "rock face",
+   "chipped",
+   "striated",
+   "rugged",
+   "fissured",
+   "rock formation",
+   "veined"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "rock"
+  ]
+ },
+ "marble_rock_03": {
+  "name": "Marble Rock 03",
+  "tags": [
+   "uneven",
+   "weathered",
+   "cracked",
+   "worn",
+   "rock face",
+   "rock",
+   "dirty",
+   "marble",
+   "rock formation",
+   "exposed rock",
+   "striated",
+   "craggy",
+   "fissured",
+   "veined",
+   "geological",
+   "stratified",
+   "fractured",
+   "striations",
+   "cliff"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "medieval_blocks_02": {
+  "name": "Medieval Blocks 02",
+  "tags": [
+   "stones",
+   "sandstone",
+   "old",
+   "weathered",
+   "rough",
+   "uneven"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "dirty",
+   "outdoor",
+   "rock"
+  ]
+ },
+ "medieval_blocks_05": {
+  "name": "Medieval Blocks 05",
+  "tags": [
+   "blocks",
+   "road",
+   "stones",
+   "gaps"
+  ],
+  "cats": [
+   "wall",
+   "rock",
+   "man made",
+   "outdoor",
+   "dirty",
+   "floor"
+  ]
+ },
+ "medieval_blocks_06": {
+  "name": "Medieval Blocks 06",
+  "tags": [
+   "wall",
+   "blocks",
+   "rocks",
+   "fortress walls",
+   "stonework",
+   "ancient walls",
+   "dungeon",
+   "fort",
+   "stone blocks",
+   "rough",
+   "stone wall"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "rock",
+   "dirty",
+   "outdoor"
+  ]
+ },
+ "medieval_wall_02": {
+  "name": "Medieval Wall 02",
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "old",
+   "wall",
+   "worn",
+   "chipped",
+   "damaged",
+   "cracked",
+   "brown",
+   "rock",
+   "rocks",
+   "concrete",
+   "dungeon",
+   "dry"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "rock",
+   "outdoor"
+  ]
+ },
+ "mixed_rock_tiles": {
+  "name": "Mixed Rock Tiles",
+  "tags": [
+   "rough",
+   "uneven",
+   "old",
+   "pebbles",
+   "rocks",
+   "stone tiles",
+   "embedded rock",
+   "dirty",
+   "stone slabs",
+   "outdoor",
+   "weathered",
+   "embedded pebble"
+  ],
+  "cats": [
+   "floor",
+   "rock"
+  ]
+ },
+ "monastery_stone_floor": {
+  "name": "Monastery Stone Floor",
+  "tags": [
+   "rock",
+   "rocks",
+   "stone",
+   "floor",
+   "pathway",
+   "slates",
+   "slate",
+   "path",
+   "walkway",
+   "weathered"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "floor",
+   "man made"
+  ]
+ },
+ "moon_01": {
+  "name": "Moon 01",
+  "tags": [
+   "rough",
+   "uneven",
+   "dirt",
+   "coarse",
+   "exterior",
+   "regolith",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_02": {
+  "name": "Moon 02",
+  "tags": [
+   "rough",
+   "uneven",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_03": {
+  "name": "Moon 03",
+  "tags": [
+   "rough",
+   "uneven",
+   "dirt",
+   "coarse",
+   "exterior",
+   "regolith",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_04": {
+  "name": "Moon 04",
+  "tags": [
+   "rough",
+   "uneven",
+   "dirt",
+   "coarse",
+   "exterior",
+   "regolith",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_dusted_01": {
+  "name": "Moon Dusted 01",
+  "tags": [
+   "rough",
+   "dirt",
+   "coarse",
+   "exterior",
+   "regolith",
+   "dusted",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_dusted_02": {
+  "name": "Moon Dusted 02",
+  "tags": [
+   "rough",
+   "dirt",
+   "coarse",
+   "exterior",
+   "regolith",
+   "dusted",
+   "pebbles",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_dusted_03": {
+  "name": "Moon Dusted 03",
+  "tags": [
+   "rough",
+   "dirt",
+   "coarse",
+   "exterior",
+   "regolith",
+   "dusted",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_dusted_04": {
+  "name": "Moon Dusted 04",
+  "tags": [
+   "rough",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "dusted",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_dusted_05": {
+  "name": "Moon Dusted 05",
+  "tags": [
+   "rough",
+   "dirt",
+   "coarse",
+   "exterior",
+   "regolith",
+   "dusted",
+   "extraterrestrial",
+   "lunar",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_flat_macro_01": {
+  "name": "Moon Flat Macro 01",
+  "tags": [
+   "flat",
+   "macro",
+   "dirt",
+   "exterior",
+   "regolith",
+   "dusted",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_flat_macro_02": {
+  "name": "Moon Flat Macro 02",
+  "tags": [
+   "flat",
+   "macro",
+   "dirt",
+   "exterior",
+   "regolith",
+   "dusted",
+   "extraterrestrial",
+   "lunar",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_footprints_01": {
+  "name": "Moon Footprints 01",
+  "tags": [
+   "rough",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "dusted",
+   "footprints",
+   "path",
+   "trail",
+   "extraterrestrial",
+   "space",
+   "lunar"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_footprints_02": {
+  "name": "Moon Footprints 02",
+  "tags": [
+   "rough",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "dusted",
+   "footprints",
+   "garden path gravel",
+   "trail",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_macro_01": {
+  "name": "Moon Macro 01",
+  "tags": [
+   "rough",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "dusted",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_meteor_01": {
+  "name": "Moon Meteor 01",
+  "tags": [
+   "rough",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "dusted",
+   "meteor",
+   "craters",
+   "rock",
+   "extraterrestrial",
+   "space",
+   "lunar"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_meteor_02": {
+  "name": "Moon Meteor 02",
+  "tags": [
+   "rough",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "dusted",
+   "meteor",
+   "craters",
+   "rock",
+   "lunar",
+   "extraterrestrial",
+   "space"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_track_01": {
+  "name": "Moon Track 01",
+  "tags": [
+   "rough",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "dusted",
+   "tracks",
+   "tyre tracks",
+   "tire tracks",
+   "extraterrestrial",
+   "space",
+   "lunar"
+  ],
+  "cats": [
+   "sand",
+   "terrain",
+   "outdoor",
+   "collection: moon"
+  ]
+ },
+ "moon_track_02": {
+  "name": "Moon Track 02",
+  "tags": [
+   "rough",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "dusted",
+   "tracks",
+   "tyre tracks",
+   "tire tracks",
+   "extraterrestrial",
+   "space",
+   "lunar"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_track_03": {
+  "name": "Moon Track 03",
+  "tags": [
+   "rough",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "dusted",
+   "tracks",
+   "tyre tracks",
+   "tire tracks",
+   "extraterrestrial",
+   "space",
+   "lunar"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "moon_track_04": {
+  "name": "Moon Track 04",
+  "tags": [
+   "rough",
+   "dirt",
+   "course",
+   "exterior",
+   "regolith",
+   "dusted",
+   "tracks",
+   "tyre tracks",
+   "tire tracks",
+   "extraterrestrial",
+   "space",
+   "lunar"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "terrain",
+   "collection: moon"
+  ]
+ },
+ "mossy_rock": {
+  "name": "Mossy Rock",
+  "tags": [
+   "rough",
+   "moss",
+   "rock face",
+   "cracked",
+   "lichen",
+   "striations",
+   "striated",
+   "mosscovered",
+   "mossy",
+   "uneven",
+   "rock"
+  ],
+  "cats": [
+   "rock",
+   "natural",
+   "outdoor",
+   "terrain"
+  ]
+ },
+ "mossy_sandstone": {
+  "name": "Mossy Sandstone",
+  "tags": [
+   "rough",
+   "weathered",
+   "uneven",
+   "old",
+   "worn",
+   "wall",
+   "mosscovered",
+   "mossy",
+   "mossy ",
+   "outdoor",
+   "rock",
+   "timeworn",
+   "weatherbeaten",
+   "fortress walls",
+   "moss",
+   "rocks"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "sandstone"
+  ]
+ },
+ "mossy_stone_wall": {
+  "name": "Mossy Stone Wall",
+  "tags": [
+   "discolored",
+   "weathered",
+   "uneven",
+   "exterior",
+   "moss",
+   "concrete",
+   "weatherbeaten",
+   "aged",
+   "worn",
+   "wall",
+   "outdoor",
+   "mosscovered",
+   "dungeon",
+   "stonework",
+   "dilapidated"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "rock"
+  ]
+ },
+ "mud_cracked_dry_03": {
+  "name": "Mud Cracked Dry 03",
+  "tags": [
+   "dry",
+   "mud",
+   "sand",
+   "uneven",
+   "ground",
+   "cracked",
+   "cracks",
+   "nature"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "sand"
+  ]
+ },
+ "mud_cracked_dry_riverbed_002": {
+  "name": "Mud Cracked Dry Riverbed 002",
+  "tags": [
+   "weathered",
+   "cracked",
+   "rough",
+   "ground",
+   "dry",
+   "uneven",
+   "mud",
+   "cracks",
+   "nature",
+   "flaked",
+   "lake"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "sand"
+  ]
+ },
+ "mud_forest": {
+  "name": "Mud Forest",
+  "tags": [
+   "brown",
+   "ground",
+   "dirty",
+   "leaves",
+   "mud",
+   "forest",
+   "sticks"
+  ],
+  "cats": [
+   "outdoor",
+   "floor",
+   "natural",
+   "dirty"
+  ]
+ },
+ "muddy_tracks": {
+  "name": "Muddy Tracks",
+  "tags": [
+   "mud",
+   "muddy surface",
+   "tracks",
+   "tire tracks",
+   "wet",
+   "organic",
+   "outdoor",
+   "earth",
+   "dirty",
+   "earthy",
+   "loose earth",
+   "soil",
+   "moist ground",
+   "muddy terrain",
+   "off-road"
+  ],
+  "cats": [
+   "floor",
+   "natural",
+   "outdoor",
+   "sand",
+   "dirty"
+  ]
+ },
+ "old_sandstone_02": {
+  "name": "Old Sandstone 02",
+  "tags": [
+   "rough",
+   "weathered",
+   "wall",
+   "stone",
+   "sandstone",
+   "old",
+   "worn",
+   "chipped",
+   "aged",
+   "stonework",
+   "brown",
+   "timeworn"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "sandstone",
+   "wall"
+  ]
+ },
+ "old_stone_wall": {
+  "name": "Old Stone Wall",
+  "tags": [
+   "stone",
+   "wall",
+   "rock wall",
+   "stone wall",
+   "fortress walls",
+   "stonework",
+   "ancient walls",
+   "fort",
+   "masonry",
+   "rough surface",
+   "uneven",
+   "weathered",
+   "weathered stone"
+  ],
+  "cats": [
+   "wall",
+   "outdoor"
+  ]
+ },
+ "old_stone_wall_02": {
+  "name": "Old Stone Wall 02",
+  "tags": [
+   "rough",
+   "weathered",
+   "uneven",
+   "old",
+   "worn",
+   "wall",
+   "discolored",
+   "cracked",
+   "chipped",
+   "stone",
+   "rock",
+   "exterior",
+   "fortress walls",
+   "masonry",
+   "stone wall",
+   "rock wall"
+  ],
+  "cats": [
+   "wall",
+   "rock"
+  ]
+ },
+ "park_dirt": {
+  "name": "Park Dirt",
+  "tags": [
+   "sand",
+   "park",
+   "dirt",
+   "leaves",
+   "twigs",
+   "debris",
+   "seaside",
+   "ground",
+   "damp",
+   "pathway",
+   "autumn",
+   "nature"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "sand"
+  ]
+ },
+ "park_sand": {
+  "name": "Park Sand",
+  "tags": [
+   "brown",
+   "ground",
+   "sand",
+   "trampled",
+   "tracks",
+   "park"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "sand"
+  ]
+ },
+ "patterned_brick_wall": {
+  "name": "Patterned Brick Wall",
+  "tags": [
+   "road",
+   "rough",
+   "wall",
+   "damaged",
+   "chipped",
+   "dry",
+   "bricks",
+   "brick"
+  ],
+  "cats": [
+   "man made",
+   "brick",
+   "wall"
+  ]
+ },
+ "patterned_brick_wall_02": {
+  "name": "Patterned Brick Wall 02",
+  "tags": [
+   "stones",
+   "wall",
+   "chipped",
+   "rocks",
+   "pattern",
+   "weathered",
+   "concrete",
+   "bricks",
+   "brick",
+   "plastered",
+   "plaster",
+   "consistent"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "brick",
+   "plaster-concrete"
+  ]
+ },
+ "patterned_clay_wall": {
+  "name": "Patterned Clay Wall",
+  "tags": [
+   "uneven",
+   "weathered",
+   "damaged",
+   "cracked",
+   "worn",
+   "discolored",
+   "chipped",
+   "stained",
+   "dry",
+   "wall",
+   "brown"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall"
+  ]
+ },
+ "pavement_04": {
+  "name": "Pavement 04",
+  "tags": [
+   "grey",
+   "brick",
+   "bricks",
+   "pavement",
+   "floor",
+   "sidewalk",
+   "dry",
+   "synthetic"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "floor",
+   "brick"
+  ]
+ },
+ "pebble_cemented_floor": {
+  "name": "Pebble Cemented Floor",
+  "tags": [
+   "pebble",
+   "cement",
+   "floor",
+   "flat",
+   "rough",
+   "stones",
+   "small",
+   "gravel",
+   "pathway",
+   "path",
+   "pebbles",
+   "wall"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "floor",
+   "road"
+  ]
+ },
+ "pebble_ground_01": {
+  "name": "Pebble Ground 01",
+  "tags": [
+   "pebble",
+   "stones",
+   "even",
+   "pebbles",
+   "pebbly",
+   "sticks",
+   "scattered pebbles",
+   "small stones",
+   "dirt",
+   "plant litter",
+   "dry leaves"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural",
+   "road"
+  ]
+ },
+ "pebbles": {
+  "name": "Pebbles",
+  "tags": [
+   "pebbles",
+   "pebble",
+   "gravel",
+   "gravelly",
+   "gravelly ground",
+   "pebbly",
+   "stony",
+   "gritty texture",
+   "driveway gravel"
+  ],
+  "cats": [
+   "outdoor"
+  ]
+ },
+ "plaster_stone_wall_01": {
+  "name": "Plaster Stone Wall 01",
+  "tags": [
+   "rough",
+   "uneven",
+   "wall",
+   "rocks",
+   "weathered",
+   "old",
+   "stone embedded",
+   "coarse",
+   "weatherbeaten",
+   "exterior",
+   "embedded rock",
+   "plaster",
+   "plasterconcrete",
+   "concrete"
+  ],
+  "cats": [
+   "wall",
+   "plaster",
+   "plaster-concrete"
+  ]
+ },
+ "plaster_stone_wall_02": {
+  "name": "Plaster Stone Wall 02",
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "old",
+   "stone embedded",
+   "embedded rock",
+   "concrete",
+   "plaster",
+   "cement",
+   "mortar",
+   "coarse",
+   "timeworn"
+  ],
+  "cats": [
+   "plaster-concrete",
+   "plaster",
+   "concrete"
+  ]
+ },
+ "plastered_stone_wall": {
+  "name": "Plastered Stone Wall",
+  "tags": [
+   "rough",
+   "weathered",
+   "chipped",
+   "wall",
+   "damaged",
+   "cracked",
+   "discolored",
+   "worn",
+   "concrete",
+   "scratched",
+   "plaster",
+   "cement",
+   "rocks",
+   "cracked cement",
+   "scuffed",
+   "plastered",
+   "crumbling",
+   "stone",
+   "exterior"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "plaster-concrete",
+   "rock"
+  ]
+ },
+ "playground_sand": {
+  "name": "Playground Sand",
+  "tags": [
+   "brown",
+   "sand",
+   "floor",
+   "rough",
+   "ground",
+   "playground",
+   "dirty",
+   "wet",
+   "footprints"
+  ],
+  "cats": [
+   "outdoor",
+   "floor",
+   "sand"
+  ]
+ },
+ "quarry_wall": {
+  "name": "Quarry Wall",
+  "tags": [
+   "rough",
+   "rock face",
+   "wall",
+   "rock",
+   "quarry",
+   "solid",
+   "stonework",
+   "exterior",
+   "mining",
+   "quarrying",
+   "roughhewn",
+   "mining site",
+   "quarry stone"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "rock"
+  ]
+ },
+ "quarry_wall_02": {
+  "name": "Quarry Wall 02",
+  "tags": [
+   "rough",
+   "wall",
+   "rock",
+   "quarry",
+   "quarry stone",
+   "rock face",
+   "roughhewn",
+   "solid rock",
+   "mining",
+   "quarrying",
+   "mining site",
+   "stone wall",
+   "stone quarry"
+  ],
+  "cats": [
+   "wall",
+   "outdoor",
+   "rock"
+  ]
+ },
+ "rabdentse_ruins_wall": {
+  "name": "Rabdentse Ruins Wall",
+  "tags": [
+   "chipped",
+   "wall",
+   "weathered",
+   "damaged",
+   "worn",
+   "rocks",
+   "rock",
+   "dilapidated",
+   "fortress walls",
+   "rugged",
+   "abandoned",
+   "historic",
+   "stone",
+   "crumbling",
+   "weatherbeaten",
+   "stonework",
+   "timeworn",
+   "exterior"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "rock"
+  ]
+ },
+ "raked_dirt": {
+  "name": "Raked Dirt",
+  "tags": [
+   "brown",
+   "nature",
+   "ground",
+   "sand",
+   "leaves",
+   "dirt",
+   "floor",
+   "dirty"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "dirty",
+   "floor"
+  ]
+ },
+ "red_dirt_mud_01": {
+  "name": "Red Dirt Mud 01",
+  "tags": [
+   "gravel",
+   "mud",
+   "dirt",
+   "rough",
+   "pathway",
+   "path",
+   "road",
+   "village"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "red_laterite_soil_stones": {
+  "name": "Red Laterite Soil Stones",
+  "tags": [
+   "rough",
+   "red",
+   "laterite",
+   "stones",
+   "ground",
+   "dirt",
+   "pebbles",
+   "rocks",
+   "gravel",
+   "debris",
+   "nature",
+   "pathway",
+   "path",
+   "rock",
+   "brown",
+   "chipped"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "rock",
+   "road",
+   "sand"
+  ]
+ },
+ "red_mud_stones": {
+  "name": "Red Mud Stones",
+  "tags": [
+   "mud",
+   "dirt",
+   "flat",
+   "dry",
+   "rocks",
+   "compact soil",
+   "organic debris",
+   "roots",
+   "gothic",
+   "soil",
+   "cracked",
+   "earthy",
+   "plant debris"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "red_sand": {
+  "name": "Red Sand",
+  "tags": [
+   "red",
+   "sand",
+   "outdoor",
+   "footprints",
+   "dusty",
+   "ground",
+   "tracks",
+   "tyre tracks",
+   "tire tracks",
+   "trampled"
+  ],
+  "cats": [
+   "floor",
+   "sand",
+   "outdoor"
+  ]
+ },
+ "red_sandstone_pavement": {
+  "name": "Red Sandstone Pavement",
+  "tags": [
+   "weathered",
+   "plaster",
+   "rock",
+   "sandstone",
+   "concrete",
+   "pavement",
+   "floor",
+   "dirty",
+   "discolored",
+   "brown",
+   "red",
+   "rocks",
+   "pathway",
+   "grey"
+  ],
+  "cats": [
+   "outdoor",
+   "floor",
+   "sandstone",
+   "man made",
+   "rock"
+  ]
+ },
+ "red_sandstone_tiles": {
+  "name": "Red Sandstone Tiles",
+  "tags": [
+   "rough",
+   "paving",
+   "sandstone",
+   "coarse",
+   "exterior",
+   "rough  ",
+   "gritty",
+   "stone tiles",
+   "chipped",
+   "stone blocks"
+  ],
+  "cats": [
+   "floor",
+   "outdoor",
+   "man made"
+  ]
+ },
+ "red_sandstone_wall": {
+  "name": "Red Sandstone Wall",
+  "tags": [
+   "rough",
+   "uneven",
+   "old",
+   "weathered",
+   "wall",
+   "worn",
+   "chipped",
+   "damaged",
+   "cracked",
+   "discolored",
+   "dirty",
+   "concrete",
+   "sandstone",
+   "crumbling",
+   "brown",
+   "dusty"
+  ],
+  "cats": [
+   "man made",
+   "wall",
+   "outdoor",
+   "dirty",
+   "sandstone"
+  ]
+ },
+ "river_small_rocks": {
+  "name": "River Small Rocks",
+  "tags": [
+   "rough",
+   "uneven",
+   "stones",
+   "rock",
+   "pebbles",
+   "river",
+   "pathway",
+   "debris",
+   "scattered",
+   "ground",
+   "broken",
+   "costal"
+  ],
+  "cats": [
+   "terrain",
+   "rock",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "road_damaged_2": {
+  "name": "Road Damaged 2",
+  "tags": [
+   "uneven",
+   "rough",
+   "asphalt",
+   "asphalt road",
+   "damaged",
+   "weathered",
+   "damaged",
+   "pothole",
+   "potholes",
+   "deteriorating",
+   "tar",
+   "battered",
+   "cracked",
+   "deteriorated",
+   "cracks",
+   "pitted",
+   "dusty",
+   "gravelly"
+  ],
+  "cats": [
+   "road",
+   "asphalt",
+   "man made"
+  ]
+ },
+ "rock_01": {
+  "name": "Rock 01",
+  "tags": [
+   "grey",
+   "smooth",
+   "rock",
+   "stone",
+   "gray",
+   "weathered",
+   "rock face",
+   "solid rock"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "terrain",
+   "natural"
+  ]
+ },
+ "rock_04": {
+  "name": "Rock 04",
+  "tags": [
+   "rough",
+   "uneven",
+   "stone",
+   "bumpy",
+   "rock",
+   "rock formation",
+   "weathered",
+   "dirty",
+   "coarse",
+   "mossy"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "terrain",
+   "natural"
+  ]
+ },
+ "rock_05": {
+  "name": "Rock 05",
+  "tags": [
+   "rough",
+   "uneven",
+   "old",
+   "stone",
+   "geological",
+   "irregular",
+   "rock",
+   "pitted",
+   "rock face"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "terrain",
+   "natural"
+  ]
+ },
+ "rock_06": {
+  "name": "Rock 06",
+  "tags": [
+   "yellow",
+   "cliff",
+   "rough",
+   "rock face",
+   "solid rock",
+   "rock",
+   "striated",
+   "geological",
+   "exposed rock",
+   "uneven",
+   "weathered rock",
+   "striations"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "terrain",
+   "natural"
+  ]
+ },
+ "rock_08": {
+  "name": "Rock 08",
+  "tags": [
+   "rough",
+   "rock face",
+   "bare",
+   "rock",
+   "boulder",
+   "coarse",
+   "geological",
+   "stone",
+   "uneven"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "terrain",
+   "natural"
+  ]
+ },
+ "rock_2": {
+  "name": "Rock 2",
+  "tags": [
+   "rough",
+   "stone",
+   "dirty",
+   "rock face",
+   "rock",
+   "coarse",
+   "geological",
+   "uneven"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "terrain",
+   "natural"
+  ]
+ },
+ "rock_3": {
+  "name": "Rock 3",
+  "tags": [
+   "grey",
+   "seaside",
+   "rough",
+   "rock face",
+   "rock",
+   "uneven",
+   "boulder",
+   "mossy",
+   "mossy patches",
+   "eroded",
+   "grunge"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "terrain",
+   "natural"
+  ]
+ },
+ "rock_boulder_cracked": {
+  "name": "Rock Boulder Cracked",
+  "tags": [
+   "rough",
+   "weathered",
+   "rock face",
+   "rock",
+   "orange",
+   "cliff",
+   "cave",
+   "stone",
+   "uneven",
+   "eroded"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "rock",
+   "natural"
+  ]
+ },
+ "rock_boulder_dry": {
+  "name": "Rock Boulder Dry",
+  "tags": [
+   "weathered",
+   "chipped",
+   "rocks",
+   "boulder",
+   "stone",
+   "flat",
+   "damaged",
+   "eroded",
+   "cracked",
+   "rough",
+   "uneven"
+  ],
+  "cats": [
+   "rock",
+   "outdoor",
+   "natural",
+   "terrain"
+  ]
+ },
+ "rock_embedded_concrete": {
+  "name": "Rock Embedded Concrete",
+  "tags": [
+   "rocks",
+   "embedded rock",
+   "pebbles",
+   "stone embedded",
+   "embedded pebble",
+   "coarse",
+   "concrete",
+   "rounded pebbles",
+   "rounded rocks",
+   "pebbled surface",
+   "pebble finish ",
+   "bumpy"
+  ],
+  "cats": [
+   "floor",
+   "man made",
+   "cobblestone"
+  ]
+ },
+ "rock_embedded_concrete_wall": {
+  "name": "Rock Embedded Concrete Wall",
+  "tags": [
+   "rough",
+   "uneven",
+   "old",
+   "wall",
+   "worn",
+   "chipped",
+   "cracked",
+   "discolored",
+   "concrete",
+   "rocks",
+   "scratched",
+   "cement",
+   "plaster",
+   "cracked cement",
+   "coarse",
+   "weathered",
+   "rock"
+  ],
+  "cats": [
+   "man made",
+   "outdoor",
+   "rock",
+   "concrete",
+   "plaster-concrete"
+  ]
+ },
+ "rock_embedded_floor": {
+  "name": "Rock Embedded Floor",
+  "tags": [
+   "rough",
+   "uneven",
+   "stone embedded",
+   "embedded rock",
+   "concrete",
+   "embedded pebble",
+   "bumpy"
+  ],
+  "cats": [
+   "floor",
+   "rock",
+   "cobblestone"
+  ]
+ },
+ "rock_embedded_tiles": {
+  "name": "Rock Embedded Tiles",
+  "tags": [
+   "rocks",
+   "rock",
+   "tiles",
+   "outdoor",
+   "city",
+   "wall",
+   "tiled wall",
+   "exterior",
+   "embedded pebble",
+   "embedded rock"
+  ],
+  "cats": [
+   "wall",
+   "rock"
+  ]
+ },
+ "rock_face": {
+  "name": "Rock Face",
+  "tags": [
+   "terrain",
+   "landscape",
+   "rock face",
+   "solid rock",
+   "cliff",
+   "solid"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "natural",
+   "rock",
+   "collection: namaqualand"
+  ]
+ },
+ "rock_face_03": {
+  "name": "Rock Face 03",
+  "tags": [
+   "rough",
+   "rock",
+   "cliff",
+   "uneven",
+   "weathered",
+   "wall",
+   "cracked",
+   "stone",
+   "rock face",
+   "rugged",
+   "chipped",
+   "eroded",
+   "cracks",
+   "rocks"
+  ],
+  "cats": [
+   "natural",
+   "terrain",
+   "rock",
+   "outdoor",
+   "collection: verdant_trail"
+  ]
+ },
+ "rock_face_04": {
+  "name": "Rock Face 04",
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "old",
+   "cracked",
+   "chipped",
+   "rock face",
+   "rock",
+   "leaves",
+   "dry leaves",
+   "fallen leaves",
+   "cracks",
+   "striated",
+   "geological"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "rock"
+  ]
+ },
+ "rock_ground": {
+  "name": "Rock Ground",
+  "tags": [
+   "gravel",
+   "rough",
+   "broken",
+   "rock",
+   "ground"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "rock",
+   "outdoor"
+  ]
+ },
+ "rock_ground_02": {
+  "name": "Rock Ground 02",
+  "tags": [
+   "rough",
+   "broken",
+   "gravel",
+   "ground",
+   "scattered plants ",
+   "stones",
+   "loose stones",
+   "dirt",
+   "sand",
+   "rocks",
+   "scattered rocks"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "rock",
+   "outdoor"
+  ]
+ },
+ "rock_path": {
+  "name": "Rock Path",
+  "tags": [
+   "rough",
+   "weathered",
+   "leaves",
+   "rocks",
+   "rocky",
+   "grass",
+   "path",
+   "pathway",
+   "exterior",
+   "dirt",
+   "stony",
+   "trail",
+   "walkway",
+   "outdoor",
+   "outdoors",
+   "footpath"
+  ],
+  "cats": [
+   "natural",
+   "outdoor",
+   "floor"
+  ]
+ },
+ "rock_pitted_mossy": {
+  "name": "Rock Pitted Mossy",
+  "tags": [
+   "cracked",
+   "weathered",
+   "rock face",
+   "rock",
+   "boulder",
+   "red",
+   "discolored",
+   "eroded",
+   "moss",
+   "stone",
+   "uneven",
+   "rough",
+   "orange"
+  ],
+  "cats": [
+   "outdoor",
+   "rock",
+   "terrain",
+   "natural",
+   "sandstone"
+  ]
+ },
+ "rock_surface": {
+  "name": "Rock Surface",
+  "tags": [
+   "rough",
+   "weathered",
+   "discolored",
+   "dirty",
+   "stone",
+   "rock",
+   "boulder",
+   "coarse"
+  ],
+  "cats": [
+   "natural",
+   "rock"
+  ]
+ },
+ "rock_tile_floor": {
+  "name": "Rock Tile Floor",
+  "tags": [
+   "stone",
+   "rough",
+   "rock",
+   "rocks",
+   "gray",
+   "rugged",
+   "floor",
+   "stonework",
+   "stone tile",
+   "paving",
+   "outdoors",
+   "coarse"
+  ],
+  "cats": [
+   "outdoor",
+   "floor",
+   "rock",
+   "man made"
+  ]
+ },
+ "rock_tile_floor_02": {
+  "name": "Rock Tile Floor 02",
+  "tags": [
+   "rough",
+   "weathered",
+   "worn",
+   "walkway",
+   "rocks",
+   "rock",
+   "grass",
+   "dead grass",
+   "outdoor",
+   "outdoor walkway",
+   "pathway",
+   "stone pathway"
+  ],
+  "cats": [
+   "floor",
+   "man made",
+   "rock"
+  ]
+ },
+ "rock_wall": {
+  "name": "Rock Wall",
+  "tags": [
+   "rough",
+   "uneven",
+   "wall",
+   "chipped",
+   "rocks",
+   "rock",
+   "discolored",
+   "weathered"
+  ],
+  "cats": [
+   "wall",
+   "rock",
+   "outdoor"
+  ]
+ },
+ "rock_wall_02": {
+  "name": "Rock Wall 02",
+  "tags": [
+   "rough",
+   "rock face",
+   "bare",
+   "rock",
+   "uneven",
+   "rough  ",
+   "discolored",
+   "coastal landscape",
+   "weathered",
+   "eroded",
+   "weather-beaten",
+   "mossy patches"
+  ],
+  "cats": [
+   "rock",
+   "natural",
+   "terrain",
+   "outdoor"
+  ]
+ },
+ "rock_wall_03": {
+  "name": "Rock Wall 03",
+  "tags": [
+   "rough",
+   "uneven",
+   "old",
+   "weathered",
+   "cracked",
+   "wall",
+   "discolored",
+   "stones",
+   "brown",
+   "rock",
+   "stained",
+   "chipped",
+   "worn"
+  ],
+  "cats": [
+   "outdoor",
+   "wall",
+   "rock",
+   "man made"
+  ]
+ },
+ "rock_wall_04": {
+  "name": "Rock Wall 04",
+  "tags": [
+   "old",
+   "rough",
+   "wall",
+   "stones",
+   "worn",
+   "rocks",
+   "dirty",
+   "weathered",
+   "stone",
+   "brown",
+   "rock"
+  ],
+  "cats": [
+   "outdoor",
+   "wall",
+   "rock",
+   "man made"
+  ]
+ },
+ "rock_wall_05": {
+  "name": "Rock Wall 05",
+  "tags": [
+   "uneven",
+   "rough",
+   "weathered",
+   "stones",
+   "worn",
+   "discolored",
+   "rocks",
+   "wall",
+   "moss"
+  ],
+  "cats": [
+   "wall",
+   "rock",
+   "outdoor"
+  ]
+ },
+ "rock_wall_06": {
+  "name": "Rock Wall 06",
+  "tags": [
+   "rough",
+   "uneven",
+   "stones",
+   "wall",
+   "rock",
+   "chipped",
+   "rocks",
+   "dry"
+  ],
+  "cats": [
+   "wall",
+   "dirty",
+   "rock",
+   "outdoor"
+  ]
+ },
+ "rock_wall_07": {
+  "name": "Rock Wall 07",
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "wall",
+   "worn",
+   "rock",
+   "concrete",
+   "exterior",
+   "stone",
+   "rocks",
+   "dungeon",
+   "castle",
+   "fortress walls"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "rock"
+  ]
+ },
+ "rock_wall_08": {
+  "name": "Rock Wall 08",
+  "tags": [
+   "uneven",
+   "rock",
+   "rocks",
+   "wall",
+   "weathered",
+   "stone",
+   "timeworn",
+   "worn",
+   "stonework",
+   "gray",
+   "grey"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "rock"
+  ]
+ },
+ "rock_wall_09": {
+  "name": "Rock Wall 09",
+  "tags": [
+   "rough",
+   "uneven",
+   "wall",
+   "rock",
+   "rocks",
+   "fort",
+   "dry",
+   "weathered",
+   "fortress walls"
+  ],
+  "cats": [
+   "wall",
+   "rock",
+   "man made",
+   "dirty"
+  ]
+ },
+ "rock_wall_10": {
+  "name": "Rock Wall 10",
+  "tags": [
+   "uneven",
+   "rock",
+   "rocks",
+   "wall",
+   "rocky",
+   "cracks",
+   "dirt",
+   "exterior",
+   "stone",
+   "hard",
+   "earthy",
+   "stone wall"
+  ],
+  "cats": [
+   "outdoor",
+   "wall",
+   "rock"
+  ]
+ },
+ "rock_wall_11": {
+  "name": "Rock Wall 11",
+  "tags": [
+   "weathered",
+   "wall",
+   "discolored",
+   "worn",
+   "stonework",
+   "fortress walls",
+   "rocks",
+   "rock",
+   "outdoor",
+   "exterior",
+   "weatherbeaten"
+  ],
+  "cats": [
+   "man made",
+   "wall",
+   "rock"
+  ]
+ },
+ "rock_wall_12": {
+  "name": "Rock Wall 12",
+  "tags": [
+   "rock",
+   "wall",
+   "fortress walls",
+   "exterior",
+   "weatherbeaten",
+   "dungeon",
+   "stonework",
+   "concrete",
+   "stone wall",
+   "scratched",
+   "mortar"
+  ],
+  "cats": [
+   "floor",
+   "man made",
+   "rock"
+  ]
+ },
+ "rock_wall_13": {
+  "name": "Rock Wall 13",
+  "tags": [
+   "outdoor",
+   "weathered",
+   "weatherbeaten",
+   "concrete",
+   "rocks",
+   "rock",
+   "stone",
+   "rugged",
+   "ancient walls",
+   "fortress walls",
+   "exterior",
+   "timeworn",
+   "masonry"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "rock"
+  ]
+ },
+ "rock_wall_14": {
+  "name": "Rock Wall 14",
+  "tags": [
+   "rough",
+   "rocks",
+   "rock",
+   "concrete",
+   "wall",
+   "embedded rock",
+   "stonework",
+   "coarse"
+  ],
+  "cats": [
+   "wall",
+   "rock",
+   "man made"
+  ]
+ },
+ "rock_wall_15": {
+  "name": "Rock Wall 15",
+  "tags": [
+   "rough",
+   "rocks",
+   "rock",
+   "concrete",
+   "wall",
+   "embedded rock",
+   "stonework",
+   "coarse"
+  ],
+  "cats": [
+   "wall",
+   "rock",
+   "man made"
+  ]
+ },
+ "rock_wall_16": {
+  "name": "Rock Wall 16",
+  "tags": [
+   "rough",
+   "weathered",
+   "uneven",
+   "wall",
+   "rock wall",
+   "stone blocks",
+   "stonework",
+   "rock",
+   "timeworn",
+   "fortress walls",
+   "stone wall"
+  ],
+  "cats": [
+   "wall",
+   "outdoor",
+   "rock"
+  ]
+ },
+ "rock_wall_17": {
+  "name": "Rock Wall 17",
+  "tags": [
+   "rough",
+   "uneven",
+   "rock",
+   "rocks",
+   "embedded rocks",
+   "coarse",
+   "stonework",
+   "fortress walls",
+   "dungeon",
+   "embedded rock"
+  ],
+  "cats": [
+   "wall",
+   "rock",
+   "plaster-concrete"
+  ]
+ },
+ "rocks_ground_01": {
+  "name": "Rocks Ground 01",
+  "tags": [
+   "rough",
+   "rock",
+   "cracked",
+   "stones"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor",
+   "rock",
+   "collection: verdant_trail"
+  ]
+ },
+ "rocks_ground_02": {
+  "name": "Rocks Ground 02",
+  "tags": [
+   "rough",
+   "mud",
+   "rock",
+   "stones",
+   "uneven",
+   "rocks",
+   "scattered rocks",
+   "gravel",
+   "dirt",
+   "exposed rock",
+   "earthy",
+   "soil"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor",
+   "rock"
+  ]
+ },
+ "rocks_ground_03": {
+  "name": "Rocks Ground 03",
+  "tags": [
+   "rocks",
+   "rough",
+   "stones",
+   "uneven",
+   "pebbles",
+   "pebbly",
+   "scattered pebbles",
+   "scattered rocks",
+   "gravel",
+   "gravelly",
+   "plant debris"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor",
+   "rock"
+  ]
+ },
+ "rocks_ground_04": {
+  "name": "Rocks Ground 04",
+  "tags": [
+   "rocks",
+   "rough",
+   "smooth",
+   "stones",
+   "gravel",
+   "gravelly",
+   "rock",
+   "rocky",
+   "dirt",
+   "cracks",
+   "crevice"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "rock",
+   "natural"
+  ]
+ },
+ "rocks_ground_05": {
+  "name": "Rocks Ground 05",
+  "tags": [
+   "rough",
+   "rock",
+   "gravel",
+   "dirt",
+   "rocky",
+   "soil",
+   "uneven",
+   "stony",
+   "dry",
+   "pebbles",
+   "stones"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "rock",
+   "natural"
+  ]
+ },
+ "rocks_ground_06": {
+  "name": "Rocks Ground 06",
+  "tags": [
+   "rocks",
+   "rough",
+   "broken",
+   "rock",
+   "uneven",
+   "gravel",
+   "scattered pebbles",
+   "scattered rocks",
+   "coastal",
+   "layered rock"
+  ],
+  "cats": [
+   "terrain",
+   "outdoor",
+   "rock",
+   "natural"
+  ]
+ },
+ "rocks_ground_08": {
+  "name": "Rocks Ground 08",
+  "tags": [
+   "mud",
+   "rough",
+   "dry",
+   "damp",
+   "dirt",
+   "rocks",
+   "scattered rocks",
+   "muddy surface",
+   "footprints",
+   "gritty",
+   "organic",
+   "outdoor",
+   "terrain",
+   "uneven",
+   "gravel"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "rocks_ground_09": {
+  "name": "Rocks Ground 09",
+  "tags": [
+   "rough",
+   "rock",
+   "stones",
+   "broken",
+   "gravel",
+   "gravelly",
+   "scattered pebbles",
+   "scattered rocks",
+   "stony",
+   "gravelly ground",
+   "rocks",
+   "rock fragments",
+   "loose debris",
+   "pebbled"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "rocky_gravel": {
+  "name": "Rocky Gravel",
+  "tags": [
+   "rough",
+   "stones",
+   "rocks",
+   "gravel",
+   "dirt",
+   "path",
+   "nature",
+   "leaves",
+   "ground",
+   "uneven"
+  ],
+  "cats": [
+   "outdoor",
+   "floor",
+   "gravel",
+   "dirty"
+  ]
+ },
+ "rocky_terrain": {
+  "name": "Rocky Terrain",
+  "tags": [
+   "rock face",
+   "rocky",
+   "solid rock",
+   "nature",
+   "grass",
+   "terrain",
+   "wilderness",
+   "uneven terrain",
+   "mountain",
+   "rugged",
+   "landscape"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "natural",
+   "rock",
+   "aerial"
+  ]
+ },
+ "rocky_terrain_02": {
+  "name": "Rocky Terrain 02",
+  "tags": [
+   "rocky",
+   "terrain",
+   "uneven terrain",
+   "grass",
+   "drone",
+   "landscape",
+   "nature",
+   "nature",
+   "boulders",
+   "wilderness",
+   "scenic",
+   "mountain",
+   "landform",
+   "natural landscape"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "natural",
+   "aerial"
+  ]
+ },
+ "rocky_terrain_03": {
+  "name": "Rocky Terrain 03",
+  "tags": [
+   "rocks",
+   "aerial",
+   "terrain",
+   "landscape",
+   "natural landscape",
+   "nature",
+   "boulders",
+   "landform",
+   "scenic",
+   "uneven terrain",
+   "wilderness",
+   "mountainside",
+   "greenery",
+   "rocky",
+   "ground",
+   "earth",
+   "nature scene"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "rock",
+   "aerial",
+   "terrain"
+  ]
+ },
+ "rocky_trail": {
+  "name": "Rocky Trail",
+  "tags": [
+   "rough",
+   "uneven",
+   "stones",
+   "rock",
+   "gravel",
+   "chipped",
+   "rocks",
+   "nature",
+   "path",
+   "broken",
+   "cliff"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "rock",
+   "collection: pine_forest"
+  ]
+ },
+ "rocky_trail_02": {
+  "name": "Rocky Trail 02",
+  "tags": [
+   "stones",
+   "earthy",
+   "rugged",
+   "rough",
+   "terrain",
+   "gravelly",
+   "pathway",
+   "gritty",
+   "dusty",
+   "rocky",
+   "outdoors",
+   "dirt",
+   "rocks",
+   "ground",
+   "sand",
+   "gravel",
+   "footprints",
+   "dusty",
+   "dry",
+   "stony",
+   "rocky"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "dirty",
+   "sand",
+   "floor"
+  ]
+ },
+ "roots": {
+  "name": "Roots",
+  "tags": [
+   "uneven",
+   "old",
+   "weathered",
+   "brown",
+   "dirty",
+   "ground",
+   "dry",
+   "nature",
+   "dirt",
+   "tree",
+   "forest"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "floor"
+  ]
+ },
+ "rough_block_wall": {
+  "name": "Rough Block Wall",
+  "tags": [
+   "rough",
+   "uneven",
+   "stone",
+   "blocks",
+   "patterned",
+   "weathered",
+   "jagged",
+   "precast",
+   "cast stone blocks",
+   "exterior",
+   "dungeon",
+   "fortress walls",
+   "stonework",
+   "masonry",
+   "cladding",
+   "rock facade"
+  ],
+  "cats": [
+   "man made",
+   "outdoor",
+   "brick",
+   "wall"
+  ]
+ },
+ "rough_concrete": {
+  "name": "Rough Concrete",
+  "tags": [
+   "rough",
+   "concrete",
+   "dry",
+   "plaster",
+   "coarse",
+   "white",
+   "grey"
+  ],
+  "cats": [
+   "man made",
+   "plaster-concrete",
+   "concrete"
+  ]
+ },
+ "rustic_stone_wall": {
+  "name": "Rustic Stone Wall",
+  "tags": [
+   "weathered",
+   "old",
+   "uneven",
+   "wall",
+   "rock",
+   "rocks"
+  ],
+  "cats": [
+   "outdoor",
+   "wall",
+   "rock",
+   "man made"
+  ]
+ },
+ "rustic_stone_wall_02": {
+  "name": "Rustic Stone Wall 02",
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "wall",
+   "rock",
+   "old",
+   "worn",
+   "chipped",
+   "damaged",
+   "cracked",
+   "rocks",
+   "cracks",
+   "stone",
+   "rustic architecture",
+   "rugged",
+   "exterior",
+   "stonework",
+   "crumbling",
+   "timeworn",
+   "rustic"
+  ],
+  "cats": [
+   "man made",
+   "outdoor",
+   "wall",
+   "rock"
+  ]
+ },
+ "sand_01": {
+  "name": "Sand 01",
+  "tags": [
+   "sand",
+   "uneven",
+   "trampled",
+   "clay",
+   "plaster",
+   "dry"
+  ],
+  "cats": [
+   "terrain",
+   "sand",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "sand_02": {
+  "name": "Sand 02",
+  "tags": [
+   "dirty",
+   "sand",
+   "sandy",
+   "beach",
+   "gritty",
+   "coast",
+   "shore",
+   "granular"
+  ],
+  "cats": [
+   "floor",
+   "sand"
+  ]
+ },
+ "sand_03": {
+  "name": "Sand 03",
+  "tags": [
+   "sand",
+   "sandy",
+   "beach",
+   "seaside",
+   "gritty",
+   "shore",
+   "costal",
+   "sandy beach",
+   "coastline",
+   "granular",
+   "coast"
+  ],
+  "cats": [
+   "floor",
+   "sand"
+  ]
+ },
+ "sandstone_blocks_04": {
+  "name": "Sandstone Blocks 04",
+  "tags": [
+   "rough",
+   "sandstone",
+   "flat",
+   "uneven",
+   "old"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "outdoor",
+   "clean",
+   "brick"
+  ]
+ },
+ "sandstone_blocks_05": {
+  "name": "Sandstone Blocks 05",
+  "tags": [
+   "blocks",
+   "old",
+   "rough",
+   "uneven",
+   "large",
+   "sandstone"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "outdoor",
+   "brick"
+  ]
+ },
+ "sandstone_blocks_08": {
+  "name": "Sandstone Blocks 08",
+  "tags": [
+   "blocks",
+   "uneven",
+   "large",
+   "sandstone"
+  ],
+  "cats": [
+   "wall",
+   "floor",
+   "man made",
+   "outdoor",
+   "clean",
+   "indoor"
+  ]
+ },
+ "sandstone_brick_wall_01": {
+  "name": "Sandstone Brick Wall 01",
+  "tags": [
+   "red",
+   "rough",
+   "uneven",
+   "industrial",
+   "baked",
+   "urban",
+   "weathered"
+  ],
+  "cats": [
+   "wall",
+   "brick",
+   "man made",
+   "outdoor",
+   "sandstone"
+  ]
+ },
+ "sandstone_cracks": {
+  "name": "Sandstone Cracks",
+  "tags": [
+   "rough",
+   "dirt",
+   "ground",
+   "sandstone",
+   "cracked",
+   "plaster"
+  ],
+  "cats": [
+   "wall",
+   "floor",
+   "natural",
+   "man made",
+   "outdoor",
+   "road",
+   "terrain"
+  ]
+ },
+ "sandy_gravel": {
+  "name": "Sandy Gravel",
+  "tags": [
+   "rough",
+   "weathered",
+   "stones",
+   "sand",
+   "sandy",
+   "gravel",
+   "gravelly ground",
+   "gravelly texture",
+   "gravelly",
+   "gritty",
+   "coarse"
+  ],
+  "cats": [
+   "outdoor",
+   "sand",
+   "gravel"
+  ]
+ },
+ "sandy_gravel_02": {
+  "name": "Sandy Gravel 02",
+  "tags": [
+   "terrain",
+   "sand",
+   "gravel",
+   "stony",
+   "gravelly",
+   "dusty",
+   "desert",
+   "ground",
+   "pebbles",
+   "debris"
+  ],
+  "cats": [
+   "outdoor",
+   "terrain",
+   "natural",
+   "sand",
+   "gravel",
+   "collection: namaqualand"
+  ]
+ },
+ "seaside_rock": {
+  "name": "Seaside Rock",
+  "tags": [
+   "rough",
+   "weathered",
+   "seaside",
+   "rock face",
+   "rock",
+   "coastal",
+   "cliff",
+   "shore",
+   "solid rock",
+   "coastal landscape"
+  ],
+  "cats": [
+   "natural",
+   "rock"
+  ]
+ },
+ "seaworn_sandstone_brick": {
+  "name": "Seaworn Sandstone Brick",
+  "tags": [
+   "rough",
+   "worn",
+   "precast",
+   "concrete",
+   "blocks",
+   "brick",
+   "bricks",
+   "sandstone",
+   "rustic",
+   "weathered"
+  ],
+  "cats": [
+   "brick",
+   "sandstone",
+   "outdoor",
+   "wall",
+   "man made"
+  ]
+ },
+ "seaworn_stone_tiles": {
+  "name": "Seaworn Stone Tiles",
+  "tags": [
+   "rough",
+   "stonework",
+   "stone blocks",
+   "cast stone blocks",
+   "timeworn",
+   "wall",
+   "exterior",
+   "coarse",
+   "stone",
+   "synthetic stone"
+  ],
+  "cats": [
+   "sandstone",
+   "brick",
+   "wall",
+   "man made"
+  ]
+ },
+ "shell_floor_01": {
+  "name": "Shell Floor 01",
+  "tags": [
+   "shells",
+   "seaside",
+   "uneven",
+   "rough",
+   "broken shells",
+   "gravel",
+   "gravelly",
+   "gravelly ground",
+   "marine debris",
+   "coastal",
+   "organic debris",
+   "beach"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "slab_tiles": {
+  "name": "Slab Tiles",
+  "tags": [
+   "flat",
+   "rocks",
+   "smooth",
+   "floor",
+   "stone",
+   "slates",
+   "tiles"
+  ],
+  "cats": [
+   "floor",
+   "man made",
+   "rock",
+   "indoor"
+  ]
+ },
+ "slate_driveway": {
+  "name": "Slate Driveway",
+  "tags": [
+   "rough",
+   "old",
+   "worn",
+   "concrete",
+   "slate",
+   "slates",
+   "rock",
+   "exterior",
+   "driveway",
+   "stone",
+   "stonework",
+   "cracked cement"
+  ],
+  "cats": [
+   "man made",
+   "outdoor",
+   "floor"
+  ]
+ },
+ "slate_floor_02": {
+  "name": "Slate Floor 02",
+  "tags": [
+   "old",
+   "weathered",
+   "worn",
+   "slates",
+   "slate",
+   "floor",
+   "vintage",
+   "rustic",
+   "rustic architecture",
+   "natural",
+   "traditional",
+   "stone floor"
+  ],
+  "cats": [
+   "floor",
+   "cobblestone",
+   "rock"
+  ]
+ },
+ "snow_03": {
+  "name": "Snow 03",
+  "tags": [
+   "snow",
+   "uneven",
+   "rough",
+   "trampled",
+   "mud"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "snow",
+   "dirty",
+   "outdoor"
+  ]
+ },
+ "snow_04": {
+  "name": "Snow 04",
+  "tags": [
+   "snow",
+   "mud",
+   "field",
+   "uneven",
+   "rough"
+  ],
+  "cats": [
+   "terrain",
+   "snow",
+   "outdoor",
+   "natural",
+   "dirty"
+  ]
+ },
+ "snow_05": {
+  "name": "Snow 05",
+  "tags": [
+   "snow",
+   "mud",
+   "uneven",
+   "rough"
+  ],
+  "cats": [
+   "terrain",
+   "snow",
+   "outdoor",
+   "dirty",
+   "road"
+  ]
+ },
+ "snow_field_aerial": {
+  "name": "Snow Field Aerial",
+  "tags": [
+   "snow",
+   "mud",
+   "field",
+   "uneven"
+  ],
+  "cats": [
+   "terrain",
+   "snow",
+   "outdoor",
+   "dirty",
+   "natural",
+   "aerial"
+  ]
+ },
+ "square_cobblestone": {
+  "name": "Square Cobblestone",
+  "tags": [
+   "weathered",
+   "worn",
+   "chipped",
+   "discolored",
+   "grey",
+   "concrete",
+   "cobblestone",
+   "cement",
+   "dry",
+   "dirty",
+   "pavement",
+   "street"
+  ],
+  "cats": [
+   "outdoor",
+   "rock",
+   "floor",
+   "man made",
+   "cobblestone"
+  ]
+ },
+ "stacked_stone_wall": {
+  "name": "Stacked Stone Wall",
+  "tags": [
+   "rock",
+   "stonework",
+   "wall",
+   "exterior wall",
+   "stone wall",
+   "stone",
+   "layered rock",
+   "stacked stones"
+  ],
+  "cats": [
+   "wall",
+   "rock"
+  ]
+ },
+ "stenciled_brick_floor": {
+  "name": "Stenciled Brick Floor",
+  "tags": [
+   "worn",
+   "old",
+   "damaged",
+   "dry",
+   "brick",
+   "bricks",
+   "floor",
+   "outdoor flooring",
+   "scratched",
+   "paving",
+   "concrete",
+   "worndown",
+   "cement",
+   "weathered",
+   "terracotta"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "floor",
+   "brick"
+  ]
+ },
+ "stone_embedded_concrete": {
+  "name": "Stone Embedded Concrete",
+  "tags": [
+   "rough",
+   "weathered",
+   "wall",
+   "rock",
+   "concrete",
+   "stone",
+   "stonework",
+   "dungeon",
+   "castle",
+   "stones",
+   "fortress walls",
+   "cement",
+   "fort",
+   "rocks",
+   "exterior",
+   "coarse"
+  ],
+  "cats": [
+   "outdoor",
+   "wall",
+   "man made",
+   "cobblestone"
+  ]
+ },
+ "stone_floor": {
+  "name": "Stone Floor",
+  "tags": [
+   "rough",
+   "old",
+   "uneven",
+   "worn",
+   "brown",
+   "dirty",
+   "dry",
+   "rock",
+   "floor",
+   "pathway",
+   "paving",
+   "stone",
+   "cobblestone"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "floor",
+   "rock",
+   "cobblestone"
+  ]
+ },
+ "stone_pathway": {
+  "name": "Stone Pathway",
+  "tags": [
+   "weathered",
+   "rock",
+   "pathway",
+   "path",
+   "uneven",
+   "rocks",
+   "discolored",
+   "dry",
+   "brown",
+   "chipped",
+   "worn",
+   "floor",
+   "walkway",
+   "slates",
+   "cracked",
+   "stones"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "rock"
+  ]
+ },
+ "stone_tiles": {
+  "name": "Stone Tiles",
+  "tags": [
+   "tiles",
+   "stones",
+   "flat",
+   "rocks",
+   "shiny",
+   "reflective",
+   "uneven",
+   "rock",
+   "floor",
+   "smooth",
+   "wall",
+   "pavement",
+   "pathway"
+  ],
+  "cats": [
+   "man made",
+   "wall",
+   "floor",
+   "indoor",
+   "outdoor"
+  ]
+ },
+ "stone_tiles_02": {
+  "name": "Stone Tiles 02",
+  "tags": [
+   "uneven",
+   "rock",
+   "stones",
+   "stone",
+   "floor",
+   "tiles",
+   "rocks",
+   "slates"
+  ],
+  "cats": [
+   "floor",
+   "rock",
+   "outdoor",
+   "wall"
+  ]
+ },
+ "stone_tiles_03": {
+  "name": "Stone Tiles 03",
+  "tags": [
+   "rough",
+   "weathered",
+   "dirty",
+   "stones",
+   "dirt",
+   "leaves",
+   "pathway",
+   "rocks",
+   "worn",
+   "floor",
+   "walkway"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "floor",
+   "rock"
+  ]
+ },
+ "stone_wall": {
+  "name": "Stone Wall",
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "cracked",
+   "stones",
+   "worn",
+   "chipped",
+   "dry",
+   "rocks",
+   "rock",
+   "dirty"
+  ],
+  "cats": [
+   "outdoor",
+   "rock",
+   "wall"
+  ]
+ },
+ "stone_wall_02": {
+  "name": "Stone Wall 02",
+  "tags": [
+   "cracked",
+   "damaged",
+   "weathered",
+   "dirty",
+   "wall",
+   "brown",
+   "rough",
+   "chipped",
+   "old"
+  ],
+  "cats": [
+   "wall",
+   "man made",
+   "rock"
+  ]
+ },
+ "stone_wall_03": {
+  "name": "Stone Wall 03",
+  "tags": [
+   "rough",
+   "uneven",
+   "weathered",
+   "wall",
+   "chipped",
+   "cracked",
+   "worn",
+   "discolored",
+   "brown",
+   "stones",
+   "rocks",
+   "concrete",
+   "stone"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "plaster-concrete",
+   "concrete",
+   "rock"
+  ]
+ },
+ "stone_wall_04": {
+  "name": "Stone Wall 04",
+  "tags": [
+   "weathered",
+   "rough",
+   "worn",
+   "wall",
+   "uneven",
+   "rocks",
+   "rock",
+   "fortress walls",
+   "sturdy",
+   "ancient walls",
+   "rugged",
+   "durable",
+   "fort",
+   "stonework"
+  ],
+  "cats": [
+   "wall",
+   "rock",
+   "man made"
+  ]
+ },
+ "stony_dirt_path": {
+  "name": "Stony Dirt Path",
+  "tags": [
+   "brown",
+   "ground",
+   "leaves",
+   "rocks",
+   "stones",
+   "dirt",
+   "pathway",
+   "path",
+   "forest",
+   "nature",
+   "autumn",
+   "twigs",
+   "rock"
+  ],
+  "cats": [
+   "dirty",
+   "floor",
+   "outdoor",
+   "natural"
+  ]
+ },
+ "tarred_gravel": {
+  "name": "Tarred Gravel",
+  "tags": [
+   "rough",
+   "weathered",
+   "uneven",
+   "old",
+   "worn",
+   "floor",
+   "tar",
+   "gravel",
+   "stone embedded",
+   "gritty",
+   "coarse",
+   "bumpy",
+   "embedded rock",
+   "compacted",
+   "asphalt",
+   "cracks",
+   "cracking"
+  ],
+  "cats": [
+   "asphalt",
+   "gravel"
+  ]
+ },
+ "terrain_red_01": {
+  "name": "Terrain Red 01",
+  "tags": [
+   "gravel",
+   "stones",
+   "rough",
+   "pebbles",
+   "railroad",
+   "pathway",
+   "path"
+  ],
+  "cats": [
+   "terrain",
+   "natural",
+   "outdoor",
+   "road",
+   "rock"
+  ]
+ },
+ "tiger_rock": {
+  "name": "Tiger Rock",
+  "tags": [
+   "cliff",
+   "boulder",
+   "rock face",
+   "cave",
+   "weathered",
+   "landscape",
+   "solid rock",
+   "mountain",
+   "solid",
+   "rugged",
+   "granite"
+  ],
+  "cats": [
+   "collection: namaqualand",
+   "rock",
+   "terrain",
+   "natural",
+   "outdoor"
+  ]
+ },
+ "volcanic_herringbone_01": {
+  "name": "Volcanic Herringbone 01",
+  "tags": [
+   "weathered",
+   "rough",
+   "wall",
+   "floor",
+   "concrete",
+   "rocks",
+   "exterior",
+   "damaged",
+   "cement",
+   "chipped",
+   "worn",
+   "stone",
+   "old",
+   "coarse",
+   "rustic",
+   "aged",
+   "antique"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "rock"
+  ]
+ },
+ "volcanic_rock_tiles": {
+  "name": "Volcanic Rock Tiles",
+  "tags": [
+   "wall",
+   "rocks",
+   "rock",
+   "mosaic",
+   "rough",
+   "volcanic rock"
+  ],
+  "cats": [
+   "wall",
+   "man made"
+  ]
+ },
+ "weathered_peeling_timber": {
+  "name": "Weathered Peeling Timber",
+  "tags": [
+   "rough",
+   "weathered",
+   "wood",
+   "wood planks",
+   "peeling",
+   "peeling paint",
+   "wooden planks",
+   "rustic",
+   "plank",
+   "distressed",
+   "flaking paint",
+   "nail holes",
+   "dry"
+  ],
+  "cats": [
+   "outdoor",
+   "wood",
+   "man made"
+  ]
+ },
+ "white_sandstone_blocks_02": {
+  "name": "White Sandstone Blocks 02",
+  "tags": [
+   "blocks",
+   "sandstone",
+   "uneven",
+   "damaged"
+  ],
+  "cats": [
+   "brick",
+   "man made",
+   "outdoor",
+   "wall",
+   "collection: the_shed"
+  ]
+ },
+ "white_sandstone_bricks": {
+  "name": "White Sandstone Bricks",
+  "tags": [
+   "blocks",
+   "sandstone",
+   "uneven",
+   "damaged",
+   "worn",
+   "plastered",
+   "old",
+   "crumbling"
+  ],
+  "cats": [
+   "brick",
+   "man made",
+   "outdoor",
+   "wall"
+  ]
+ },
+ "white_sandstone_bricks_03": {
+  "name": "White Sandstone Bricks 03",
+  "tags": [
+   "blocks",
+   "white",
+   "standstone",
+   "uneven"
+  ],
+  "cats": [
+   "brick",
+   "man made",
+   "outdoor",
+   "wall",
+   "clean"
+  ]
+ },
+ "winter_leaves": {
+  "name": "Winter Leaves",
+  "tags": [
+   "leaves",
+   "forest",
+   "dry",
+   "sticks",
+   "winter",
+   "dead grass",
+   "twigs",
+   "nature",
+   "leaf litter"
+  ],
+  "cats": [
+   "outdoor",
+   "floor",
+   "natural"
+  ]
+ },
+ "withered_grass": {
+  "name": "Withered Grass",
+  "tags": [
+   "old",
+   "weathered",
+   "grass",
+   "dead grass",
+   "discolored",
+   "driedup",
+   "dry"
+  ],
+  "cats": [
+   "natural",
+   "outdoor",
+   "floor"
+  ]
+ },
+ "wood_inlaid_stone_wall": {
+  "name": "Wood Inlaid Stone Wall",
+  "tags": [
+   "wood",
+   "concrete",
+   "rough",
+   "inlaid",
+   "aged wood",
+   "decorative",
+   "brick pattern",
+   "rustic",
+   "carved wood",
+   "rocks",
+   "rock",
+   "stone",
+   "masonry",
+   "stone block",
+   "rough hewn"
+  ],
+  "cats": [
+   "wall",
+   "rock",
+   "outdoor"
+  ]
+ },
+ "wood_peeling_paint_weathered": {
+  "name": "Wood Peeling Paint Weathered",
+  "tags": [
+   "rough",
+   "old",
+   "weathered",
+   "wood",
+   "planks",
+   "painted",
+   "chipped",
+   "flaked",
+   "paint",
+   "worn",
+   "faded",
+   "dry",
+   "damaged",
+   "peeling",
+   "discolored",
+   "cracked",
+   "stained",
+   "wall"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "wood",
+   "dirty"
+  ]
+ },
+ "wood_stone_pathway": {
+  "name": "Wood Stone Pathway",
+  "tags": [
+   "dirt",
+   "path",
+   "pathway",
+   "rocks",
+   "rock",
+   "wood",
+   "dusty",
+   "worn",
+   "exterior",
+   "walkway",
+   "weatherbeaten",
+   "lumber",
+   "dry",
+   "stones",
+   "dirty",
+   "sandy"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "rock",
+   "raw wood"
+  ]
+ },
+ "wood_table_worn": {
+  "name": "Wood Table Worn",
+  "tags": [
+   "rough",
+   "planks",
+   "table",
+   "worn",
+   "old",
+   "damaged",
+   "discolored",
+   "stained",
+   "brown",
+   "dry",
+   "furniture",
+   "grain",
+   "scratched"
+  ],
+  "cats": [
+   "man made",
+   "wood",
+   "dirty",
+   "raw wood"
+  ]
+ },
+ "wooden_planks": {
+  "name": "Wooden Planks",
+  "tags": [
+   "cracked",
+   "flat",
+   "even",
+   "wooden",
+   "wood",
+   "old",
+   "worn",
+   "dry"
+  ],
+  "cats": [
+   "wood",
+   "raw wood",
+   "outdoor"
+  ]
+ },
+ "worn_asphalt": {
+  "name": "Worn Asphalt",
+  "tags": [
+   "asphalt",
+   "asphalt road",
+   "petals",
+   "plant debris",
+   "outdoor",
+   "cracked",
+   "driveway",
+   "sticks",
+   "twigs",
+   "leaf litter",
+   "worn",
+   "coarse",
+   "gritty",
+   "gravelly"
+  ],
+  "cats": [
+   "floor",
+   "asphalt"
+  ]
+ },
+ "worn_rock_natural_01": {
+  "name": "Worn Rock Natural 01",
+  "tags": [
+   "weathered",
+   "yellow",
+   "rock face",
+   "rock",
+   "flat",
+   "brown",
+   "boulder",
+   "cliff",
+   "chipped",
+   "nature",
+   "costal"
+  ],
+  "cats": [
+   "outdoor",
+   "natural",
+   "terrain",
+   "rock",
+   "sandstone"
+  ]
+ },
+ "yellow_plaster_02": {
+  "name": "Yellow Plaster 02",
+  "tags": [
+   "rough",
+   "old",
+   "yellow",
+   "wall",
+   "wood",
+   "plastered",
+   "cracks",
+   "weathered",
+   "uneven",
+   "brown",
+   "tan",
+   "planks",
+   "mud",
+   "cabin",
+   "wooden"
+  ],
+  "cats": [
+   "outdoor",
+   "man made",
+   "wall",
+   "plaster-concrete",
+   "wood",
+   "concrete",
+   "plaster"
+  ]
+ },
+ "yellow_stone_wall": {
+  "name": "Yellow Stone Wall",
+  "tags": [
+   "wall",
+   "damaged",
+   "old",
+   "cracked",
+   "chipped",
+   "worn",
+   "yellow",
+   "concrete",
+   "rocks",
+   "rock",
+   "rough",
+   "discolored",
+   "scratched"
+  ],
+  "cats": [
+   "outdoor",
+   "rock",
+   "man made"
+  ]
+ }
+}
