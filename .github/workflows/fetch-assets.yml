@@ -29,7 +29,7 @@ jobs:
           if git rev-parse --verify origin/assets >/dev/null 2>&1; then git checkout -B assets origin/assets; else git checkout --orphan assets && git rm -rf . >/dev/null && git clean -fdx; fi
           git checkout main -- tools || true
       - name: Mechs (Quaternius Animated Mech Pack, CC0)
-        if: inputs.stage == 'catalog'
+        if: inputs.stage == 'catalog' || inputs.stage == 'mechs'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq blender >/dev/null
           mkdir -p raw && cd raw
@@ -39,20 +39,25 @@ jobs:
           find mechs -type f | sed 's/^/  /' > ../mech_files.txt
           cd ..
           mkdir -p assets/mechs
-          for f in $(find raw/mechs -iname '*.blend'); do
+          cp "raw/mechs/Animated Mech Pack - March 2021/Preview.jpg" assets/mechs/preview.jpg || true
+          cp "raw/mechs/Animated Mech Pack - March 2021/Preview2.png" assets/mechs/preview2.png || true
+          cp "raw/mechs/Animated Mech Pack - March 2021/License.txt" assets/mechs/LICENSE.txt || true
+          cat > /tmp/exp.py <<'PY'
+          import bpy, sys
+          out = sys.argv[sys.argv.index("--") + 1]
+          for o in bpy.data.objects:
+              o.hide_set(False); o.hide_viewport=False; o.hide_render=False
+          bpy.ops.export_scene.gltf(filepath=out, export_format='GLB', export_animations=True, export_yup=True)
+          print("ACTIONS:", [a.name for a in bpy.data.actions])
+          PY
+          find raw/mechs -iname '*.blend' -print0 | while IFS= read -r -d '' f; do
             n=$(basename "$f" .blend)
-            blender -b "$f" --python-expr "import bpy;bpy.ops.export_scene.gltf(filepath='assets/mechs/$n.glb',export_format='GLB',export_animations=True,export_apply=True)" >/dev/null 2>&1 || echo "blend export failed $n"
+            blender -b "$f" --python /tmp/exp.py -- "assets/mechs/$n.glb" 2>&1 | grep -E "ACTIONS|Error|rror" | head -5 >> mech_files.txt
           done
-          if [ -z "$(ls assets/mechs 2>/dev/null)" ]; then
-            for f in $(find raw/mechs -iname '*.fbx'); do
-              n=$(basename "$f" .fbx)
-              blender -b --python-expr "import bpy;bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.fbx(filepath='$f');bpy.ops.export_scene.gltf(filepath='assets/mechs/$n.glb',export_format='GLB',export_animations=True)" >/dev/null 2>&1 || echo "fbx export failed $n"
-            done
-          fi
           ls -la assets/mechs >> mech_files.txt
           rm -rf raw
       - name: Texture and HDRI catalog (Poly Haven, CC0)
-        if: inputs.stage == 'catalog'
+        if: inputs.stage == 'catalog' && false
         run: python3 tools/polyhaven.py catalog
       - name: Fetch chosen textures
         if: inputs.stage == 'fetch'
