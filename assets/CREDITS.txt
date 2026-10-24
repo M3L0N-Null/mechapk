@@ -1,0 +1,4 @@
+Mechs: "Animated Mech Pack" by Quaternius (CC0) - https://opengameart.org/node/126992
+Textures: aerial_sand, dirt_floor, cliff_side from Poly Haven (CC0) - https://polyhaven.com
+Sky: belfast_sunset_puresky from Poly Haven (CC0) - https://polyhaven.com
+3D engine: three.js r128 (MIT)

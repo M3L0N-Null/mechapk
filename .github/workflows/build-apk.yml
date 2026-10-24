@@ -28,7 +28,7 @@ jobs:
           mkdir app && cd app
           npm init -y
           npm install @capacitor/core@7 @capacitor/cli@7 @capacitor/android@7
-          mkdir www && cp ../index.html ../three.min.js www/
+          mkdir www && cp ../index.html ../three.min.js www/ && cp -r ../assets www/
           npx cap init "Iron Swarm" com.ironswarm.game --web-dir www
           npx cap add android
           # lock to landscape
