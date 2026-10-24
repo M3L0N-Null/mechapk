@@ -21,17 +21,41 @@
   mechs/Animated Mech Pack - March 2021/OBJ/Stan.mtl
   mechs/Animated Mech Pack - March 2021/OBJ/Leela.mtl
   mechs/Animated Mech Pack - March 2021/OBJ/Stan.obj
+Error: Unable to pack file, source path '/home/runner/work/mechapk/mechapk/raw/mechs/Animated Mech Pack - March 2021/Blends/Leela_Texture.png' not found
+ERROR: Image "//Leela_Texture.png" not available. Keeping packed image
+Error: Unable to pack file, source path '/home/runner/work/mechapk/mechapk/raw/mechs/Animated Mech Pack - March 2021/Blends/Leela_Texture.png' not found
+15:25:01 | ERROR: Draco mesh compression is not available because library could not be found at /usr/bin/4.0/python/lib/python3.12/site-packages/libextern_draco.so
 ACTIONS: ['Dance', 'Death', 'Hello', 'HitRecieve_1', 'HitRecieve_2', 'Idle', 'Jump', 'Kick', 'No', 'Pickup', 'Punch', 'Run', 'Run_Tall', 'Shoot', 'SwordSlash', 'Walk', 'Walk_Tall', 'Yes']
+ERROR: Image "//Leela_Texture.png" not available. Keeping packed image
+Error: Unable to pack file, source path '/home/runner/work/mechapk/mechapk/raw/mechs/Animated Mech Pack - March 2021/Blends/Mike_Texture.png' not found
+ERROR: Image "//Mike_Texture.png" not available. Keeping packed image
+Error: Unable to pack file, source path '/home/runner/work/mechapk/mechapk/raw/mechs/Animated Mech Pack - March 2021/Blends/Mike_Texture.png' not found
+15:25:04 | ERROR: Draco mesh compression is not available because library could not be found at /usr/bin/4.0/python/lib/python3.12/site-packages/libextern_draco.so
 ACTIONS: ['Dance', 'Death', 'Hello', 'HitRecieve_1', 'HitRecieve_2', 'Idle', 'Jump', 'Kick', 'No', 'Pickup', 'Punch', 'Run', 'Run_Holding', 'Shoot', 'SwordSlash', 'Walk', 'Walk_Holding', 'Yes']
+ERROR: Image "//Mike_Texture.png" not available. Keeping packed image
+Error: Unable to pack file, source path '/home/runner/work/mechapk/mechapk/raw/mechs/Animated Mech Pack - March 2021/Blends/George_Texture.png' not found
+ERROR: Image "//George_Texture.png" not available. Keeping packed image
+Error: Unable to pack file, source path '/home/runner/work/mechapk/mechapk/raw/mechs/Animated Mech Pack - March 2021/Blends/George_Texture.png' not found
+15:25:10 | ERROR: Draco mesh compression is not available because library could not be found at /usr/bin/4.0/python/lib/python3.12/site-packages/libextern_draco.so
 ACTIONS: ['Dance', 'Death', 'Hello', 'HitRecieve_1', 'HitRecieve_2', 'Idle', 'Jump', 'Kick', 'No', 'Pickup', 'Punch', 'Run', 'Run_Holding', 'Run_Tall', 'Shoot', 'SwordSlash', 'Walk', 'Walk_Holding', 'Walk_Tall', 'Yes']
+ERROR: Image "//George_Texture.png" not available. Keeping packed image
+Error: Unable to pack file, source path '/home/runner/work/mechapk/mechapk/raw/mechs/Animated Mech Pack - March 2021/Blends/Stan_Texture.png' not found
+ERROR: Image "//Stan_Texture.png" not available. Keeping packed image
+Error: Unable to pack file, source path '/home/runner/work/mechapk/mechapk/raw/mechs/Animated Mech Pack - March 2021/Blends/Stan_Texture.png' not found
+15:25:17 | ERROR: Draco mesh compression is not available because library could not be found at /usr/bin/4.0/python/lib/python3.12/site-packages/libextern_draco.so
 ACTIONS: ['Dance', 'Death', 'Hello', 'HitRecieve_1', 'HitRecieve_2', 'Idle', 'Jump', 'Kick', 'No', 'Pickup', 'Punch', 'Run', 'Run_Holding', 'Shoot', 'SwordSlash', 'Walk', 'Walk_Holding', 'Yes']
-total 8368
-drwxr-xr-x 2 runner runner    4096 Oct 24 15:22 .
-drwxr-xr-x 6 runner runner    4096 Oct 24 15:22 ..
--rw-r--r-- 1 runner runner 1317872 Oct 24 15:22 George.glb
--rw-r--r-- 1 runner runner     364 Oct 24 15:22 LICENSE.txt
--rw-r--r-- 1 runner runner  519324 Oct 24 15:22 Leela.glb
--rw-r--r-- 1 runner runner 1043748 Oct 24 15:22 Mike.glb
--rw-r--r-- 1 runner runner 2635016 Oct 24 15:22 Stan.glb
--rw-r--r-- 1 runner runner  292178 Oct 24 15:22 preview.jpg
--rw-r--r-- 1 runner runner 2739710 Oct 24 15:22 preview2.png
+ERROR: Image "//Stan_Texture.png" not available. Keeping packed image
+total 16048
+drwxr-xr-x 2 runner runner    4096 Oct 24 15:24 .
+drwxr-xr-x 6 runner runner    4096 Oct 24 15:24 ..
+-rw-r--r-- 1 runner runner 1317872 Oct 24 15:25 George.glb
+-rw-r--r-- 1 runner runner 2295756 Oct 24 15:24 George_Texture.png
+-rw-r--r-- 1 runner runner     364 Oct 24 15:24 LICENSE.txt
+-rw-r--r-- 1 runner runner  519324 Oct 24 15:25 Leela.glb
+-rw-r--r-- 1 runner runner 1929427 Oct 24 15:24 Leela_Texture.png
+-rw-r--r-- 1 runner runner 1043748 Oct 24 15:25 Mike.glb
+-rw-r--r-- 1 runner runner 2065288 Oct 24 15:24 Mike_Texture.png
+-rw-r--r-- 1 runner runner 2635016 Oct 24 15:25 Stan.glb
+-rw-r--r-- 1 runner runner 1560762 Oct 24 15:24 Stan_Texture.png
+-rw-r--r-- 1 runner runner  292178 Oct 24 15:24 preview.jpg
+-rw-r--r-- 1 runner runner 2739710 Oct 24 15:24 preview2.png
