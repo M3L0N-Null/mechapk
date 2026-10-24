@@ -1,0 +1,67 @@
+name: Fetch assets
+
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: "catalog or fetch"
+        default: catalog
+      ids:
+        description: "comma-separated Poly Haven texture ids (fetch stage)"
+        default: ""
+      hdri:
+        description: "Poly Haven HDRI id (fetch stage)"
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Prepare assets branch
+        run: |
+          git fetch origin assets || true
+          if git rev-parse --verify origin/assets >/dev/null 2>&1; then git checkout -B assets origin/assets; else git checkout --orphan assets && git rm -rf . >/dev/null && git clean -fdx; fi
+          git checkout main -- tools || true
+      - name: Mechs (Quaternius Animated Mech Pack, CC0)
+        if: inputs.stage == 'catalog'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq blender >/dev/null
+          mkdir -p raw && cd raw
+          curl -sSL -A "Mozilla/5.0" -o mechs.zip https://opengameart.org/sites/default/files/animated_mech_pack_-_march_2021.zip
+          curl -sSL -A "Mozilla/5.0" -o ../mech_preview.jpg https://opengameart.org/sites/default/files/preview_281.jpg || true
+          unzip -q -o mechs.zip -d mechs
+          find mechs -type f | sed 's/^/  /' > ../mech_files.txt
+          cd ..
+          mkdir -p assets/mechs
+          for f in $(find raw/mechs -iname '*.blend'); do
+            n=$(basename "$f" .blend)
+            blender -b "$f" --python-expr "import bpy;bpy.ops.export_scene.gltf(filepath='assets/mechs/$n.glb',export_format='GLB',export_animations=True,export_apply=True)" >/dev/null 2>&1 || echo "blend export failed $n"
+          done
+          if [ -z "$(ls assets/mechs 2>/dev/null)" ]; then
+            for f in $(find raw/mechs -iname '*.fbx'); do
+              n=$(basename "$f" .fbx)
+              blender -b --python-expr "import bpy;bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.fbx(filepath='$f');bpy.ops.export_scene.gltf(filepath='assets/mechs/$n.glb',export_format='GLB',export_animations=True)" >/dev/null 2>&1 || echo "fbx export failed $n"
+            done
+          fi
+          ls -la assets/mechs >> mech_files.txt
+          rm -rf raw
+      - name: Texture and HDRI catalog (Poly Haven, CC0)
+        if: inputs.stage == 'catalog'
+        run: python3 tools/polyhaven.py catalog
+      - name: Fetch chosen textures
+        if: inputs.stage == 'fetch'
+        run: python3 tools/polyhaven.py fetch "${{ inputs.ids }}" "${{ inputs.hdri }}"
+      - name: Commit
+        run: |
+          rm -rf tools
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Fetch assets (${{ inputs.stage }})" || echo "nothing to commit"
+          git push origin assets
