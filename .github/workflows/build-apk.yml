@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -40,7 +43,15 @@ jobs:
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
           ./gradlew assembleDebug --no-daemon
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: iron-swarm-apk
           path: app/android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Publish the APK as a downloadable release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp app/android/app/build/outputs/apk/debug/app-debug.apk iron-swarm.apk
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest iron-swarm.apk --title "Iron Swarm (latest build)" --notes "Tap iron-swarm.apk below to download, then open it to install."
