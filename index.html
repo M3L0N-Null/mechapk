@@ -5305,7 +5305,7 @@ function splatMat(mode){
       'vec3 ground=mix(sand*vec3(1.08,.98,.86),dirt,smoothstep(.32,.62,mk*.7+mk2*.5));'+
       'vec3 cliff=tri(tCliff,vWP,n,.055)*vec3(1.05,.95,.9);float cw=smoothstep(.2,.42,slope+ (mk-.5)*.12);'+
       'vec3 col=mix(ground,cliff,cw);diffuseColor.rgb*=col*0.92;'
-      :'vec3 n=normalize(vWN);vec3 col=tri(tCliff,vWP,n,.16);diffuseColor.rgb*=col*0.95;';
+      :'vec3 n=normalize(vWN);vec3 col=tri(tCliff,vWP,n,.085);diffuseColor.rgb*=col*0.95;';
     sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nuniform sampler2D tSand;uniform sampler2D tDirt;uniform sampler2D tCliff;varying vec3 vWP;varying vec3 vWN;\n'+tri)
       .replace('#include <map_fragment>','#include <map_fragment>\n'+body);
   };
@@ -5355,10 +5355,10 @@ function crater(x,z,r,depth){
   }
   const a=[Math.max(0,i0-1),Math.min(TN-1,i1+1),Math.max(0,j0-1),Math.min(TN-1,j1+1)];
   if(!dirty)dirty=a;else{dirty[0]=Math.min(dirty[0],a[0]);dirty[1]=Math.max(dirty[1],a[1]);dirty[2]=Math.min(dirty[2],a[2]);dirty[3]=Math.max(dirty[3],a[3]);}
-  settleNear(x,z,r*1.4);
+  markIslands(x,z,r*1.4);
 }
 // scattered boulders
-const MAXR=260;let rockMesh=null;
+const MAXR=200;let rockMesh=null;
 const rocks=[];
 function genRocks(R){rocks.length=0;if(!rockMesh){const g=new THREE.DodecahedronGeometry(1,1);const p=g.attributes.position;for(let i=0;i<p.count;i++){const n=0.82+0.3*vnoise(p.getX(i)*3+9,p.getY(i)*3+p.getZ(i)*2);p.setXYZ(i,p.getX(i)*n,p.getY(i)*n,p.getZ(i)*n);}g.computeVertexNormals();
     rockMesh=new THREE.InstancedMesh(g,rockMat,MAXR);rockMesh.castShadow=true;rockMesh.receiveShadow=true;rockMesh.frustumCulled=false;scene.add(rockMesh);}
@@ -5368,111 +5368,21 @@ function genRocks(R){rocks.length=0;if(!rockMesh){const g=new THREE.Dodecahedron
 function blastRocks(p,r){let ch=false;for(let i=0;i<rocks.length;i++){const k=rocks[i];if(!k.alive)continue;if(Math.hypot(k.x-p.x,k.z-p.z)<r+k.s&&Math.abs(H(k.x,k.z)-p.y)<r+2){k.alive=0;rockMesh.setMatrixAt(i,ZERO);ch=true;tmpC.setHex(0x8d6646);spawnDebris(_v2.set(k.x,H(k.x,k.z)+k.s*0.5,k.z),tmpC,3,8);}}
   if(ch)rockMesh.instanceMatrix.needsUpdate=true;}
 
-// ======================================================= destructible rock blocks
-const MAXB=2600,MAXF=220,MAXD=650;
-let _rbg=null;
-function rockBlockGeo(){if(_rbg)return _rbg;const b=0.32,w=B*1.06-2*b;
-  const sh=new THREE.Shape();const x=w/2,c=0.28;sh.moveTo(-x+c,-x);sh.lineTo(x-c,-x);sh.lineTo(x,-x+c);sh.lineTo(x,x-c);sh.lineTo(x-c,x);sh.lineTo(-x+c,x);sh.lineTo(-x,x-c);sh.lineTo(-x,-x+c);sh.closePath();
-  const g=new THREE.ExtrudeGeometry(sh,{depth:w,bevelEnabled:true,bevelThickness:b,bevelSize:b,bevelSegments:2,curveSegments:1,steps:2});g.translate(0,0,-w/2);
-  const p=g.attributes.position;for(let i=0;i<p.count;i++){const X=p.getX(i),Y=p.getY(i),Z=p.getZ(i);const n=Math.sin(X*3.1+Y*1.7)*Math.cos(Z*2.3-X*1.1)+Math.sin(Y*4.3+Z*2.9)*0.6;
-    p.setXYZ(i,X*(1+n*0.05),Y*(1+n*0.04)+Math.sin(X*2+Z*3)*0.06,Z*(1+n*0.05));}
-  g.computeVertexNormals();_rbg=g;return g;}
-let rockMat=null,blockMesh=null,fallMesh=null,debMesh=null;
-const bIX=new Int16Array(MAXB),bIZ=new Int16Array(MAXB),bIY=new Int16Array(MAXB),bAlive=new Uint8Array(MAXB),bColor=[];let nB=0;
-const cols=new Map();const ckey=(ix,iz)=>(ix+600)*2000+(iz+600);
+// ======================================================= volumetric rock formations (signed distance field + surface nets)
+const MAXD=700,RV=0.55;
 const tmpO=new THREE.Object3D(),ZERO=new THREE.Matrix4().makeScale(0,0,0),tmpC=new THREE.Color(),tmpC2=new THREE.Color(),WHITE=new THREE.Color(1,1,1);
-let blocksDirty=false;
-const STRATA_C=[0xf2e2d0,0xe6cfb8,0xd8bea6,0xf6e8d6,0xd2b49a,0xeadac4,0xcaa98e,0xefdcc6].map(h=>new THREE.Color(h));
-function STRATA(iy){const c=STRATA_C[((iy%8)+8)%8].clone();const j=rand(-0.04,0.04);c.r+=j;c.g+=j;c.b+=j*0.8;return c;}
-function addBlock(ix,iz,iy,color_){const color=STRATA(iy);
-  if(nB>=MAXB)return;const k=ckey(ix,iz);let c=cols.get(k);if(!c){c={ix,iz,cells:new Map()};cols.set(k,c);}if(c.cells.has(iy))return;
-  const i=nB++;bIX[i]=ix;bIZ[i]=iz;bIY[i]=iy;bAlive[i]=1;bColor[i]=color;c.cells.set(iy,i);
-  tmpO.position.set((ix+0.5)*B+rand(-0.12,0.12),GBASE+(iy+0.5)*B,(iz+0.5)*B+rand(-0.12,0.12));tmpO.rotation.set((Math.random()*4|0)*Math.PI/2+rand(-0.06,0.06),(Math.random()*4|0)*Math.PI/2+rand(-0.15,0.15),rand(-0.06,0.06));
-  tmpO.scale.set(rand(0.96,1.12),rand(0.92,1.04),rand(0.96,1.12));tmpO.updateMatrix();blockMesh.setMatrixAt(i,tmpO.matrix);blockMesh.setColorAt(i,color);
-}
-function blockAt(x,y,z){const c=cols.get(ckey(Math.floor(x/B),Math.floor(z/B)));if(!c)return -1;const i=c.cells.get(Math.floor((y-GBASE)/B));return i!==undefined&&bAlive[i]?i:-1;}
-function genStructures(R){
-  nB=0;cols.clear();
-  const strata=[0xc79a68,0xb3825a,0xa06e48,0xc8a070,0x9a6442,0xb88a5e,0x8e5d3d].map(h=>new THREE.Color(h));const pal=new Proxy({},{get:(o,k)=>strata[0]});
-  const gIy=(ix,iz)=>{let m=1e9;for(const[dx,dz]of[[0,0],[1,0],[0,1],[1,1],[0.5,0.5]])m=Math.min(m,H((ix+dx)*B,(iz+dz)*B));return Math.floor((m-GBASE)/B);};
-  const okSpot=(x,z)=>Math.hypot(x,z)>18&&Math.abs(x)<112&&Math.abs(z)<112;
-  for(let n=0;n<16;n++){
-    const a=R()*TAU,d=22+R()*85,x=Math.cos(a)*d,z=Math.sin(a)*d;if(!okSpot(x,z))continue;
-    const ix0=Math.floor(x/B),iz0=Math.floor(z/B),fp=R()<0.55?1:2,hgt=5+(R()*8|0);let top=-1e9;
-    for(let dx=0;dx<fp;dx++)for(let dz=0;dz<fp;dz++){const g=gIy(ix0+dx,iz0+dz);for(let k=0;k<hgt;k++)addBlock(ix0+dx,iz0+dz,g+k,pal[(k+(R()*2|0))%pal.length]);top=Math.max(top,g+hgt);}
-    if(R()<0.65){for(let dx=-1;dx<=fp;dx++)for(let dz=-1;dz<=fp;dz++)if(R()<0.85)addBlock(ix0+dx,iz0+dz,top,pal[5]);
-      if(R()<0.5)for(let dx=0;dx<fp;dx++)for(let dz=0;dz<fp;dz++)addBlock(ix0+dx,iz0+dz,top+1,pal[3]);}
-  }
-  for(let n=0;n<7;n++){
-    const a=R()*TAU,d=26+R()*80,x=Math.cos(a)*d,z=Math.sin(a)*d;if(!okSpot(x,z))continue;
-    const ix0=Math.floor(x/B),iz0=Math.floor(z/B),alongX=R()<0.5,len=5+(R()*7|0);
-    for(let s=0;s<len;s++){if(R()<0.12)continue;const ix=ix0+(alongX?s:0),iz=iz0+(alongX?0:s),g=gIy(ix,iz),h=2+(R()*3|0);for(let k=0;k<h;k++)addBlock(ix,iz,g+k,pal[(k+s)%pal.length]);}
-  }
-  for(let n=0;n<2;n++){
-    const a=R()*TAU,d=40+R()*55,x=Math.cos(a)*d,z=Math.sin(a)*d;if(!okSpot(x,z))continue;
-    const ix0=Math.floor(x/B),iz0=Math.floor(z/B);
-    for(let cx=0;cx<3;cx++)for(let cz=0;cz<2;cz++){const ix=ix0+cx*3,iz=iz0+cz*4,g=gIy(ix,iz),h=4+(R()*3|0);for(let k=0;k<h;k++)addBlock(ix,iz,g+k,pal[2]);addBlock(ix,iz,g+h,pal[4]);}
-  }
-  blockMesh.count=nB;blockMesh.instanceMatrix.needsUpdate=true;if(blockMesh.instanceColor)blockMesh.instanceColor.needsUpdate=true;
-}
-const fallers=[];
+let rockMat=null,debMesh=null,forms=[],chunks=[];
 const deb=[];for(let i=0;i<MAXD;i++)deb.push({p:new V3(),v:new V3(),r:new V3(),w:new V3(),life:0,s:1});
 let debIdx=0;
 function makeRockMeshes(){
   rockMat=splatMat('rock');
-  blockMesh=new THREE.InstancedMesh(rockBlockGeo(),rockMat,MAXB);blockMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);blockMesh.castShadow=true;blockMesh.receiveShadow=true;blockMesh.frustumCulled=false;scene.add(blockMesh);
-  fallMesh=new THREE.InstancedMesh(rockBlockGeo(),rockMat,MAXF);fallMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);fallMesh.castShadow=true;fallMesh.frustumCulled=false;scene.add(fallMesh);
-  debMesh=new THREE.InstancedMesh(new THREE.DodecahedronGeometry(0.4,0),rockMat,MAXD);debMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);debMesh.castShadow=true;debMesh.frustumCulled=false;scene.add(debMesh);
+  debMesh=new THREE.InstancedMesh(new THREE.DodecahedronGeometry(0.42,0),rockMat,MAXD);debMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);debMesh.castShadow=true;debMesh.frustumCulled=false;scene.add(debMesh);
   for(let i=0;i<MAXD;i++){debMesh.setMatrixAt(i,ZERO);debMesh.setColorAt(i,tmpC.set(0xffffff));}
-  for(let i=0;i<MAXF;i++){fallMesh.setMatrixAt(i,ZERO);fallMesh.setColorAt(i,tmpC.set(0xffffff));}
 }
-function spawnDebris(p,color,n,spd=9){
+function spawnDebris(p,color,n,spd=9,spread=0.8){
   for(let k=0;k<n;k++){const d=deb[debIdx];debMesh.setColorAt(debIdx,tmpC2.copy(color).lerp(WHITE,0.55));debIdx=(debIdx+1)%MAXD;
-    d.p.set(p.x+rand(-0.8,0.8),p.y+rand(-0.8,0.8),p.z+rand(-0.8,0.8));d.v.set(rand(-1,1)*spd,rand(0.4,1.4)*spd,rand(-1,1)*spd);d.r.set(rand(TAU),rand(TAU),rand(TAU));d.w.set(rand(-9,9),rand(-9,9),rand(-9,9));d.life=rand(1.6,3.2);d.s=rand(0.5,1.6);}
+    d.p.set(p.x+rand(-spread,spread),p.y+rand(-spread,spread),p.z+rand(-spread,spread));d.v.set(rand(-1,1)*spd,rand(0.4,1.4)*spd,rand(-1,1)*spd);d.r.set(rand(TAU),rand(TAU),rand(TAU));d.w.set(rand(-9,9),rand(-9,9),rand(-9,9));d.life=rand(1.8,3.6);d.s=rand(0.5,1.9);}
   debMesh.instanceColor.needsUpdate=true;
-}
-function hideBlock(i){bAlive[i]=0;blockMesh.setMatrixAt(i,ZERO);blocksDirty=true;}
-function bCenter(i,out){return out.set((bIX[i]+0.5)*B,GBASE+(bIY[i]+0.5)*B,(bIZ[i]+0.5)*B);}
-let collapseDir=new V3(1,0,0);
-function makeFall(i,base){
-  hideBlock(i);if(fallers.length>=MAXF){bCenter(i,_v);spawnDebris(_v,bColor[i],3);return;}
-  const lv=bIY[i]-base,p=bCenter(i,new V3());
-  const v=new V3(collapseDir.x*(1+lv*0.9)+rand(-0.6,0.6),rand(-0.5,1),collapseDir.z*(1+lv*0.9)+rand(-0.6,0.6));
-  fallers.push({p,v,q:new THREE.Quaternion(),axis:new V3(collapseDir.z,0,-collapseDir.x),spin:(0.6+lv*0.25)*(Math.random()<0.15?-1:1),color:bColor[i],life:6});
-}
-function settleCols(keys){
-  for(const k of keys){const c=cols.get(k);if(!c)continue;const ivs=[...c.cells.keys()].sort((a,b)=>a-b);let base=null;
-    for(const iy of ivs){const i=c.cells.get(iy);if(!bAlive[i])continue;const below=c.cells.get(iy-1);if(below!==undefined&&bAlive[below])continue;
-      const bottom=GBASE+iy*B,g=Math.max(H((c.ix+0.5)*B,(c.iz+0.5)*B),H(c.ix*B+0.4,c.iz*B+0.4),H((c.ix+1)*B-0.4,(c.iz+1)*B-0.4),H(c.ix*B+0.4,(c.iz+1)*B-0.4),H((c.ix+1)*B-0.4,c.iz*B+0.4));
-      if(g>=bottom-0.3)continue;if(base===null)base=iy;makeFall(i,base);}}
-}
-function settleNear(x,z,r){
-  const keys=new Set();for(let ix=Math.floor((x-r)/B)-1;ix<=Math.floor((x+r)/B)+1;ix++)for(let iz=Math.floor((z-r)/B)-1;iz<=Math.floor((z+r)/B)+1;iz++){const k=ckey(ix,iz);if(cols.has(k))keys.add(k);}
-  if(keys.size){const a=rand(TAU);collapseDir.set(Math.cos(a),0,Math.sin(a));settleCols(keys);}
-}
-function destroyBlocks(p,r,awayFrom){
-  const keys=new Set();let any=false;
-  for(let ix=Math.floor((p.x-r)/B);ix<=Math.floor((p.x+r)/B);ix++)for(let iz=Math.floor((p.z-r)/B);iz<=Math.floor((p.z+r)/B);iz++){
-    const c=cols.get(ckey(ix,iz));if(!c)continue;
-    for(const[iy,i]of c.cells){if(!bAlive[i])continue;bCenter(i,_v);if(_v.distanceTo(p)<r+B*0.35){hideBlock(i);spawnDebris(_v,bColor[i],3,10);fxPuff(_v,0.55,0.45,0.33,3.5,0.5);any=true;}}
-    for(let a=-1;a<=1;a++)for(let b=-1;b<=1;b++){const k=ckey(ix+a,iz+b);if(cols.has(k))keys.add(k);}
-  }
-  if(any){if(awayFrom){collapseDir.set(p.x-awayFrom.x,0,p.z-awayFrom.z);if(collapseDir.lengthSq()<0.01)collapseDir.set(1,0,0);collapseDir.normalize();}
-    else{const a=rand(TAU);collapseDir.set(Math.cos(a),0,Math.sin(a));}settleCols(keys);}
-  return any;
-}
-const _q=new THREE.Quaternion();
-function updateFallers(dt){
-  for(let k=fallers.length-1;k>=0;k--){const f=fallers[k];f.life-=dt;f.v.y-=30*dt;f.p.addScaledVector(f.v,dt);
-    f.q.premultiply(_q.setFromAxisAngle(f.axis,f.spin*dt));const g=H(f.p.x,f.p.z);
-    if(f.p.y-B*0.45<g||blockAt(f.p.x,f.p.y-B*0.6,f.p.z)>=0||f.life<=0){
-      spawnDebris(f.p,f.color,5,7);fxPuff(f.p,0.55,0.46,0.34,5,0.7);if(f.p.y-g<2)crater(f.p.x,f.p.z,1.8,0.35);
-      for(const e of enemies)if(!e.dead&&e.center.distanceTo(f.p)<e.rad+1.6)hurt(e,25,null);
-      if(P&&P.alive&&_v.set(P.pos.x,P.pos.y+3,P.pos.z).distanceTo(f.p)<3.4)hurtPlayer(8);
-      sfx('thud',0.6,f.p);fallers.splice(k,1);}
-  }
-  for(let i=0;i<MAXF;i++){if(i<fallers.length){const f=fallers[i];tmpO.position.copy(f.p);tmpO.quaternion.copy(f.q);tmpO.scale.set(1,1,1);tmpO.updateMatrix();fallMesh.setMatrixAt(i,tmpO.matrix);fallMesh.setColorAt(i,f.color);}else fallMesh.setMatrixAt(i,ZERO);}
-  fallMesh.instanceMatrix.needsUpdate=true;if(fallMesh.instanceColor)fallMesh.instanceColor.needsUpdate=true;
 }
 function updateDebris(dt){
   for(let i=0;i<MAXD;i++){const d=deb[i];if(d.life<=0)continue;d.life-=dt;
@@ -5482,7 +5392,136 @@ function updateDebris(dt){
     const s=d.s*Math.min(1,d.life*2);tmpO.position.copy(d.p);tmpO.rotation.set(d.r.x,d.r.y,d.r.z);tmpO.scale.set(s,s,s);tmpO.updateMatrix();debMesh.setMatrixAt(i,tmpO.matrix);}
   debMesh.instanceMatrix.needsUpdate=true;
 }
-
+// --- 3D noise
+function hash3(x,y,z){let h=Math.imul(x|0,374761393)+Math.imul(y|0,668265263)+Math.imul(z|0,1440662683)+Math.imul(SEED,2246822519);h=Math.imul(h^(h>>>13),1274126177);return((h^(h>>>16))>>>0)/4294967296;}
+function vn3(x,y,z){const xi=Math.floor(x),yi=Math.floor(y),zi=Math.floor(z),xf=x-xi,yf=y-yi,zf=z-zi,u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf),w=zf*zf*(3-2*zf);
+  const a=lerp(lerp(hash3(xi,yi,zi),hash3(xi+1,yi,zi),u),lerp(hash3(xi,yi+1,zi),hash3(xi+1,yi+1,zi),u),v);
+  const b=lerp(lerp(hash3(xi,yi,zi+1),hash3(xi+1,yi,zi+1),u),lerp(hash3(xi,yi+1,zi+1),hash3(xi+1,yi+1,zi+1),u),v);return lerp(a,b,w);}
+function fbm3(x,y,z){return vn3(x,y,z)*0.58+vn3(x*2.13,y*2.13,z*2.13)*0.28+vn3(x*4.37,y*4.37,z*4.37)*0.14;}
+function erode(x,y,z,amp){return (fbm3(x*0.22,y*0.22,z*0.22)-0.5)*amp+(vn3(x*0.9,y*0.9,z*0.9)-0.5)*0.35+Math.sin(y*1.7+fbm3(x*0.07,0,z*0.07)*4)*0.2;}
+// --- shapes (negative = rock)
+function sdHoodoo(cx,cz,by,h,r){return(x,y,z)=>{const dx=x-cx,dz=z-cz,rr=Math.hypot(dx,dz),t=clamp((y-by)/h,0,1);
+  const rad=r*(1.1-0.42*t+0.14*Math.sin(t*10+cx))+Math.max(0,0.15-t)*r*5;let d=Math.max(rr-rad,y-(by+h));
+  const cy=by+h+0.7,dc=(Math.hypot(dx/(r*1.75),(y-cy)/1.25,dz/(r*1.6))-1)*Math.min(r*1.6,1.25);d=Math.min(d,dc);return d+erode(x,y,z,1.7);};}
+function sdArch(cx,cz,by,R,r,ang){const ca=Math.cos(ang),sa=Math.sin(ang);return(x,y,z)=>{const lx=(x-cx)*ca+(z-cz)*sa,lz=-(x-cx)*sa+(z-cz)*ca,ly=y-by;
+  const rr=r*(1+0.35*Math.abs(lx)/R);const q=Math.hypot(lx,ly)-R;let d=Math.hypot(q,lz*0.75)-rr;return d+erode(x,y,z,1.5);};}
+function sdButte(cx,cz,by,w,h,d0,ang){const ca=Math.cos(ang),sa=Math.sin(ang);return(x,y,z)=>{const lx=Math.abs((x-cx)*ca+(z-cz)*sa)-w,lz=Math.abs(-(x-cx)*sa+(z-cz)*ca)-d0,ly=Math.abs(y-(by+h/2))-h/2;
+  const o=Math.hypot(Math.max(lx,0),Math.max(ly,0),Math.max(lz,0))+Math.min(Math.max(lx,Math.max(ly,lz)),0)-1.2;
+  return o+erode(x,y,z,3.2)+Math.max(0,Math.sin(y*0.9)*0.6);};}
+function sdSpires(cx,cz,by,R){const s=[];for(let i=0;i<4;i++){const a=rand(TAU),d=rand(0,R);s.push(sdHoodoo(cx+Math.cos(a)*d,cz+Math.sin(a)*d,by,rand(9,17),rand(1.0,1.7)));}
+  return(x,y,z)=>{let d=1e9;for(const f of s)d=Math.min(d,f(x,y,z));return d;};}
+function mkForm(min,max,sdf){
+  const nx=Math.ceil((max[0]-min[0])/RV)+3,ny=Math.ceil((max[1]-min[1])/RV)+3,nz=Math.ceil((max[2]-min[2])/RV)+3,ox=min[0]-RV,oy=min[1]-RV,oz=min[2]-RV;
+  const F=new Float32Array(nx*ny*nz);let n=0;
+  for(let k=0;k<nz;k++)for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){let d=sdf(ox+i*RV,oy+j*RV,oz+k*RV);if(i===0||j===0||k===0||i===nx-1||j===ny-1||k===nz-1)d=Math.max(d,0.6);F[n++]=d;}
+  const f={ox,oy,oz,nx,ny,nz,F,x1:ox+(nx-1)*RV,y1:oy+(ny-1)*RV,z1:oz+(nz-1)*RV,mesh:null,dirty:true,check:false,away:null};forms.push(f);return f;
+}
+function genForms(R){
+  for(const f of forms){if(f.mesh){scene.remove(f.mesh);f.mesh.geometry.dispose();}}forms=[];
+  for(const c of chunks){scene.remove(c.mesh);c.mesh.geometry.dispose();}chunks=[];
+  const spots=[];const pick=(minD,maxD,clear)=>{for(let t=0;t<40;t++){const a=R()*TAU,d=minD+R()*(maxD-minD),x=Math.cos(a)*d,z=Math.sin(a)*d;if(Math.abs(x)>108||Math.abs(z)>108)continue;if(spots.every(s=>Math.hypot(s[0]-x,s[1]-z)>s[2]+clear)){spots.push([x,z,clear]);return[x,z];}}return null;};
+  const base=(x,z,r)=>{let m=1e9;for(let a=0;a<6;a++)m=Math.min(m,H(x+Math.cos(a)*r,z+Math.sin(a)*r));return Math.min(m,H(x,z))-2.5;};
+  for(let n=0;n<7;n++){const s=pick(24,100,9);if(!s)continue;const[x,z]=s,r=1.8+R()*1.3,h=11+R()*11,by=base(x,z,r+1);mkForm([x-r*2.4,by-1,z-r*2.4],[x+r*2.4,by+h+3,z+r*2.4],sdHoodoo(x,z,by,h,r));}
+  for(let n=0;n<3;n++){const s=pick(30,95,14);if(!s)continue;const[x,z]=s,Rr=6+R()*4,r=1.6+R()*0.8,a=R()*Math.PI,by=base(x,z,Rr)+1.5;const e=Rr+r+2.5;mkForm([x-e,by-3,z-e],[x+e,by+Rr+r+2.5,z+e],sdArch(x,z,by,Rr,r,a));}
+  for(let n=0;n<3;n++){const s=pick(28,100,10);if(!s)continue;const[x,z]=s,by=base(x,z,5);mkForm([x-8,by-1,z-8],[x+8,by+21,z+8],sdSpires(x,z,by,4.5));}
+  for(let n=0;n<3;n++){const s=pick(35,105,15);if(!s)continue;const[x,z]=s,w=4+R()*4,d0=3+R()*3,h=6+R()*8,a=R()*Math.PI,by=base(x,z,Math.max(w,d0)+2);const e=Math.hypot(w,d0)+4;mkForm([x-e,by-1,z-e],[x+e,by+h+4,z+e],sdButte(x,z,by,w,h,d0,a));}
+  for(const f of forms)remesh(f);
+}
+// --- surface nets
+const EDGES=[[0,1],[2,3],[4,5],[6,7],[0,2],[1,3],[4,6],[5,7],[0,4],[1,5],[2,6],[3,7]],_cv=new Float32Array(8);
+function surfNets(F,nx,ny,nz,ox,oy,oz){
+  const vIdx=new Int32Array(nx*ny*nz).fill(-1),pos=[],nor=[],ind=[];
+  for(let k=0;k<nz-1;k++)for(let j=0;j<ny-1;j++)for(let i=0;i<nx-1;i++){
+    let mask=0;for(let q=0;q<8;q++){const v=F[((k+(q>>2&1))*ny+(j+(q>>1&1)))*nx+i+(q&1)];_cv[q]=v;if(v<0)mask|=1<<q;}
+    if(mask===0||mask===255)continue;
+    let sx=0,sy=0,sz=0,cnt=0;
+    for(const e of EDGES){const a=e[0],b=e[1],va=_cv[a],vb=_cv[b];if((va<0)!==(vb<0)){const t=va/(va-vb);sx+=(a&1)+((b&1)-(a&1))*t;sy+=(a>>1&1)+((b>>1&1)-(a>>1&1))*t;sz+=(a>>2&1)+((b>>2&1)-(a>>2&1))*t;cnt++;}}
+    vIdx[(k*ny+j)*nx+i]=pos.length/3;pos.push(ox+(i+sx/cnt)*RV,oy+(j+sy/cnt)*RV,oz+(k+sz/cnt)*RV);
+    const c=_cv,gx=(c[1]-c[0])+(c[3]-c[2])+(c[5]-c[4])+(c[7]-c[6]),gy=(c[2]-c[0])+(c[3]-c[1])+(c[6]-c[4])+(c[7]-c[5]),gz=(c[4]-c[0])+(c[5]-c[1])+(c[6]-c[2])+(c[7]-c[3]);
+    const l=Math.hypot(gx,gy,gz)||1;nor.push(gx/l,gy/l,gz/l);
+  }
+  const V=(i,j,k)=>vIdx[(k*ny+j)*nx+i];
+  const quad=(a,b,c,d,flip)=>{if(a<0||b<0||c<0||d<0)return;if(flip)ind.push(a,c,b,a,d,c);else ind.push(a,b,c,a,c,d);};
+  for(let k=1;k<nz-1;k++)for(let j=1;j<ny-1;j++)for(let i=1;i<nx-1;i++){
+    const v0=F[(k*ny+j)*nx+i],in0=v0<0;
+    if(i<nx-1&&(F[(k*ny+j)*nx+i+1]<0)!==in0)quad(V(i,j-1,k-1),V(i,j,k-1),V(i,j,k),V(i,j-1,k),in0);
+    if(j<ny-1&&(F[(k*ny+j+1)*nx+i]<0)!==in0)quad(V(i-1,j,k-1),V(i-1,j,k),V(i,j,k),V(i,j,k-1),in0);
+    if(k<nz-1&&(F[((k+1)*ny+j)*nx+i]<0)!==in0)quad(V(i-1,j-1,k),V(i,j-1,k),V(i,j,k),V(i-1,j,k),in0);
+  }
+  return{pos,nor,ind};
+}
+let NETS_FLIP=null;
+function netsGeo(r){
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(r.pos,3));g.setAttribute('normal',new THREE.Float32BufferAttribute(r.nor,3));
+  if(NETS_FLIP===null&&r.ind.length>30){let s=0;const P=r.pos,N=r.nor,I=r.ind;for(let t=0;t<Math.min(I.length,600);t+=3){const a=I[t]*3,b=I[t+1]*3,c=I[t+2]*3;
+      const ux=P[b]-P[a],uy=P[b+1]-P[a+1],uz=P[b+2]-P[a+2],vx=P[c]-P[a],vy=P[c+1]-P[a+1],vz=P[c+2]-P[a+2];const fx=uy*vz-uz*vy,fy=uz*vx-ux*vz,fz=ux*vy-uy*vx;s+=fx*N[a]+fy*N[a+1]+fz*N[a+2];}NETS_FLIP=s<0;}
+  if(NETS_FLIP){const I=r.ind;for(let t=0;t<I.length;t+=3){const x=I[t+1];I[t+1]=I[t+2];I[t+2]=x;}}
+  g.setIndex(r.ind.length>65535?new THREE.Uint32BufferAttribute(r.ind,1):new THREE.Uint16BufferAttribute(r.ind,1));g.computeBoundingSphere();return g;
+}
+function remesh(f){
+  const g=netsGeo(surfNets(f.F,f.nx,f.ny,f.nz,f.ox,f.oy,f.oz));
+  if(!f.mesh){f.mesh=new THREE.Mesh(g,rockMat);f.mesh.castShadow=true;f.mesh.receiveShadow=true;scene.add(f.mesh);}else{f.mesh.geometry.dispose();f.mesh.geometry=g;}
+  f.dirty=false;
+}
+function fSample(f,x,y,z){const gx=(x-f.ox)/RV,gy=(y-f.oy)/RV,gz=(z-f.oz)/RV;if(gx<0||gy<0||gz<0||gx>=f.nx-1||gy>=f.ny-1||gz>=f.nz-1)return 1;
+  const i=gx|0,j=gy|0,k=gz|0,tx=gx-i,ty=gy-j,tz=gz-k,F=f.F,nx=f.nx,s=nx*f.ny,b=(k*f.ny+j)*nx+i;
+  return lerp(lerp(lerp(F[b],F[b+1],tx),lerp(F[b+nx],F[b+nx+1],tx),ty),lerp(lerp(F[b+s],F[b+s+1],tx),lerp(F[b+s+nx],F[b+s+nx+1],tx),ty),tz);}
+function rockAt(x,y,z){for(const f of forms){if(x<f.ox||y<f.oy||z<f.oz||x>f.x1||y>f.y1||z>f.z1)continue;if(fSample(f,x,y,z)<0)return true;}return false;}
+function carveRock(p,r,away){
+  let removed=0;
+  for(const f of forms){if(p.x+r<f.ox||p.x-r>f.x1||p.y+r<f.oy||p.y-r>f.y1||p.z+r<f.oz||p.z-r>f.z1)continue;
+    const i0=Math.max(1,Math.floor((p.x-r-f.ox)/RV)),i1=Math.min(f.nx-2,Math.ceil((p.x+r-f.ox)/RV)),j0=Math.max(1,Math.floor((p.y-r-f.oy)/RV)),j1=Math.min(f.ny-2,Math.ceil((p.y+r-f.oy)/RV)),k0=Math.max(1,Math.floor((p.z-r-f.oz)/RV)),k1=Math.min(f.nz-2,Math.ceil((p.z+r-f.oz)/RV));
+    let ch=false;
+    for(let k=k0;k<=k1;k++)for(let j=j0;j<=j1;j++)for(let i=i0;i<=i1;i++){const x=f.ox+i*RV,y=f.oy+j*RV,z=f.oz+k*RV,d=Math.hypot(x-p.x,y-p.y,z-p.z);if(d>r+RV)continue;
+      const nv=r-d+(vn3(x*0.9,y*0.9,z*0.9)-0.5)*0.7,idx=(k*f.ny+j)*f.nx+i;if(nv>f.F[idx]){if(f.F[idx]<0&&nv>=0)removed++;f.F[idx]=nv;ch=true;}}
+    if(ch){f.dirty=true;f.check=true;f.away=away?away.clone():null;f.blast=p.clone();}
+  }
+  if(removed>0){tmpC.setRGB(0.85,0.6,0.45);spawnDebris(p,tmpC,Math.min(16,3+removed/4|0),9+r,r*0.5);fxPuff(p,0.6,0.46,0.34,2.5+r*0.6,0.65);}
+  return removed>0;
+}
+function markIslands(x,z,r){for(const f of forms){if(x+r<f.ox||x-r>f.x1||z+r<f.oz||z-r>f.z1)continue;f.check=true;}}
+function islands(f){
+  const{nx,ny,nz,F}=f,N=nx*ny*nz,lab=new Int32Array(N),q=new Int32Array(N);let qt=0;
+  for(let k=1;k<nz-1;k++)for(let i=1;i<nx-1;i++){const g=H(f.ox+i*RV,f.oz+k*RV)+0.5;for(let j=1;j<ny-1;j++){if(f.oy+j*RV>g)break;const idx=(k*ny+j)*nx+i;if(F[idx]<0&&!lab[idx]){lab[idx]=1;q[qt++]=idx;}}}
+  const S=nx*ny;
+  const bfs=(start,label,list)=>{let h=start;while(h<qt){const idx=q[h++];if(list)list.push(idx);
+      const nb=[idx+1,idx-1,idx+nx,idx-nx,idx+S,idx-S];for(const n of nb){if(n<0||n>=N||lab[n]||F[n]>=0)continue;lab[n]=label;q[qt++]=n;}}return h;};
+  bfs(0,1,null);
+  let label=2;const comps=[];
+  for(let idx=0;idx<N;idx++){if(F[idx]<0&&!lab[idx]){const st=qt;lab[idx]=label;q[qt++]=idx;const list=[];bfs(st,label,list);comps.push(list);label++;}}
+  for(const list of comps){if(list.length<10){for(const idx of list)F[idx]=0.6;continue;}makeChunk(f,list);}
+  if(comps.length)f.dirty=true;
+}
+function makeChunk(f,list){
+  const{nx,ny,F}=f,S=nx*ny;let i0=1e9,i1=-1,j0=1e9,j1=-1,k0=1e9,k1=-1,cx=0,cy=0,cz=0;
+  for(const idx of list){const k=(idx/S)|0,j=((idx-k*S)/nx)|0,i=idx-k*S-j*nx;i0=Math.min(i0,i);i1=Math.max(i1,i);j0=Math.min(j0,j);j1=Math.max(j1,j);k0=Math.min(k0,k);k1=Math.max(k1,k);cx+=i;cy+=j;cz+=k;}
+  const n=list.length;cx=f.ox+cx/n*RV;cy=f.oy+cy/n*RV;cz=f.oz+cz/n*RV;
+  i0--;j0--;k0--;i1++;j1++;k1++;const cnx=i1-i0+1,cny=j1-j0+1,cnz=k1-k0+1,CF=new Float32Array(cnx*cny*cnz).fill(0.6);
+  for(const idx of list){const k=(idx/S)|0,j=((idx-k*S)/nx)|0,i=idx-k*S-j*nx;CF[((k-k0)*cny+(j-j0))*cnx+(i-i0)]=F[idx];F[idx]=0.6;}
+  const g=netsGeo(surfNets(CF,cnx,cny,cnz,f.ox+i0*RV-cx,f.oy+j0*RV-cy,f.oz+k0*RV-cz));
+  const mesh=new THREE.Mesh(g,rockMat);mesh.position.set(cx,cy,cz);mesh.castShadow=true;mesh.receiveShadow=true;scene.add(mesh);
+  const rad=Math.max(i1-i0,j1-j0,k1-k0)*RV*0.5;const dir=new V3(1,0,0);
+  if(f.blast){dir.set(cx-f.blast.x,0,cz-f.blast.z);if(dir.lengthSq()<0.01)dir.set(rand(-1,1),0,rand(-1,1));dir.normalize();}
+  chunks.push({mesh,v:new V3(dir.x*rand(1,3),rand(0,1.5),dir.z*rand(1,3)),axis:new V3(dir.z,0,-dir.x),spin:rand(0.5,1.3)*(0.4+Math.min(1.5,(j1-j0)*RV/8)),rad,size:n,life:7});
+  sfx('thud',0.9,mesh.position);
+}
+const _q=new THREE.Quaternion();
+function updateRock(dt){
+  for(const f of forms)if(f.check){f.check=false;islands(f);}
+  let budget=3;for(const f of forms)if(f.dirty&&budget-->0)remesh(f);
+  for(let k=chunks.length-1;k>=0;k--){const c=chunks[k],m=c.mesh;c.life-=dt;c.v.y-=30*dt;m.position.addScaledVector(c.v,dt);c.spin+=dt*0.8;m.quaternion.premultiply(_q.setFromAxisAngle(c.axis,c.spin*dt));
+    const g=H(m.position.x,m.position.z),low=m.position.y-c.rad*0.45;
+    if(c.life<4.5&&Math.random()<0.25)SMOKE.add(m.position.x+rand(-c.rad,c.rad),m.position.y,m.position.z+rand(-c.rad,c.rad),0,0.5,0,1.2,1.5,1,0.6,0.48,0.36,0.35,0.5,0);
+    if(low<g||rockAt(m.position.x,low,m.position.z)||c.life<=0){
+      const p=m.position;tmpC.setRGB(0.85,0.6,0.45);spawnDebris(p,tmpC,Math.min(40,6+c.size/8|0),8+c.rad,c.rad*0.6);
+      for(let s=0;s<Math.min(10,3+c.rad*1.5);s++)fxPuff(_v.set(p.x+rand(-c.rad,c.rad),Math.max(g,p.y-c.rad*0.3),p.z+rand(-c.rad,c.rad)),0.62,0.5,0.37,2+c.rad,0.75);
+      crater(p.x,p.z,Math.min(5,1.2+c.rad*0.5),Math.min(1.4,0.25+c.rad*0.12));
+      for(const e of enemies)if(!e.dead&&e.center.distanceTo(p)<e.rad+c.rad+1)hurt(e,20+c.size*0.08,null);
+      if(P&&P.alive&&_v.set(P.pos.x,P.pos.y+3,P.pos.z).distanceTo(p)<c.rad+3)hurtPlayer(6+c.size*0.02);
+      shake=Math.min(1.6,shake+Math.min(0.9,c.rad*0.15)*clamp(1.2-camera.position.distanceTo(p)/80,0,1));sfx('boom',Math.min(1,0.4+c.rad*0.1),p);sfx('thud',1,p);
+      scene.remove(m);m.geometry.dispose();chunks.splice(k,1);}
+  }
+}
 // ======================================================= particles
 function noiseTex(fire){
   const S=128,c=document.createElement('canvas');c.width=c.height=S;const g=c.getContext('2d'),img=g.createImageData(S,S),d=img.data;const ox=Math.random()*100,oy=Math.random()*100;
@@ -5690,11 +5729,11 @@ function play(M,name,opt={}){
   if(M.cur&&M.cur!==name&&M.acts[M.cur])M.acts[M.cur].fadeOut(opt.fade||0.2);M.cur=name;
 }
 function buildWeapons(eq,chassis){
-  const mount=new THREE.Group();const R={mount,pods:[],spin:null,muzzle:new THREE.Object3D(),gun:new THREE.Group()};
+  const mount=new THREE.Group();const R={mount,pods:[],tips:[],spin:null,muzzle:new THREE.Object3D(),gun:new THREE.Group()};
   const mt=MOUNT[chassis];const podMat=chassis==='Leela'?MAT.bone:MAT.olive2;
   for(const[x,y,z]of mt.pods){const pg=new THREE.Group();pg.position.set(x,y,z);mount.add(pg);
     if(eq.back==='swarm'){cb(0.95,0.9,1.5,0.16,podMat,0,0,0,pg);cb(0.82,0.08,1.3,0.03,MAT.gun,0,0.47,0,pg);
-      for(let a=0;a<2;a++)for(let b=0;b<3;b++){cb(0.26,0.05,0.26,0.02,MAT.black,-0.18+a*0.36,0.52,-0.42+b*0.42,pg);cy(0.06,0.06,0.04,6,MAT.hazard,-0.18+a*0.36,0.54,-0.42+b*0.42,pg);}
+      for(let a=0;a<2;a++)for(let b=0;b<3;b++){cb(0.28,0.05,0.28,0.02,MAT.black,-0.18+a*0.36,0.52,-0.42+b*0.42,pg);R.tips.push(M(gcache('mtip',()=>new THREE.ConeGeometry(0.11,0.34,10)),MAT.hazard,-0.18+a*0.36,0.66,-0.42+b*0.42,pg));}
       decal('stripe',1.2,0.24,Math.sign(x)*0.49,-0.2,0,pg,Math.sign(x)*Math.PI/2);}
     else if(eq.back==='buster'){if(x>0){pg.rotation.x=-0.3;cy(0.36,0.36,2.8,14,MAT.bone,0,0.2,0.2,pg,'z');M(gcache('cone',()=>new THREE.ConeGeometry(0.36,0.8,14)),MAT.hazard,0,0.2,-1.6,pg,-Math.PI/2);cb(0.5,0.22,3.0,0.05,MAT.gun,0,-0.2,0.2,pg);}}
     else{cb(0.9,0.7,1.2,0.12,podMat,0,0,0,pg);for(let k=0;k<2;k++){cy(0.22,0.22,0.3,12,MAT.gun,-0.2+k*0.4,0.45,0,pg,null,true);cy(0.17,0.17,0.04,10,MAT.hazard,-0.2+k*0.4,0.56,0,pg);}}
@@ -5716,7 +5755,7 @@ function buildPlayerMech(eq){
   const thrMat=MAT.thrust.clone();
   for(const s of[-1,1]){const tg=new THREE.Group();tg.position.set(s*0.55,ch==='Leela'?0.2:0.9,1.0);W.mount.add(tg);cy(0.22,0.34,0.5,12,MAT.steel,0,0,0,tg,null,true);cy(0.25,0.25,0.04,12,thrMat,0,-0.2,0,tg);}
   play(I,'Idle');
-  return Object.assign(I,{pods:W.pods,spin:W.spin,muzzle:W.muzzle,gun:W.gun,mount:W.mount,thrMat,chassis:ch});
+  return Object.assign(I,{pods:W.pods,tips:W.tips,spin:W.spin,muzzle:W.muzzle,gun:W.gun,mount:W.mount,thrMat,chassis:ch});
 }
 const _bw=new V3();
 function poseMech(R,aimP,dt,firing){
@@ -5725,6 +5764,7 @@ function poseMech(R,aimP,dt,firing){
   if(MOUNT[R.chassis].hand&&R.palm){const pw=R.palm.getWorldPosition(new V3());R.gun.position.copy(R.mount.worldToLocal(pw));R.gun.position.z-=0.3;}
   const mp=R.gun.getWorldPosition(_v2);const d=_v.copy(aimP).sub(mp);const hz=Math.hypot(d.x,d.z);R.gun.rotation.x=clamp(Math.atan2(d.y,hz),-0.7,0.9);
   if(R.spin)R.spin.rotation.z+=dt*(firing?28:1.5);
+  if(R.tips.length){const rd=P&&state==='play'?(P.specCd<=0?1:clamp(1-P.specCd/P.specMax,0,1)):1;const nv=Math.floor(R.tips.length*rd+0.001);R.tips.forEach((t,i)=>t.visible=i<nv);}
   R.thrMat.emissiveIntensity=lerp(R.thrMat.emissiveIntensity,P&&P.jetting?4.5:0.3,1-Math.pow(0.001,dt));
 }
 // ======================================================= drone model
@@ -5750,44 +5790,41 @@ const aim={p:new V3(),type:'none',e:null};
 function newPlayer(){return{pos:new V3(0,H(0,0),0),vel:new V3(),legYaw:0,hp:ST.maxHp,fuel:ST.maxFuel,onGround:true,walk:0,spd:0,fireCd:0,specCd:0,specMax:1,alive:true,jetting:false,rad:1.8,hgt:7};}
 function rebuildMech(){if(mech)scene.remove(mech.root);mech=buildPlayerMech(save.equip);scene.add(mech.root);}
 
-function floorAt(x,z,y,rad){
-  let g=H(x,z);const r=rad*0.6;
-  for(let ix=Math.floor((x-r)/B);ix<=Math.floor((x+r)/B);ix++)for(let iz=Math.floor((z-r)/B);iz<=Math.floor((z+r)/B);iz++){
-    const c=cols.get(ckey(ix,iz));if(!c)continue;for(const[iy,i]of c.cells){if(!bAlive[i])continue;const top=GBASE+(iy+1)*B;if(top<=y+1.3&&top>g)g=top;}}
-  return g;
-}
-function pushOutBlocks(p,rad,hgt){
-  for(let ix=Math.floor((p.x-rad)/B);ix<=Math.floor((p.x+rad)/B);ix++)for(let iz=Math.floor((p.z-rad)/B);iz<=Math.floor((p.z+rad)/B);iz++){
-    const c=cols.get(ckey(ix,iz));if(!c)continue;
-    for(const[iy,i]of c.cells){if(!bAlive[i])continue;const by=GBASE+iy*B;if(by+B<=p.y+1.3||by>=p.y+hgt)continue;
-      const qx=clamp(p.x,ix*B,(ix+1)*B),qz=clamp(p.z,iz*B,(iz+1)*B);let dx=p.x-qx,dz=p.z-qz;const d=Math.hypot(dx,dz);
-      if(d<rad){if(d<1e-4){const cx=(ix+0.5)*B,cz=(iz+0.5)*B;dx=p.x-cx;dz=p.z-cz;const dd=Math.hypot(dx,dz)||1;p.x=cx+dx/dd*(B*0.71+rad);p.z=cz+dz/dd*(B*0.71+rad);}
-        else{p.x+=dx/d*(rad-d);p.z+=dz/d*(rad-d);}}}}
+function floorAt(x,z,y,rad){return H(x,z);}
+const _pd=[[1,0],[0.707,0.707],[0,1],[-0.707,0.707],[-1,0],[-0.707,-0.707],[0,-1],[0.707,-0.707]];
+function pushOutRock(p,rad,hgt){
+  for(let it=0;it<2;it++){let px=0,pz=0;
+    for(const hy of[1.6,hgt*0.55,hgt*0.9])for(const d of _pd){if(rockAt(p.x+d[0]*rad,p.y+hy,p.z+d[1]*rad)){px-=d[0];pz-=d[1];}}
+    const l=Math.hypot(px,pz);if(l<0.01)break;p.x+=px/l*0.35;p.z+=pz/l*0.35;}
 }
 function moveUnit(u,mvx,mvz,dt,climb){
   const nx=clamp(u.pos.x+mvx*dt,-ARENA,ARENA),nz=clamp(u.pos.z+mvz*dt,-ARENA,ARENA);
   if(H(nx,u.pos.z)-u.pos.y<climb||!u.onGround)u.pos.x=nx;
   if(H(u.pos.x,nz)-u.pos.y<climb||!u.onGround)u.pos.z=nz;
-  pushOutBlocks(u.pos,u.rad,u.hgt);
-  u.vel.y-=30*dt;u.pos.y+=u.vel.y*dt;
-  const f=floorAt(u.pos.x,u.pos.z,u.pos.y,u.rad);
-  if(u.pos.y<=f){u.pos.y=f;if(u.vel.y<0)u.vel.y=0;u.onGround=true;}
-  else if(u.onGround&&u.vel.y<=0&&u.pos.y-f<1.2){u.pos.y=f;u.vel.y=0;}
-  else u.onGround=false;
+  pushOutRock(u.pos,u.rad,u.hgt);
+  const oy=u.pos.y;u.vel.y-=30*dt;let ny=u.pos.y+u.vel.y*dt;let ground=false;
+  if(u.vel.y>0&&rockAt(u.pos.x,ny+u.hgt*0.9,u.pos.z)){ny=oy;u.vel.y=0;}
+  if(rockAt(u.pos.x,ny+0.05,u.pos.z)){let ok=false;for(let dy=0.15;dy<=1.8;dy+=0.15){if(!rockAt(u.pos.x,ny+dy+0.05,u.pos.z)){ny+=dy;ok=true;break;}}if(!ok)ny=Math.max(ny,oy);ground=true;if(u.vel.y<0)u.vel.y=0;}
+  u.pos.y=ny;
+  const f=H(u.pos.x,u.pos.z);
+  if(u.pos.y<=f){u.pos.y=f;if(u.vel.y<0)u.vel.y=0;ground=true;}
+  else if(!ground&&u.onGround&&u.vel.y<=0&&u.pos.y-f<1.2&&!rockAt(u.pos.x,u.pos.y-0.3,u.pos.z)){u.pos.y=f;u.vel.y=0;ground=true;}
+  else if(!ground&&u.vel.y<=0&&rockAt(u.pos.x,u.pos.y-0.12,u.pos.z))ground=true;
+  u.onGround=ground;
   if(u.pos.y<MINH-5)u.pos.y=H(u.pos.x,u.pos.z);
 }
 function castRay(o,d,maxD,skipT=3){
   const p=_v3;
   for(let t=skipT;t<maxD;t+=0.6){p.copy(o).addScaledVector(d,t);
     if(p.y<H(p.x,p.z)){aim.p.copy(o).addScaledVector(d,t-0.3);aim.type='ground';aim.e=null;return aim;}
-    if(blockAt(p.x,p.y,p.z)>=0){aim.p.copy(p);aim.type='block';aim.e=null;return aim;}
+    if(rockAt(p.x,p.y,p.z)){aim.p.copy(p);aim.type='block';aim.e=null;return aim;}
     for(const e of enemies)if(!e.dead&&p.distanceToSquared(e.center)<e.rad*e.rad){aim.p.copy(p);aim.type='enemy';aim.e=e;return aim;}}
   aim.p.copy(o).addScaledVector(d,maxD);aim.type='none';aim.e=null;return aim;
 }
 
 // ======================================================= weapons
 function muzzlePos(out){mech.root.updateMatrixWorld(true);return mech.muzzle.getWorldPosition(out);}
-function podPos(out,i){const pg=mech.pods[i%mech.pods.length];mech.root.updateMatrixWorld(true);return pg.localToWorld(out.set(rand(-0.3,0.3),0.9,rand(-0.5,0.5)));}
+function podPos(out,i){const pg=mech.pods[i%mech.pods.length];mech.root.updateMatrixWorld(true);const k=(i>>1)%6;return pg.localToWorld(out.set(-0.18+(k%2)*0.36,0.8,-0.42+((k/2)|0)*0.42));}
 function fireDir(m,out){out.copy(aim.p).sub(m);if(out.length()<5)out.copy(camDir);return out.normalize();}
 const camDir=new V3(0,0,-1),camRight=new V3(1,0,0);
 function flashAt(p,s){GLOW.add(p.x,p.y,p.z,0,0,0,s,0,0.06,1,0.9,0.7,1);FIRE.add(p.x,p.y,p.z,0,0,0,s*0.7,0,0.08,1,0.6,0.25,1);}
@@ -5806,7 +5843,7 @@ function railShot(m,d){
   const dmg=55*ST.dmgMul,hit=new Set();let pen=0,end=null;const p=new V3();
   for(let t=0;t<230;t+=0.6){p.copy(m).addScaledVector(d,t);
     for(const e of enemies)if(!e.dead&&!hit.has(e)&&p.distanceToSquared(e.center)<e.rad*e.rad){hit.add(e);hurt(e,dmg,d);for(let k=0;k<10;k++)GLOW.add(p.x,p.y,p.z,rand(-10,10),rand(-4,12),rand(-10,10),0.4,0,0.5,0.6,0.85,1,1,0.5,-20);}
-    if(blockAt(p.x,p.y,p.z)>=0){destroyBlocks(p,1.6,m);pen++;if(pen>5){end=p.clone();break;}}
+    if(rockAt(p.x,p.y,p.z)){if(pen%3===0)carveRock(p,1.7,m);pen++;if(pen>14){end=p.clone();break;}}
     if(p.y<H(p.x,p.z)){end=p.clone();crater(p.x,p.z,2.4,0.9);fxBoom(p,2.5,true);break;}}
   if(!end)end=p.clone();
   const len=end.distanceTo(m),q=new THREE.Quaternion().setFromUnitVectors(UP,d);
@@ -5816,14 +5853,16 @@ function railShot(m,d){
   flashAt(m,6);sfx('rail');shake=Math.min(1.2,shake+0.35);
 }
 function pickTargets(){
-  const c=enemies.filter(e=>!e.dead&&e.center.distanceTo(P.pos)<170).map(e=>{_v.copy(e.center).sub(camera.position).normalize();return{e,s:_v.dot(camDir)};}).filter(o=>o.s>0.55).sort((a,b)=>b.s-a.s).slice(0,6);
+  const o=_v2.set(P.pos.x,P.pos.y+4,P.pos.z);
+  const c=enemies.filter(e=>!e.dead&&e.center.distanceTo(o)<230).map(e=>{_v.copy(e.center).sub(camera.position).normalize();return{e,s:_v.dot(camDir)};}).filter(o=>o.s>0.2).sort((a,b)=>b.s-a.s).slice(0,6);
   if(c.length)return c.map(o=>({e:o.e}));
-  return[{p:aim.p.clone()}];
+  const far=aim.p.distanceTo(o)>30&&aim.type!=='none'?aim.p.clone():camera.position.clone().addScaledVector(camDir,160);
+  return[{p:far}];
 }
 function fireSpecial(){
   const b=save.equip.back;let cd;
-  if(b==='swarm'){const n=20+ST.ord*4,tg=pickTargets();
-    for(let i=0;i<n;i++)launchQ.push({at:time+i*0.022,fn:()=>{if(P&&P.alive)launchSwarm(podPos(new V3(),i),tg[i%tg.length],'P',i,15*ST.dmgMul,3.6*ST.radMul);}});cd=6;}
+  if(b==='swarm'){const n=20+ST.ord*4,tg=pickTargets();P.salvo=n;
+    for(let i=0;i<n;i++)launchQ.push({at:time+i*0.03,fn:()=>{if(P&&P.alive)launchSwarm(podPos(new V3(),i),tg[i%tg.length],'P',i,15*ST.dmgMul,3.6*ST.radMul);}});cd=6;}
   else if(b==='buster'){const p=podPos(new V3(),0),tg=pickTargets()[0];
     const m=mkMissile('buster',p,new V3(0,1,0).addScaledVector(camDir,0.6).normalize().multiplyScalar(24),tg,'P',125*ST.dmgMul,10.5*ST.radMul*(1+ST.ord*0.12));missiles.push(m);sfx('launch');flashAt(p,4);cd=8;}
   else{const n=3+ST.ord;
@@ -5835,11 +5874,13 @@ function fireSpecial(){
 function mkMissile(kind,p,v,tgt,team,dmg,r){const m={kind,p:p.clone(),v,t:0,t1:rand(0.32,0.6),axis:new V3(),w:0,tgt,off:new V3(rand(-1,1),rand(-1,1),rand(-1,1)),team,dmg,r,life:5,drill:-1,split:0,tr:newTrail(team,kind!=='swarm')};trailPush(m.tr,m.p);return m;}
 function launchSwarm(o,tgt,team,i,dmg,r){
   const fw=team==='P'?_v2.set(camDir.x,0,camDir.z).normalize():_v2.set(P.pos.x-o.x,0,P.pos.z-o.z).normalize();
-  const rt=_v.set(-fw.z,0,fw.x);const side=i%2?1:-1;
-  const dir=new V3(0,rand(0.5,1.0),0).addScaledVector(rt,side*rand(0.5,1.6)).addScaledVector(fw,rand(-0.7,0.2)).normalize();
-  const m=mkMissile('swarm',o,dir.clone().multiplyScalar(team==='P'?rand(48,62):rand(30,40)),tgt,team,dmg,r);
-  m.axis.crossVectors(dir,_v3.set(rand(-1,1),rand(-1,1),rand(-1,1))).normalize();m.w=rand(4,7.5)*(Math.random()<0.5?-1:1);
-  missiles.push(m);GLOW.add(o.x,o.y,o.z,0,0,0,2.6,0,0.07,1,0.95,0.8,1);FIRE.add(o.x,o.y,o.z,dir.x*-4,-2,dir.z*-4,1.2,2,0.25,1,0.7,0.35,1,0.3,0);
+  const rt=_v.set(-fw.z,0,fw.x);const side=(i%2?1:-1);
+  const dir=new V3(0,rand(0.7,1.1),0).addScaledVector(rt,side*rand(0.35,1.0)).addScaledVector(fw,rand(0.0,0.5)).normalize();
+  const m=mkMissile('swarm',o,dir.clone().multiplyScalar(team==='P'?rand(34,44):rand(26,32)),tgt,team,dmg,r);
+  m.t0=rand(0.12,0.24);m.wig=rand(0.35,0.8);m.wf=rand(4.5,8.5);m.ph=rand(TAU);m.life=team==='P'?4:6;
+  missiles.push(m);
+  GLOW.add(o.x,o.y,o.z,0,0,0,3.2,0,0.08,1,0.92,0.75,1);FIRE.add(o.x,o.y,o.z,-dir.x*6,-dir.y*6,-dir.z*6,1.4,2.5,0.22,1,0.65,0.3,1,0.2,0);
+  SMOKE.add(o.x,o.y,o.z,rand(-1.5,1.5),rand(-0.5,1),rand(-1.5,1.5),1.4,3,1.2,0.88,0.87,0.85,0.5,0.3,0);
   sfx('launch',1,o);
 }
 function missileAim(m,out){
@@ -5854,21 +5895,44 @@ function missileAim(m,out){
 function pointHit(p,team){
   if(Math.abs(p.x)>HALF||Math.abs(p.z)>HALF)return 'out';
   if(p.y<H(p.x,p.z))return 'rock';
-  if(blockAt(p.x,p.y,p.z)>=0)return 'block';
+  if(rockAt(p.x,p.y,p.z))return 'block';
   if(team==='P'){for(const e of enemies)if(!e.dead&&p.distanceToSquared(e.center)<e.rad*e.rad)return 'unit';}
   else if(P&&P.alive&&p.distanceToSquared(_v3.set(P.pos.x,P.pos.y+3.5,P.pos.z))<8)return 'unit';
   return null;
 }
 const _aimT=new V3();
+const MAXMS=180;let msMeshes=null;const _mq=new THREE.Quaternion(),ZAX=new V3(0,0,1);
+function makeMissileMeshes(){
+  const body=new THREE.CylinderGeometry(0.13,0.13,1.1,8);body.rotateX(Math.PI/2);
+  const nose=new THREE.ConeGeometry(0.13,0.38,8);nose.rotateX(Math.PI/2);nose.translate(0,0,0.74);
+  const f1=new THREE.BoxGeometry(0.62,0.035,0.28);f1.translate(0,0,-0.42);const f2=new THREE.BoxGeometry(0.035,0.62,0.28);f2.translate(0,0,-0.42);
+  const band=new THREE.CylinderGeometry(0.135,0.135,0.12,8);band.rotateX(Math.PI/2);band.translate(0,0,0.32);
+  msMeshes=[[body,MAT.bone],[nose,MAT.gun],[f1,MAT.gun],[f2,MAT.gun],[band,MAT.hazard]].map(([g,m])=>{const im=new THREE.InstancedMesh(g,m,MAXMS);im.instanceMatrix.setUsage(THREE.DynamicDrawUsage);im.frustumCulled=false;im.castShadow=true;scene.add(im);return im;});
+}
+function drawMissiles(){
+  if(!msMeshes)return;let n=0;
+  for(const m of missiles){if(n>=MAXMS)break;const sp=m.v.length();if(sp<0.1)continue;_mq.setFromUnitVectors(ZAX,_v.copy(m.v).divideScalar(sp));const s=m.kind==='swarm'?1.15:m.kind==='buster'?3:1.6;
+    tmpO.position.copy(m.p);tmpO.quaternion.copy(_mq);tmpO.scale.set(s,s,s);tmpO.updateMatrix();for(const im of msMeshes)im.setMatrixAt(n,tmpO.matrix);n++;}
+  for(const im of msMeshes){im.count=n;im.instanceMatrix.needsUpdate=true;}
+}
 function steer(m,dt,rate,maxSp,acc){missileAim(m,_aimT);const des=_aimT.sub(m.p).normalize(),cur=_v2.copy(m.v).normalize(),ang=cur.angleTo(des);
   if(ang>1e-4){_v.crossVectors(cur,des);if(_v.lengthSq()>1e-8){_v.normalize();cur.applyAxisAngle(_v,Math.min(ang,rate*dt));}}m.v.copy(cur).multiplyScalar(Math.min(m.v.length()+acc*dt,maxSp));}
 function updateMissile(m,dt){
   m.t+=dt;m.life-=dt;
   if(m.kind==='swarm'){
-    if(m.t<m.t1){m.v.applyAxisAngle(m.axis,m.w*dt);m.v.setLength(Math.max(36,m.v.length()*Math.pow(0.5,dt)));}
-    else{const P_=m.team==='P';steer(m,dt,(P_?3.5:2.5)+(m.t-m.t1)*(P_?30:12),P_?135:62,P_?200:80);}
+    const PL=m.team==='P';missileAim(m,_aimT);const to=_v3.copy(_aimT).sub(m.p),dist=to.length();
+    if(m.t<m.t0){m.v.multiplyScalar(Math.pow(0.35,dt));}
+    else{
+      const des=to.normalize(),sd=_v2.crossVectors(des,UP);if(sd.lengthSq()<1e-4)sd.set(1,0,0);sd.normalize();const up2=_v.crossVectors(sd,des);
+      const amp=m.wig*clamp(dist/35,0,1)*clamp((m.t-m.t0)*3,0,1);
+      des.addScaledVector(sd,Math.sin(m.t*m.wf+m.ph)*amp).addScaledVector(up2,Math.cos(m.t*m.wf*0.77+m.ph)*amp*0.7).normalize();
+      const cur=_aimT.copy(m.v).normalize(),ang=cur.angleTo(des),rate=(PL?5:2.6)+(m.t-m.t0)*(PL?14:5);
+      if(ang>1e-4){const ax=_v.crossVectors(cur,des);if(ax.lengthSq()>1e-8){ax.normalize();cur.applyAxisAngle(ax,Math.min(ang,rate*dt));}}
+      m.v.copy(cur).multiplyScalar(Math.min(m.v.length()+(PL?190:70)*dt,PL?125:58));
+    }
+    if(dist<2.4&&m.t>m.t0){m.p.copy(m.p);endMissile(m,true);return false;}
   }else if(m.kind==='buster'){
-    if(m.drill>=0){m.drill-=dt;crater(m.p.x,m.p.z,1.9,dt*9);destroyBlocks(m.p,1.9,null);m.v.setLength(9);
+    if(m.drill>=0){m.drill-=dt;if(m.p.y<H(m.p.x,m.p.z)+0.5)crater(m.p.x,m.p.z,1.9,dt*9);carveRock(m.p,2.1,null);m.v.setLength(9);
       SMOKE.add(m.p.x,m.p.y+0.5,m.p.z,rand(-4,4),rand(4,9),rand(-4,4),1.6,2,1,0.58,0.47,0.34,0.7,0.5,-6);FIRE.add(m.p.x,m.p.y,m.p.z,0,0,0,3,0,0.05,1,0.6,0.25,1);
       if(m.drill<=0){m.p.addScaledVector(m.v,dt);endMissile(m,true);return false;}}
     else if(m.t>0.3)steer(m,dt,4,90,90);else m.v.y-=4*dt;
@@ -5888,7 +5952,7 @@ function endMissile(m,boom){if(m.tr.x.length>1)deadTrails.push(m.tr);if(boom)exp
 function explode(p,r,dmg,team,dig=0.38){
   const gh=H(p.x,p.z),near=p.y-gh<r*0.9;
   if(near){const f=clamp(1-(p.y-gh)/r,0,1);crater(p.x,p.z,r*0.85,r*dig*f);}
-  destroyBlocks(p,r*0.8,null);if(r>2.5)blastRocks(p,r*0.7);
+  carveRock(p,r*0.85,null);if(r>2.5)blastRocks(p,r*0.7);
   if(dmg>0){
     if(team==='P'){for(const e of enemies){if(e.dead)continue;const d=Math.max(0,e.center.distanceTo(p)-e.rad);if(d<r){_v.copy(e.center).sub(p).normalize();hurt(e,dmg*(1-0.6*d/r),_v.multiplyScalar(r*0.8));}}}
     else if(P&&P.alive){const c=_v.set(P.pos.x,P.pos.y+3.5,P.pos.z),d=Math.max(0,c.distanceTo(p)-2.3);if(d<r){_v2.copy(c).sub(p).normalize();P.vel.addScaledVector(_v2,r*0.6);hurtPlayer(dmg*(1-0.6*d/r));}}
@@ -5954,7 +6018,7 @@ function updateEnemy(e,dt){
     e.vel.multiplyScalar(Math.pow(0.35,dt));
     e.pos.addScaledVector(e.vel,dt);e.pos.x=clamp(e.pos.x,-ARENA,ARENA);e.pos.z=clamp(e.pos.z,-ARENA,ARENA);
     const g=floorAt(e.pos.x,e.pos.z,e.pos.y+20,1)+3;if(e.pos.y<g){e.pos.y=g;e.vel.y=Math.abs(e.vel.y);}
-    if(blockAt(e.pos.x,e.pos.y,e.pos.z)>=0){e.vel.y+=20*dt;e.pos.y+=6*dt;}
+    if(rockAt(e.pos.x,e.pos.y,e.pos.z)){e.vel.y+=20*dt;e.pos.y+=6*dt;}
     e.center.copy(e.pos);e.mesh.root.position.copy(e.pos);e.mesh.root.rotation.y=Math.atan2(-dx,-dz);e.mesh.root.rotation.z=clamp(-e.vel.x*0.02,-0.3,0.3);
     for(const f of e.mesh.fans)f.rotation.y+=dt*30;
     e.fireCd-=dt;
@@ -6077,7 +6141,7 @@ function updateCamera(dt){
   const cp=Math.cos(camPitch);camDir.set(-Math.sin(camYaw)*cp,-Math.sin(camPitch),-Math.cos(camYaw)*cp);camRight.set(Math.cos(camYaw),0,-Math.sin(camYaw));
   const tgt=_v.set(P.pos.x,P.pos.y+6.6,P.pos.z);
   let dist=camDist;const o=_v2.copy(tgt).addScaledVector(camRight,3.6);
-  for(let t=1;t<camDist;t+=0.5){_v3.copy(o).addScaledVector(camDir,-t);if(_v3.y<H(_v3.x,_v3.z)+0.6||blockAt(_v3.x,_v3.y,_v3.z)>=0){dist=Math.max(3,t-0.8);break;}}
+  for(let t=1;t<camDist;t+=0.5){_v3.copy(o).addScaledVector(camDir,-t);if(_v3.y<H(_v3.x,_v3.z)+0.6||rockAt(_v3.x,_v3.y,_v3.z)){dist=Math.max(3,t-0.8);break;}}
   P.camD=lerp(P.camD||dist,dist,dist<(P.camD||dist)?1:1-Math.pow(0.05,dt));
   camera.position.copy(o).addScaledVector(camDir,-P.camD);
   const g=H(camera.position.x,camera.position.z)+0.8;if(camera.position.y<g)camera.position.y=g;
@@ -6087,9 +6151,9 @@ function updateCamera(dt){
 
 // ======================================================= flow
 function clearWorld(){for(const e of enemies)scene.remove(e.mesh.root);for(const c of corpses)scene.remove(c.I.root);corpses=[];for(const p of pickups)scene.remove(p.mesh);for(const b of beams)scene.remove(b.mesh);
-  enemies=[];shots=[];missiles=[];pickups=[];launchQ=[];beams=[];deadTrails=[];fallers.length=0;FIRE.n=0;SMOKE.n=0;GLOW.n=0;bossRef=null;for(const d of deb)d.life=0;
+  enemies=[];shots=[];missiles=[];pickups=[];launchQ=[];beams=[];deadTrails=[];FIRE.n=0;SMOKE.n=0;GLOW.n=0;bossRef=null;for(const d of deb)d.life=0;
   for(let i=0;i<MAXD;i++)debMesh.setMatrixAt(i,ZERO);}
-function buildWorld(seed){clearWorld();const R=genTerrain(seed);genStructures(R);genRocks(R);}
+function buildWorld(seed){clearWorld();const R=genTerrain(seed);genForms(R);genRocks(R);}
 function deploy(){
   computeStats();buildWorld((save.wave*7919+(Math.random()*1e6|0))>>>0);P=newPlayer();rebuildMech();
   camYaw=0;camPitch=0.16;runScrap=0;hurtFlash=0;
@@ -6143,19 +6207,18 @@ function update(dt){
     if(P.alive)placeMech(dt,firing);}
   else if(state==='title'||state==='hangar'){attract(dt);placeMech(dt,false);if(state==='title')showcaseCamera(19,5.5,-1);else{orbit+=dt*0.12;showcaseCamera(17,6,1);}}
   else if(state==='dead')updateCamera(dt);
-  missiles=missiles.filter(m=>updateMissile(m,dt));
+  missiles=missiles.filter(m=>updateMissile(m,dt));drawMissiles();
   updateShots(dt);
   if(P)updatePickups(dt);
   enemies=enemies.filter(e=>{if(e.dead&&!e.mesh.acts&&e.mesh.root.parent)scene.remove(e.mesh.root);return!e.dead;});
   for(let k=corpses.length-1;k>=0;k--){const c=corpses[k];c.t-=dt;c.I.mixer.update(dt);if(c.t<=0){scene.remove(c.I.root);const q=c.pos.clone();q.y+=c.big?6:3;fxBoom(q,c.big?12:5,true);sfx('boom',0.9,q);tmpC.setRGB(0.5,0.5,0.5);spawnDebris(q,tmpC,c.big?20:8,10);corpses.splice(k,1);}}
-  updateFallers(dt);updateDebris(dt);FIRE.update(dt);SMOKE.update(dt);GLOW.update(dt);
+  updateRock(dt);updateDebris(dt);FIRE.update(dt);SMOKE.update(dt);GLOW.update(dt);
   for(let k=beams.length-1;k>=0;k--){const b=beams[k];b.t-=dt;if(b.t<=0){scene.remove(b.mesh);beams.splice(k,1);continue;}const u=b.t/b.max;b.mesh.material.opacity=u;b.mesh.scale.x=b.mesh.scale.z=b.w*(0.4+u*0.6);}
   for(const R of rings){if(R.t<=0)continue;R.t-=dt;const u=1-R.t/R.max;R.m.scale.setScalar(R.r*(0.2+u*0.8));R.m.material.opacity=0.7*(1-u);if(R.t<=0)R.m.visible=false;}
   for(const L of boomLights)L.intensity*=Math.pow(0.0005,dt);
   if(banner&&(banner.t-=dt)<=0)banner=null;
   shake*=Math.pow(0.02,dt);hurtFlash*=Math.pow(0.05,dt);
   if(dirty){writeTerrain(dirty[0],dirty[1],dirty[2],dirty[3]);dirty=null;}
-  if(blocksDirty){blockMesh.instanceMatrix.needsUpdate=true;blocksDirty=false;}
   // contrails
   deadTrails=deadTrails.filter(tr=>{trailPrune(tr);return tr.x.length>1;});
   for(const tr of deadTrails)emitTrail(tr);for(const m of missiles)emitTrail(m.tr);
@@ -6289,7 +6352,7 @@ resize();
 loadAll(()=>{
   const sk=A.tex.sky;sk.mapping=THREE.EquirectangularReflectionMapping;scene.background=sk;
   try{const pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromEquirectangular(sk).texture;pm.dispose();}catch(e){}
-  makeTerrainMesh();makeRockMeshes();
+  makeTerrainMesh();makeRockMeshes();makeMissileMeshes();
   titleWorld();syncSound();updateTitle();state='title';showScreen('title');$('loading').hidden=true;requestAnimationFrame(frame);
 });
 </script>
