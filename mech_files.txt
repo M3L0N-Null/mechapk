@@ -21,29 +21,17 @@
   mechs/Animated Mech Pack - March 2021/OBJ/Stan.mtl
   mechs/Animated Mech Pack - March 2021/OBJ/Leela.mtl
   mechs/Animated Mech Pack - March 2021/OBJ/Stan.obj
-ModuleNotFoundError: No module named 'numpy'
-RuntimeError: Error: Python: Traceback (most recent call last):
-ModuleNotFoundError: No module named 'numpy'
-Error: Python: Traceback (most recent call last):
-ModuleNotFoundError: No module named 'numpy'
-ModuleNotFoundError: No module named 'numpy'
-RuntimeError: Error: Python: Traceback (most recent call last):
-ModuleNotFoundError: No module named 'numpy'
-Error: Python: Traceback (most recent call last):
-ModuleNotFoundError: No module named 'numpy'
-ModuleNotFoundError: No module named 'numpy'
-RuntimeError: Error: Python: Traceback (most recent call last):
-ModuleNotFoundError: No module named 'numpy'
-Error: Python: Traceback (most recent call last):
-ModuleNotFoundError: No module named 'numpy'
-ModuleNotFoundError: No module named 'numpy'
-RuntimeError: Error: Python: Traceback (most recent call last):
-ModuleNotFoundError: No module named 'numpy'
-Error: Python: Traceback (most recent call last):
-ModuleNotFoundError: No module named 'numpy'
-total 2976
-drwxr-xr-x 2 runner runner    4096 Oct 24 15:20 .
-drwxr-xr-x 4 runner runner    4096 Oct 24 15:20 ..
--rw-r--r-- 1 runner runner     364 Oct 24 15:20 LICENSE.txt
--rw-r--r-- 1 runner runner  292178 Oct 24 15:20 preview.jpg
--rw-r--r-- 1 runner runner 2739710 Oct 24 15:20 preview2.png
+ACTIONS: ['Dance', 'Death', 'Hello', 'HitRecieve_1', 'HitRecieve_2', 'Idle', 'Jump', 'Kick', 'No', 'Pickup', 'Punch', 'Run', 'Run_Tall', 'Shoot', 'SwordSlash', 'Walk', 'Walk_Tall', 'Yes']
+ACTIONS: ['Dance', 'Death', 'Hello', 'HitRecieve_1', 'HitRecieve_2', 'Idle', 'Jump', 'Kick', 'No', 'Pickup', 'Punch', 'Run', 'Run_Holding', 'Shoot', 'SwordSlash', 'Walk', 'Walk_Holding', 'Yes']
+ACTIONS: ['Dance', 'Death', 'Hello', 'HitRecieve_1', 'HitRecieve_2', 'Idle', 'Jump', 'Kick', 'No', 'Pickup', 'Punch', 'Run', 'Run_Holding', 'Run_Tall', 'Shoot', 'SwordSlash', 'Walk', 'Walk_Holding', 'Walk_Tall', 'Yes']
+ACTIONS: ['Dance', 'Death', 'Hello', 'HitRecieve_1', 'HitRecieve_2', 'Idle', 'Jump', 'Kick', 'No', 'Pickup', 'Punch', 'Run', 'Run_Holding', 'Shoot', 'SwordSlash', 'Walk', 'Walk_Holding', 'Yes']
+total 8368
+drwxr-xr-x 2 runner runner    4096 Oct 24 15:22 .
+drwxr-xr-x 6 runner runner    4096 Oct 24 15:22 ..
+-rw-r--r-- 1 runner runner 1317872 Oct 24 15:22 George.glb
+-rw-r--r-- 1 runner runner     364 Oct 24 15:22 LICENSE.txt
+-rw-r--r-- 1 runner runner  519324 Oct 24 15:22 Leela.glb
+-rw-r--r-- 1 runner runner 1043748 Oct 24 15:22 Mike.glb
+-rw-r--r-- 1 runner runner 2635016 Oct 24 15:22 Stan.glb
+-rw-r--r-- 1 runner runner  292178 Oct 24 15:22 preview.jpg
+-rw-r--r-- 1 runner runner 2739710 Oct 24 15:22 preview2.png
